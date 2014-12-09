@@ -1,0 +1,90 @@
+{% extends 'SitewebBackBundle::layout.html.twig' %}
+
+{% block content %}
+
+
+<div class="page-content">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h6 class="panel-title"><i class="icon-list2"></i> Abstracts list</h6>
+        </div>
+        <div class="panel-body">
+
+
+                <div class="datatable">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Track</th>
+                <th>Author</th>
+                <th>Co-Author(s)</th>
+                <th>Speaker</th>
+                <th>Submitter</th>
+                <th>Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.id }}</td>
+                <td><a href="{{ path('admin_abstract_detail',{'id':entity.id}) }}" data-target="#remote_modal" role="button" data-toggle="modal">{{ entity.title }}</a></td>
+                <td>{{ entity.track.title }}</td>
+                <td>{{ entity.author }}</td>
+                <td>
+                    {% if entity.coauthers %}
+
+                    <ul style="list-style:square">
+                        {% for coauthor in entity.coauthers %}
+                            <li>{{ coauthor.coauthor }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    --
+                    {% endif %}
+
+                </td>
+                <td>{{ entity.speaker }}</td>
+                <td>{{ entity.submiter }}</td>
+                <td>{{ entity.status }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+            <div id="confirm-delete" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title"><i class="icon-user-minus"></i> Small modal</h4>
+                        </div>
+                        <div class="modal-body with-padding">
+                            <p>Are You sure you want to delete this User</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-warning" data-dismiss="modal">Close</button>
+                            <a href="#" class="btn btn-danger modaldanger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+            $(document).on('hidden.bs.modal', function (e) {
+                $(e.target).removeData('bs.modal');
+            });
+
+    </script>
+    {% endblock %}

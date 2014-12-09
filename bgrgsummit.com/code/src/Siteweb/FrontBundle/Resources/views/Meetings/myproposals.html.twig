@@ -1,0 +1,74 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+{% block content %}
+    <div class="page-top">
+        <h1 class="page-title btn-yellow-124">My Meeting Proposal</h1>
+        <p></p>
+    </div>
+    <div class="main-left">
+        <h3 class="titley">Sent Proposal</h3>
+        <br/>
+            <div class="section-0">
+                <div class="form-group-326">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Proposer</th>
+                            <th>Invitee</th>
+                            <th>Location</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+
+                             {% for meeting in sentmeetings %}
+                        <tr>
+                            <td>{{ meeting.id }}</td>
+                            <td>{{ meeting.proposer.fname }} {{ meeting.proposer.lname }}</td>
+                            <td>{{ meeting.invitee.fname }} {{ meeting.invitee.lname }}</td>
+                            <td>{{ meeting.location }}</td>
+                            <td>{{ meeting.time }}</td>
+                            <td>{{ meeting.status }}</td>
+                        </tr>
+                             {% endfor %}
+                    </table>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+        <h3 class="titley">Relieved Proposal</h3>
+        <br/>
+        <div class="section-0">
+            <div class="form-group-326">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Proposer</th>
+                        <th>Invitee</th>
+                        <th>Location</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+
+                    {% for meeting in recievedmeetings %}
+                        <tr>
+                            <td>{{ meeting.id }}</td>
+                            <td>{{ meeting.proposer.fname }} {{ meeting.proposer.lname }}</td>
+                            <td>{{ meeting.invitee.fname }} {{ meeting.invitee.lname }}</td>
+                            <td>{{ meeting.location }}</td>
+                            <td>{{ meeting.time }}</td>
+                            <td>{{ meeting.status }}</td>
+                            <td>
+                                <a href="" >Accept</a>
+                                <a href="" >Deny</a>
+                                <a href="{{ path('proposeanother',{'id':meeting.id}) }}" >Propose another time</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+{%endblock%}

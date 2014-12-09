@@ -1,0 +1,68 @@
+siteweb_front_homepage:
+    pattern:  /
+    defaults: { _controller: SitewebFrontBundle:Default:index }
+
+new_summit_registration:
+    pattern:  /reg
+    defaults: { _controller: SitewebFrontBundle:Default:summitregistration }
+
+summit_abstracts:
+    pattern:  /abstracts
+    defaults: { _controller: SitewebFrontBundle:Abstract:abstract }
+
+summit_abstract_submission:
+    pattern:  /track/{id}/abstract/submission
+    defaults: { _controller: SitewebFrontBundle:Abstract:abstractregister }
+
+summit_paypal_payment:
+    pattern:  /payment
+    defaults: { _controller: SitewebFrontBundle:Payment:preparePaypalExpressCheckoutPayment }
+
+summit_paypal_payment_done:
+    pattern:  /payment/done
+    defaults: { _controller: SitewebFrontBundle:Payment:captureDone }
+
+summit_registration_existusers:
+    pattern:  /existuser/register
+    defaults: { _controller: SitewebUserBundle:Registration:existusersregister }
+
+summit_travel:
+    pattern:  /travel
+    defaults: { _controller: SitewebFrontBundle:Travel:travel }
+
+summit_press:
+    pattern:  /press
+    defaults: { _controller: SitewebFrontBundle:Press:press }
+
+summit_organizers:
+    pattern:  /organizers
+    defaults: { _controller: SitewebFrontBundle:Organizers:organizers }
+
+summit_sponsorships:
+    pattern:  /sponsorships
+    defaults: { _controller: SitewebFrontBundle:Sponsorships:sponsorships }
+
+summit_focusgroups:
+    pattern:  /focusgroups
+    defaults: { _controller: SitewebFrontBundle:FocusGroups:focusgroups }
+
+summit_history:
+    pattern:  /history
+    defaults: { _controller: SitewebFrontBundle:History:history }
+
+summit_speakers:
+    pattern:  /speakers
+    defaults: { _controller: SitewebFrontBundle:Speakers:speakers }
+
+summit_construction:
+    pattern:  /construction
+    defaults: { _controller: SitewebFrontBundle:Construction:construction }
+
+
+summit_nomination:
+    pattern:  /award/{id}/nominate
+    defaults: { _controller: SitewebFrontBundle:Nomination:index }
+
+summit_awards:
+    pattern:  /awards
+    defaults: { _controller: SitewebFrontBundle:Nomination:awards }

@@ -1,0 +1,120 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="page-top">
+        <h1 class="page-title btn-yellow-100">Awards Nomination</h1>
+        <p></p>
+    </div>
+    <div class="section-0">
+        <h2 class="titlen">{{ award.title }}</h2>
+        <h3 class="titley">{{ award.subtitle }}</h3>
+        <p>{{ award.description }}</p>
+        <p>Nominating Criteria and Instructions</p>
+        <p>{{ award.criteria }}</p>
+    </div>
+    {{ form_start(form) }}
+{{ form_errors(form) }}
+            <p>Nominee Information</p>
+            <div class="form-group-260">
+                <label for="inputLastName" class="label-92">Last Name<span class="field-required">*</span></label>
+                {{ form_widget(form.lname,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="form-group-260">
+                <label for="inputFirstName" class="label-92">First Name<span class="field-required">*</span></label>
+                {{ form_widget(form.fname,{'attr':{'class':'input-155 input-yellow'} }) }}
+                <p class="help-block">(Legal)</p>
+            </div>
+            <div class="form-group-130">
+                <label for="inputMiddleInitial" class="label-92">Middle Initial<span class="field-required">*</span></label>
+                {{ form_widget(form.mname,{'attr':{'class':'input-32 input-yellow'} }) }}
+            </div>
+            <div class="form-group-130">
+                <label for="inputSufix" class="label-80p">Sufix<span class="field-required">*</span></label>
+                {{ form_widget(form.sname,{'attr':{'class':'input-32 input-yellow'} }) }}
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group-260">
+                <label for="inputDegree1" class="label-92">Degree 1<span class="field-required">*</span></label>
+                {{ form_widget(form.degree1,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="form-group-260">
+                <label for="inputDegree2" class="label-92">Degree 2<span class="field-required">*</span></label>
+                {{ form_widget(form.degree2,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="form-group-260">
+                <label for="inputDegree3" class="label-92">Degree 3<span class="field-required">*</span></label>
+                {{ form_widget(form.degree3,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="form-group-260">
+                <label for="inputJobTitle" class="label-92">Job Title<span class="field-required">*</span></label>
+                {{ form_widget(form.jobtitle,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="form-group-260">
+                <label for="inputOrganization" class="label-92">Organization<span class="field-required">*</span></label>
+                {{ form_widget(form.organization,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="form-group-260">
+                <label for="inputAddress" class="label-92">Address<span class="field-required">*</span></label>
+                {{ form_widget(form.address,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="form-group-260">
+                <label for="inputAddress2" class="label-92">Address #2<span class="field-required">*</span></label>
+                {{ form_widget(form.address2,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="form-group-260">
+                <label for="inputLastName" class="label-92">City<span class="field-required">*</span></label>
+                {{ form_widget(form.city,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="form-group-260">
+                <label for="inputFirstName" class="label-92">State<span class="field-required">*</span></label>
+                {{ form_widget(form.state,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="form-group-130">
+                <label for="inputMiddleInitial" class="label-92">Postal Code<span class="field-required">*</span></label>
+                {{ form_widget(form.postalcode,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="form-group-130">
+                <label for="inputSufix" class="label-80p">Country<span class="field-required">*</span></label>
+                {{ form_widget(form.country,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="form-group-260">
+                <label for="inputTelephone" class="label-92">Telephone<span class="field-required">*</span></label>
+                {{ form_widget(form.telephone,{'attr':{'class':'input-155 input-yellow'} }) }}
+                <p class="help-block">(Day Time)</p>
+            </div>
+            <div class="form-group-260">
+                <label for="inputTelephoneMobile" class="label-92">Telephone<span class="field-required">*</span></label>
+                {{ form_widget(form.telephone2,{'attr':{'class':'input-155 input-yellow'} }) }}
+                <p class="help-block">(Mobile)</p>
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group-260">
+                <label for="inputEmail" class="label-92">Email<span class="field-required">*</span></label>
+                {{ form_widget(form.email.first,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="form-group-260">
+                <label for="inputConfirm" class="label-92">Confirm Email<span class="field-required">*</span></label>
+                {{ form_widget(form.email.second,{'attr':{'class':'input-155 input-yellow'} }) }}
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group">
+                <p  class="">Please write a statement on why this person should be the recipient of this award based on the above criteria. This part should not exceed 10 double-spaced pages.<span class="field-required">*</span></p>
+                {{ form_widget(form.statement,{'attr':{'class':'text-845','rows':'6'} }) }}
+            </div>
+        {{ form_widget(form._token) }}
+            <div class="clearfix"></div>
+            <button class="btn-red-146 btn-submit" type="submit">Submit Nomination</button>
+            <div class="clearfix"></div>
+
+    </form>
+
+
+{%endblock%}

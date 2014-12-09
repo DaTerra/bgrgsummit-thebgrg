@@ -1,0 +1,396 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+<p style="font-size: 18px">
+    {{ form_errors(form) }}
+</p>
+    <div class="page-top">
+        <h1 class="page-title btn-yellow-124">Registration</h1>
+        <p></p>
+    </div>
+    <div class="section-0">
+        <h3 class="titley">Guidelines for Completing the Scholarship Application Form</h3>
+
+        <div class="scholarpresentation">
+            <p class="spp1">Please complete this application for scholarship for the 2015 UCLA H3/ Black Gay Research Group Summit scheduled for January 14, 2015 in Atlanta, Georgia.</p>
+            <p class="spp2">All sections of the Scholarship Application Form must be completed in English.</p>
+            <p class="spp3">Place “N/A” (not applicable) next to items that do not apply to you. Additional pages and other material will not be accepted. The Scholarship Application Form may be completed and submitted via e-mail as an attachment.</p>
+            <p class="spp4">Successful applicants will be offered scholarships based on individual need. The scholarships may include one or more of the following items: round-trip couch airfare, local transportation, lodging, and conference/summit registration.</p>
+            <p class="spp5">The information received in this application will be held in the strictest confidence and used only to evaluate the application for eligibility and representation. All personal information will be removed before the application is reviewed by the Scholarship Review Committee.</p>
+            <p class="spp6">The completed Scholarship Application Form must be sent electronically no later than Friday, October 24, 2014.</p>
+            <p class="spp7">Questions: Contact Craig Hutchinson, H3 Conference Chair at Craig@BGRGSummit.com</p>
+        </div>
+        {% if form_errors(form) %}
+            <div class="auto-alerts">
+                <div class="error">
+                    <p>{{ form_errors(form) }}</p>
+                </div>
+            </div>
+
+        {% endif %}
+
+        {% for type, messages in app.session.flashBag.all %}
+            {% for message in messages %}
+                <div class="auto-alerts">
+                    <div class="error">
+                        <p>{{ message|trans({}, 'FOSUserBundle') }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <h3 class="titley">Section 1: Applicant Information (This information will remain confidential)</h3>
+        <p><span class="field-required required-helper">*Required fields</span>
+    </div>
+        <form action="{{ path('summit_scholarship') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register" >
+
+    <div class="section-1">
+        <div class="form-group-260">
+            <label for="inputFirstName" class="label-92">First Name<span class="field-required">*</span></label>
+            {{ form_widget(form.fname,{'attr':{'class':'input-155 input-yellow'} }) }}
+            <p class="help-block">(Legal)</p>
+        </div>
+        <div class="form-group-260">
+            <label for="inputLastName" class="label-92">Last Name<span class="field-required">*</span></label>
+            {{ form_widget(form.lname,{'attr':{'class':'input-155 input-yellow'} }) }}
+
+        </div>
+        <div class="form-group-130" style="width:134px;">
+            <label for="inputMiddleInitial" class="label-92">Middle Initial</label>
+            {{ form_widget(form.mname,{'attr':{'class':'input-32 input-yellow'} }) }}
+        </div>
+        <div class="form-group-130">
+            <label for="inputSufix" class="label-80p">Sufix</label>
+            {{ form_widget(form.sname,{'attr':{'class':'input-32 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputDegree1" class="label-92">Degree 1<span class="field-required">*</span></label>
+            {{ form_widget(form.degree1,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputDegree2" class="label-92">Degree 2</label>
+            {{ form_widget(form.degree2,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputDegree3" class="label-92">Degree 3</label>
+            {{ form_widget(form.degree3,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputBadgeName" class="label-92">Badge Name</label>
+            {{ form_widget(form.summitbadgename,{'attr':{'class':'input-155 input-yellow'} }) }}
+            <p class="help-block">(if different from above)</p>
+        </div>
+        <div class="form-group-260">
+            <label for="inputBadgeCity" class="label-92">Badge City<span class="field-required">*</span></label>
+            {{ form_widget(form.summitbadgecity,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputBadgeState" class="label-92">Badge State<span class="field-required">*</span></label>
+            {{ form_widget(form.summitbadgestate,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputJobTitle" class="label-92">Job Title</label>
+            {{ form_widget(form.academictitle,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputOrganization" class="label-92">Organization<span class="field-required">*</span></label>
+            {{ form_widget(form.organization,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputAddress" class="label-92">Address<span class="field-required">*</span></label>
+            {{ form_widget(form.address,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputAddress2" class="label-92">Address #2</label>
+            {{ form_widget(form.address2,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputLastName" class="label-92">City<span class="field-required">*</span></label>
+            {{ form_widget(form.city,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputFirstName" class="label-92">State<span class="field-required">*</span></label>
+            {{ form_widget(form.state,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group-260">
+            <label for="inputMiddleInitial" class="label-92">Postal Code<span class="field-required">*</span></label>
+            {{ form_widget(form.postalcode,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputSufix" class="label-92">Country<span class="field-required">*</span></label>
+            {{ form_widget(form.country,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputTelephone" class="label-92">Telephone<span class="field-required">*</span></label>
+            {{ form_widget(form.telephone,{'attr':{'class':'input-155 input-yellow'} }) }}
+            <p class="help-block">(Day Time)</p>
+        </div>
+        <div class="form-group-260">
+            <label for="inputTelephoneMobile" class="label-92">Telephone 2</label>
+            {{ form_widget(form.telephone2,{'attr':{'class':'input-155 input-yellow'} }) }}
+            <p class="help-block">(Mobile)</p>
+        </div>
+        <div class="form-group-260">
+            <label for="inputPhoto" class="w92">Upload Photo:</label>
+            {{ form_widget(form.photo,{'attr':{'class':'uploadFile w105','placeholder':'Choose File'} }) }}
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="clearfix"></div>
+        <div class="form-group-260">
+            <label for="inputEmail" class="label-92">Password<sup><span class="labelhelper" onclick="alert('Choose a password to login to your account later');">?</span></sup><span class="field-required">*</span></label>
+            {{ form_widget(form.plainPassword,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+
+        <div class="form-group-260">
+            <label for="inputConfirm" class="label-92">Email<span class="field-required">*</span></label>
+            {{ form_widget(form.email,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <p class="label-bold label-inline" style="width: 165px; float: left">Make profile public<sup><span class="labelhelper" onclick="alert('If yes, your profile will be public and visible for all website visitors');">?</span></sup></p>
+            {% for publicprofile in form.publicprofile %}
+                <span class="radio-inline publicprofile">
+                {{ form_widget(publicprofile) }}{{ form_label(publicprofile) }}
+            </span>
+            {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <h3 class="titley">SECTION 2: DEMOGRAPHIC INFORMATION (THIS INFORMATION WILL REMAIN CONFIDENTIAL)<span class="logo-stamp"></span></h3>
+    <div class="yellowBG">
+        <div class="form-group">
+            <p class="label-bold">Age Range<span class="field-required">*</span></p>
+            {% for agerange in form.demographic.agerange %}
+                <span class="radio-inline w95">
+                {{ form_widget(agerange) }} {{ form_label(agerange) }}
+            </span>
+            {% endfor %}
+            <div class="clearfix"></div>
+        </div>
+        
+
+        <div class="form-group">
+            <p class="label-bold">What is your sex or current gender?<span class="field-required">*</span></p>
+            {% for currentgender in form.demographic.currentgender %}
+                <span class="radio-inline w190">
+            {{ form_widget(currentgender) }} {{ form_label(currentgender) }}
+        </span>
+            {% endfor %}
+
+            {{ form_widget(form.demographic.currentgenderother,{'attr':{'class':'input-155 input-white','style':'margin-left:-47px'} }) }}
+            <div class="clearfix"></div>
+        </div>
+        
+
+        <div class="form-group">
+            <p class="label-bold">What sex were you assigned at birth?<span class="field-required">*</span></p>
+            {% for birthgender in form.demographic.birthgender %}
+                <span class="radio-inline w150">
+                    {{ form_widget(birthgender) }} {{ form_label(birthgender) }}
+                </span>
+            {% endfor %}
+            <div class="clearfix"></div>
+        </div>
+        
+
+        <div class="form-group">
+            <p  class="label-bold">Race/Ethnicity (Check all that apply)<span class="field-required">*</span></p>
+            {% for ethnicity in form.demographic.ethnicity %}
+            <span class="checkbox-inline w245">
+            {{ form_widget(ethnicity) }} {{ form_label(ethnicity) }}
+            </span>
+            {% endfor %}
+            {{ form_widget(form.demographic.ethnicityother,{'attr':{'class':'input-155 input-white','style':'margin-left:-152px'} }) }}   
+
+            <div class="clearfix"></div>
+        </div>
+        
+
+        <div class="form-group">
+            <p class="label-bold">HIV Status?<span class="field-required">*</span></p>
+            {% for hiv in form.demographic.hiv %}
+                <span class="radio-inline w150">
+            {{ form_widget(hiv) }} {{ form_label(hiv) }}
+                        </span>
+            {% endfor %}
+            </span>
+            <div class="clearfix"></div>
+        </div>
+        
+
+        <div class="form-group col-sm-12">
+            <p class="label-bold">Geographical Location<span class="field-required">*</span></p>
+            {% for geographicallocation in form.demographic.geographicallocation %}
+                <span class="radio-inline w150">
+
+            {{ form_widget(geographicallocation) }} {{ form_label(geographicallocation) }}
+
+             </span>
+
+            {% endfor %}
+            <div class="clearfix"></div>
+        </div>
+        
+
+        <div class="form-group">
+            <p class="label-bold">Type of Geographic Area I Serve<span class="field-required">*</span></p>
+
+            {% for geographicaltype in form.demographic.geographicaltype %}
+                <span class="radio-inline w150">
+            {{ form_widget(geographicaltype) }} {{ form_label(geographicaltype) }}
+        </span>
+            {% endfor %}
+
+            <div class="clearfix"></div>
+        </div>
+        
+
+        <div class="form-group">
+            <p class="label-bold">Have you attended the UCLA H3 Conference or the BGRG Summit before?<span class="field-required">*</span></p>
+            {% for pastattendance in form.demographic.pastattendance %}
+                <span class="radio-inline w55">
+            {{ form_widget(pastattendance,{'attr':{'class':'demographic_pastattendance_radio'}}) }}  {{ form_label(pastattendance) }}
+        </span>
+            {% endfor %}
+            <div class="form-group-610" style="margin-left:30px;">
+                {% for pastattendanceedition in form.demographic.pastattendanceedition %}
+                    <span class="checkbox-inline w190">
+                {{ form_widget(pastattendanceedition,{'attr':{'class':'demographic_pastattendance'}}) }} {{ form_label(pastattendanceedition) }}
+            </span>
+                {% endfor%}
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>        
+
+        <div class="form-group">
+            <p  class="label-bold">What type of organization do you work for? (Check all that apply)<span class="field-required">*</span></p>
+            <p class="qhelper">Please make at least 1 selection from the choices below.</p>
+            {% for organizationtype in form.demographic.organizationtype %}
+                <span class="checkbox-inline w245">
+                    {{ form_widget(organizationtype) }} {{ form_label(organizationtype) }}
+                </span>
+            {% endfor %}
+            {{ form_widget(form.demographic.organizationother,{'attr':{'class':'input-155 input-white','style':'margin-left:-154px'} }) }} 
+            <div class="clearfix"></div>
+        </div>
+
+
+    </div>
+
+
+    <h3 class="titley">Section 3: Registration Request<span class="logo-stamp"></span></h3>
+    <div class="yellowBG">
+        <div class="form-group">
+            <p  class="label-bold">Did you receive a scholarship to attend the UCLA H3 Conference or BGRG Summit before?</p>
+            {% for previousscolarship in form.scolarshiprequest.previousscolarship %}
+            <label class="radio-inline w95">
+                {{ form_widget(previousscolarship) }}{{ form_label(previousscolarship) }}
+            </label>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <p  class="label-bold">Please check below the support you require. (Check all that apply)*:<span class="field-required">*</span></p>
+
+            {% for scholarship in form.scolarshiprequest.scholarship %}
+                <span class="checkbox-inline w245">
+                    {{ form_widget(scholarship) }} {{ form_label(scholarship) }}
+                </span>
+            {% endfor %}
+
+        </div>
+        <div class="form-group">
+            <p  class="label-bold">I request Schoolarship for the following meetings:<span class="field-required">*</span></p>
+            {% for accomodations in form.scolarshiprequest.accomodations %}
+                <span class="checkbox-inline w165">
+                    {{ form_widget(accomodations) }} {{ form_label(accomodations) }}
+                </span>
+            {% endfor %}
+        </div>
+    </div>
+    <h3 class="titley">Section 4: ABSTRACT SUBMISSION</h3>
+    <div class="yellowBG">
+
+            
+
+        <div class="form-group sono">
+            <p  class="label-bold">Are you submitting an abstract for consideration at the Summit?<span class="field-required">*</span></p>
+            {% for summitabstract in form.scolarshiprequest.summitabstract %}
+                <label class="radio-inline w95">
+                    {{ form_widget(summitabstract) }}{{ form_label(summitabstract) }}
+                </label>
+            {% endfor %}
+            {{ form_widget(form.scolarshiprequest.summitabsracttitle,{'attr':{'class':'input-white','value':'Title'}}) }}
+            {{ form_widget(form.scolarshiprequest.summitabstractauthor,{'attr':{'class':'input-white','value':'Author'}}) }}
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <p  class="label-bold">Are you submitting an abstract for consideration at NAESM?<span class="field-required">*</span></p>
+
+            {% for naesmabstract in form.scolarshiprequest.naesmabstract %}
+                <label class="radio-inline w95">
+                    {{ form_widget(naesmabstract) }}{{ form_label(naesmabstract) }}
+                </label>
+            {% endfor %}
+            {{ form_widget(form.scolarshiprequest.naesmabstracttitle,{'attr':{'class':'input-white','value':'Title'}}) }}
+            {{ form_widget(form.scolarshiprequest.naesmabstractauthor,{'attr':{'class':'input-white','value':'Author'}}) }}
+        </div>
+    </div>
+    <h3 class="titley">Section 5: Statement of Commitment</h3>
+    <div class="yellowBG">
+        <p>Please respond to the following three questions in the space provided. Your responses should be well-conceptualized and articulated. The response for each question should not exceed 300 words. Please note the overall organization/quality (e.g., well-organized, maintains a consistent focus) and mechanical errors (e.g., grammatical, syntax, spelling errors, etc.) will be considered in the evaluation of the scholarship application).</p>
+        <div class="form-group">
+            <p  class="label-bold">1. Why do you want to attend the Summit including what you expect to gain or learn by participating in the Summit? (e.g., what personal goals do you hope to accomplish by participating in the Summit? How will participating in the Summit improve your ability to work effectively in your community?)<span class="field-required">*</span></p>
+            {{ form_widget(form.scolarshiprequest.reason,{'attr':{'class':'text-845','rows':'6'}}) }}
+        </div>
+        <div class="form-group">
+            <p  class="label-bold">2. What are your past and/or present experiences with Black gay men’s or Black same gender practicing men’s communities in your region? (e.g., discuss your direct or collaborative involvement and/or leadership with Black gay men’s or Black same gender practicing men’s communities in your region, and/or experiences with addressing HIV in your community).<span class="field-required">*</span></p>
+            {{ form_widget(form.scolarshiprequest.experience,{'attr':{'class':'text-845','rows':'6'}}) }}
+        </div>
+        <div class="form-group">
+            <p  class="label-bold">3. How do you plan to share and/or implement what you learn from the Summit with others in your community or group? (e.g., please discuss your plans for beginning or continuing to work with groups locally or in other locations, including plans of sharing new information).<span class="field-required">*</span></p>
+            {{ form_widget(form.scolarshiprequest.plans,{'attr':{'class':'text-845','rows':'6'}}) }}
+        </div>
+    </div>
+    <h3 class="titley">Section 6: Statement of Commitment</h3>
+    <div class="yellowBG">
+        <p>I agree that, if I receive a scholarship, I will attend the full Summit, fulfill all travel and lodging arrangements made for me by the Summit Planning
+            Committee, attend the Welcome event at the beginning of the conference, evaluate the Summit in an official evaluation form, and share the information I receive at the
+            Summit with people in my community.</p>
+
+        {{ form_widget(form._token) }}
+        {#{{ form_rest(form) }}#}
+        <button type="submit" class="btn-red-146 btn-submit">Accept &amp; Submit</button>
+    </div>
+        </form>
+
+    <script language="javascript" type="text/javascript">
+    function registerControl(radioGroups, checkboxes) {
+    radioGroups.click(function () {
+            if ($(this).val() === "no") {
+                checkboxes.prop("disabled", true);
+                checkboxes.prop("checked", false);
+            } else {
+                checkboxes.prop("disabled", false);
+            }
+        });
+    }
+    registerControl($('.demographic_pastattendance_radio'), $('.demographic_pastattendance'));
+    </script>
+
+{%endblock%}

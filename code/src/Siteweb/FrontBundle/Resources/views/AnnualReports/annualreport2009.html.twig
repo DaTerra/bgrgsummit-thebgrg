@@ -1,0 +1,63 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+
+{% block content %}
+    <ul class="side-menu">
+      <li><a>About Us</a>
+        <ul>
+            <li><a href="/aboutus/mission">Mission</a></li>
+            <li><a href="/aboutus/our-work">Our Work</a></li>
+            <li><a href="/aboutus/our-services">Our Services</a></li>
+            <li><a href="/aboutus/research-agenda">Research Agenda</a>
+                <ul style="display:none;">
+                    <li><a>Executive Summary</a></li>
+                    <li><a>Introduction</a></li>
+                    <li><a>Background</a></li>
+                    <li><a>Methodologies</a></li>
+                    <li><a>Recommendations</a></li>
+                    <li><a>Conclusions</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="">BGRG Summits</a>
+                <ul>
+                    <li><a href="/aboutus/bgrg-summit/2005">2005</a></li>
+                    <li><a href="/aboutus/bgrg-summit/2010">2010</a></li>
+                    <li><a href="/aboutus/bgrg-summit/2012">2012</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li class="selected"><a href="#">Annual Reports</a>
+                <ul>
+                    <li><a href="/aboutus/annual-report/2008">2008</a></li>
+                    <li class="selected"><a href="/aboutus/annual-report/2009">2009</a></li>
+                    <li><a href="/aboutus/annual-report/2010">2010</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="/aboutus/posts/a-way-forward">Posts &amp; News</a></li>
+        </ul>    
+      </li>
+    </ul>
+
+    <main class="content contentRich" id="content">
+        <header class="content-header">
+            <h1>Annual Reports / 2009</h1>
+            <div class="clearfix"></div>
+            <hr class="book-header">
+            <div class="font-size-control" style="display:none;">
+                <a class="smaller" onclick="resizeText(-1)">-</a>
+                <p>A<span>A</span></p>
+                <a class="bigger" onclick="resizeText(1)">+</a>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+        <section>
+            <!--
+            <iframe src="https://docs.google.com/file/d/0B03qlIQCGvc4bHFzT0oyUnFYTlE/preview" width="640" height="480"></iframe>
+			-->
+            <iframe src="http://docs.google.com/gview?url={{asset('bundles/sitewebfront/pdf/2009-Annual-Report.pdf')}}&embedded=true" style="width:754px; height:970px;" frameborder="0"></iframe>
+        </section>
+    </main>
+
+{%endblock%}

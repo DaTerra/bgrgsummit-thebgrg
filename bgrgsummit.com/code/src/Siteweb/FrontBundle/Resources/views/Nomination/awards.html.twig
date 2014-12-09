@@ -1,0 +1,32 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+
+
+    <div class="page-top">
+        <h1 class="page-title btn-yellow-124">Awards</h1>
+    </div>
+    <div class="section-awards">
+        <h2 class="title">Judging and Award Information</h2>
+        <p>The BGRG Board of Directors will review and select the recipient of this award. The nominees will be notified of selection by early November 2014. The recipient will be honored at an Awards Ceremony being held at the 2015 UCLA H3/ Black Gay Research Group Summit in Atlanta, Georgia on Wednesday, January 14, 2015.</p>
+
+        <h2 class="title">Due Date and Time</h2>
+        <p>All submissions must be received by Friday, October 24, 2014. Incomplete or late submissions will be rejected.<br/>
+            In case of problems or for further clarification about the submission process, please contact one of the conference co-chairs noted below via email:<br/>
+            <a href="mailto:submissions@BGRGSummit.com">Craig Hutchinson, H3 Conference Chair at submissions@BGRGSummit.com</a></p>
+    </div>
+
+{% for award in awards %}
+
+    <div class="yellowBox center awardBox">
+        <p class="title">{{ award.title }}</p>
+        <h3 class="titley">{{ award.subtitle }}</h3>
+        <p class="content">{{ award.description }}</p>
+        <p class="label">Nominating Criteria and Instructions</p>
+        <p class="content">{{ award.criteria }}</p>
+        <a class="btn-red-124 center" href="{{ path('summit_nomination',{'id':award.id}) }}">Submit Nominee</a>
+    </div>
+
+{% endfor %}
+
+{%endblock%}

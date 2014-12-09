@@ -1,0 +1,6 @@
+Hi,
+my name is Sofien and i'm a symfony developer for almost 2 years now
+i've been working on many symfony2 based apps for clients in the 
+US : http://v7.tourqwest.com/web/
+        http://thebgrg.org/code/web/
+        http://www.bgrgsummit.com/code/web/

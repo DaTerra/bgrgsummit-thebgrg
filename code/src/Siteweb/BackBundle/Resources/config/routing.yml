@@ -1,0 +1,47 @@
+siteweb_back_homepage:
+    pattern:  /admin/
+    defaults: { _controller: SitewebBackBundle:Default:index }
+
+admin_create_user:
+    pattern: /admin/user/create
+    defaults: { _controller: SitewebBackBundle:Users:create }
+
+admin_users:
+    pattern:  /admin/users
+    defaults: { _controller: SitewebBackBundle:Users:index }
+
+user_delete:
+    pattern:  /admin/user/{id}/delete
+    defaults: { _controller: SitewebBackBundle:Users:AgentDelete }
+
+user_show:
+    pattern:  /admin/user/{id}/show
+    defaults: { _controller: SitewebBackBundle:Users:show }
+
+membershipstatus:
+    pattern:  /admin/membership/{id}/status
+    defaults: { _controller: SitewebBackBundle:Users:membershipstatus }
+
+user_edit:
+    pattern:  /admin/user/{id}/edituser
+    defaults: { _controller: SitewebBackBundle:Users:UsersEdit }
+
+user_edit_photo_status:
+    pattern:  /admin/user/{id}/edituserphotostatus
+    defaults: { _controller: SitewebBackBundle:Users:Usersstatus }
+
+admin_abstracts:
+    pattern:  /admin/abstracts
+    defaults: { _controller: SitewebBackBundle:Abstracts:abstracts }
+
+admin_abstract_detail:
+    pattern:  /admin/abstract/{id}/detail
+    defaults: { _controller: SitewebBackBundle:Abstracts:abstractdetail }
+
+admin_abstract_status:
+    pattern:  /admin/abstract/{id}/{status}
+    defaults: { _controller: SitewebBackBundle:Abstracts:abstractstatus }
+
+admin_meetings:
+    pattern:  /admin/meetings
+    defaults: { _controller: SitewebBackBundle:Meetings:index }

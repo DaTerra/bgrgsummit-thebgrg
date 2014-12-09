@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'dtr_pro_mediumRg';
+    src: url('../fonts/dtr-med-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dtr_blackRg';
+    src: url('../fonts/dtr-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dtr_pro_blackitalic';
+    src: url('../fonts/dtr-blackit-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dtr_probold';
+    src: url('../fonts/dtr-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dtr_proitalic';
+    src: url('../fonts/dtr-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dtr_pro_mediumIt';
+    src: url('../fonts/dtr-medital-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}	
+
+@font-face {
+    font-family: 'dtr_pro_lightRg';
+    src: url('../fonts/dtr-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dtr_pro_lightitalic';
+    src: url('../fonts/dtr-lightital-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dtr_proregular';
+    src: url('../fonts/dtr-reg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dtr_pro_thinregular';
+    src: url('../fonts/dtr-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dtr_pro_thinitalic';
+    src: url('../fonts/dtr-thinital-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dtr_pro_extrathinIt';
+    src: url('../fonts/dtr-xthinit-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dtr_pro_extrathinRg';
+    src: url('../fonts/dtr-xthin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

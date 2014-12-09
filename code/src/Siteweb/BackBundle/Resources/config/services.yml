@@ -1,0 +1,8 @@
+parameters:
+    siteweb.twig_extension.class: Siteweb\BackBundle\Twig\TwigExtension
+
+services:
+    siteweb.twig_extension:
+        class: %siteweb.twig_extension.class%
+        tags:
+            - { name: twig.extension }

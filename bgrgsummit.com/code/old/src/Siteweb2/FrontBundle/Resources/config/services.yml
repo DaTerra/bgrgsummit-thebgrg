@@ -1,0 +1,8 @@
+parameters:
+#    siteweb_front.example.class: Siteweb\FrontBundle\Example
+
+services:
+    siteweb_user.registration.form.type:
+        class: Siteweb\UserBundle\Form\UserType
+        tags:
+            - { name: form.type, alias: siteweb_user_registration }

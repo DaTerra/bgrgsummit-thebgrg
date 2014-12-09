@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name=viewport content="width=1170">  
+    <title>UCLA H3 / BGRG Summit 2015 - January 14, 2015 - Atlanta, GA - USA</title>
+    <link rel="icon" type="image/png" href="{{ asset('bundles/sitewebfront/img/logo-32.png') }}">
+    <link href="{{ asset('bundles/sitewebfront/css/typeface.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/sitewebfront/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/sitewebfront/css/noggrid.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/sitewebfront/css/lightbox.css') }}" rel="stylesheet">
+    {{ include('FpJsFormValidatorBundle::javascripts.html.twig') }}
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" language="javascript" src="{{ asset('bundles/sitewebfront/js/lightbox.min.js') }}"></script>
+    <!-- Accordion -->
+    <script type="text/javascript">
+      $(document).ready(function($) {
+        $('#accordion').find('.accordion-toggle').click(function(){
+          //Expand or collapse this panel
+          $(this).next().slideToggle('fast');
+          //Hide the other panels
+          $(".accordion-content").not($(this).next()).slideUp('fast');
+        });
+      });
+    </script> 
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-53782317-1', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+
+<div id="page-wrapper">
+    <div class="main-header">
+        <div class="logo-wrapper">
+            <a class="main-logo" href="/"><h1>UCLA h3 / BGRG Summit 2015</h1></a>
+            <a class ="register-btn btn-red-124" style="margin-left:20px;margin-top:40px;" href="/register">Register</a>
+        </div>
+        
+        <div class="top-menu">
+            <div class="menu-column1">
+                <a class="btn-red-115" href="/agenda">Agenda</a>
+                <a class="btn-red-115" href="/speakers">Speakers</a>
+                <a class="btn-red-115" href="/sponsorships">Sponsors</a>
+                <a class="btn-red-115" href="/organizers">Organizers</a>
+                <a class="btn-red-115" href="/attendees">Attendees</a>
+                <a class="btn-red-115" href="/construction">Meetings</a>
+            </div>
+            <div class="menu-column2">
+                <a class="btn-green-115" href="/awards">Awards</a>
+                <a class="btn-green-135" href="/scholarship/registration">Scholarships</a>
+                <a class="btn-green-115" href="/construction">Research</a>
+                <a class="btn-green-115" href="/abstracts">Abstracts</a>
+                <a class="btn-green-135" href="/focusgroups">Focus Groups</a>
+                <a class="btn-green-115" href="/history">History</a>
+            </div>
+            <div class="menu-column3">
+                <a class="btn-black-115" href="/travel">Travel</a>
+                <a class="btn-black-115" href="/press">Press</a>
+                <a class="btn-black-115" href="/construction">Evaluation</a>
+                <a class="btn-black-115" href="/construction">Contact</a>
+                
+                {% if app.user %}
+                    <a class="btn-black-115" href="{{ path('fos_user_profile_show') }}">My Account</a>
+                    <a class="btn-black-115" href="{{ path('fos_user_security_logout') }}">Logout</a>
+                {% else %}
+                <a class="btn-black-115" href="{{ path('fos_user_registration_register') }}">Registration</a>
+                <a class="btn-black-115" href="{{ path('fos_user_security_login') }}">Login</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <style>
+            .save-the-date{text-align:center;width:960px;margin:46px 0 30px 182px;float:left;display:none;}
+            .save-the-date h1{font-size: 35px;line-height: 50px;color:#ffffff;margin-top:10px;}
+            .save-the-date h1:hover{color:#000000;}
+        </style>
+        <div class="save-the-date">
+            <a href="/"><h1>The 2015 UCLA H<sup>3</sup> / BGRG SUMMIT is open for registration!</h1></a>
+        </div>
+        
+    </div>
+    <div class="clearfix"></div>
+    <div class="main-container">
+        <div class="page-header">            
+            <div class="clearfix"></div>
+            <input style="visibility:hidden;" type="search" name="searchbox" results=5 class="main-search" placeholder="SEARCH"/>            
+            <div class="share-top">
+                <a class="top-share-facebook" target="_blank" href="https://www.facebook.com/BGRGSummit">Facebook</a>
+                <a class="top-share-twitter" target="_blank" href="https://twitter.com/hashtag/BGRGSummit">Twitter</a>
+                <a class="top-share-share" href="#">Share</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="main-content">
+            <!-- HERE IS THE PAGE CONTENT INCLUDE-->
+            {% for message in app.session.flashBag.get('notice') %}
+            <div class="auto-alerts">
+                <div class="success">
+
+                        <p>{{ message|raw|trans({}, 'FOSUserBundle') }}</p>
+                </div>
+            </div>
+            {% endfor %}
+
+            {% block content %}{% endblock %}
+            <!-- END PAGE CONTENT INCLUDE-->
+        </div>
+    </div>
+    <div class="side-content">
+        <!--
+        <a href="#"><h3 class="side-sponsors-title btn-yellow-100">Sponsors</h3></a>
+        <ul>
+            <a href='#"'><li><img src="{{ asset('bundles/sitewebfront/img/BGRG-logo-side-menu.png') }}"></li></a>
+            <a href='#"'><li><img src="{{ asset('bundles/sitewebfront/img/H3-logo-side-menu.png') }}"></li></a>
+        </ul>
+        -->
+        <a href="/organizers"><h3 class="side-organizers-title btn-yellow-124">Organizers</h3></a>
+        <ul>
+            <a href='http://www.thebgrg.org'><li><img src="{{ asset('bundles/sitewebfront/img/BGRG-logo-side-menu.png') }}"></li></a>
+            <a href='http://chipts.ucla.edu/2013/03/21/ucla-health-hope-healing-h3-conference-presentations/'><li><img src="{{ asset('bundles/sitewebfront/img/H3-logo-side-menu.png') }}"></li></a>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="footer">
+        <div class="share-bottom">
+            <div class="wrapper">
+                <a class="bottom-share-facebook" target="_blank" href="https://www.facebook.com/BGRGSummit">Facebook</a>
+                <a class="bottom-share-twitter" target="_blank" href="https://twitter.com/hashtag/BGRGSummit">Twitter</a>
+                <a class="bottom-share-share" href="#">Share</a>
+            </div>
+        </div>
+        <div class="footer-content">
+            <p>UCLA H3/ BGRG SUMMIT - January 14, 2015, Atlanta, GA USA</p>
+            <p>Building Strong Families  and Communities across the African Diaspora for Black Same Gender Practicing Men</p>
+            <ul>
+                <li><a href="/agenda">Agenda</a></li>
+                <li><a href="/sponsorship">Sponsors</a></li>
+                <li><a href="/attendees">Attendees</a></li>
+            </ul>
+            <ul>
+                <li><a href="/speakers">Speakers</a></li>
+                <li><a href="/organizers">Organizers</a></li>
+                <li><a href="/meetings">Meetings</a></li>
+            </ul>
+            <ul>
+                <li><a href="/awards">Awards</a></li>
+                <li><a href="/construction">Research</a></li>
+                <li><a href="/focusgroups">Focus Groups</a></li>
+            </ul>
+            <ul>
+                <li><a href="/construction">Scholarships</a></li>
+                <li><a href="/abstracts">Abstracts</a></li>
+                <li><a href="/history">History</a></li>
+            </ul>
+            <ul>
+                <li><a href="/travel">Travel</a></li>
+                <li><a href="/construction">Evaluation</a></li>
+                <li><a href="/register">Registration</a></li>
+            </ul>
+            <ul>
+                <li><a href="/press">Press</a></li>
+                <li><a href="/construction">Contact</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </div>
+        <div class="footer-credits">
+            <a class="bgrg-logo-footer" href="#">BGRG - The Black Gay Research Group</a>
+            <p>BGRG ® 2014 All rights reserved.</p>
+            <p>Developed by <a href="http://www.daterraweb.com">DaTerra Systems</a></p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var collectionHolder = $('ul.images');
+    // ajoute un lien « add a tag »
+    var $addTagLink = $('<br /><br /><div"><a href="#" class="add_tag_link btn">Add a Co-Author</a></div>');
+    var $newLinkLi = $('<li></li>').append($addTagLink);
+    jQuery(document).ready(function() {
+        function addTagFormDeleteLink($tagFormLi) {
+            var $removeFormA = $('<a  class="btn btn-danger" href="#"> Remove this Co-Author </a>');
+            $tagFormLi.append($removeFormA);
+            $removeFormA.on('click', function(e) {
+                // prevent the link from creating a "#" on the URL
+                e.preventDefault();
+                // remove the li for the tag form
+                $tagFormLi.remove();
+            });
+        }
+        // ajoute l'ancre « ajouter un tag » et li à la balise ul
+        collectionHolder.append($newLinkLi);
+        $addTagLink.on('click', function(e) {
+            // empêche le lien de créer un « # » dans l'URL
+            e.preventDefault();
+            // ajoute un nouveau formulaire tag (voir le prochain bloc de code)
+            addTagForm(collectionHolder, $newLinkLi);
+        });
+        // ajoute un lien de suppression à tous les éléments li de
+        // formulaires de tag existants
+        function addTagForm(collectionHolder, $newLinkLi) {
+            // Récupère l'élément ayant l'attribut data-prototype comme expliqué plus tôt
+            var prototype = collectionHolder.attr('data-prototype');
+            // Remplace '__name__' dans le HTML du prototype par un nombre basé sur
+            // la longueur de la collection courante
+            var newForm = prototype.replace(/__name__/g, collectionHolder.children().length);
+            // Affiche le formulaire dans la page dans un li, avant le lien "ajouter un tag"
+            var $newFormLi = $('<li></li>').append(newForm);
+            $newLinkLi.before($newFormLi);
+            addTagFormDeleteLink($newFormLi);
+        }
+    });
+
+</script>
+</body>
+</html>

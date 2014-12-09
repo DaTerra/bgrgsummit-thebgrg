@@ -1,0 +1,129 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+{% block content %}
+    <div class="page-top">
+        <h1 class="page-title btn-yellow-124">Abstract Submission Final Step</h1>
+        <p></p>
+    </div>
+    <div class="main-left">
+        <h3 class="titley">Congratulations</h3>
+        <br/>
+        <p class="title-15">This abstract has been selected. Please fill up the form bellow
+            for us to contact the people involved.
+        </p>
+        <br/>
+        <p class="title-15">TRACK {{ entity.track.letter }}: {{ entity.track.title }}</p>
+        <p>{{ entity.track.description }}</p>
+
+        <p><span class="field-required required-helper">*Required fields</span></p>
+        <div class="clearfix"></div>
+        {{ form_errors(form) }}
+        {{ form_start(form) }}
+        <div class="section-0">
+            <div class="form-group-326">
+                <label for="SubmitterName" class="label-105">Speaker<span class="field-required">*</span></label>
+                {{ form_widget(form.speaker,{'attr':{'class':'input-200 input-yellow','disabled':'disabled' } }) }}
+            </div>
+            <div class="form-group-326">
+                <label for="SubmitterEmail" class="label-92-pad">Email<span class="field-required">*</span></label>
+                {{ form_widget(form.submiteremail,{'attr':{'class':'input-200 input-yellow','disabled':'disabled' } }) }}
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group-326">
+                <label for="FirstAuthorName" class="label-105">First Author<span class="field-required">*</span></label>
+                {{ form_widget(form.author,{'attr':{'class':'input-200 input-yellow','disabled':'disabled' } }) }}
+            </div>
+            <div class="form-group-326 col">
+                <label for="SubmitterEmail" class="label-92-pad">Email<span class="field-required">*</span></label>
+                {{ form_widget(form.authoremail,{'attr':{'class':'input-200 input-yellow' } }) }}
+            </div>
+            <div class="clearfix"></div>
+            <p class="title-15">Co-Authors</p>
+            <div class="clearfix"></div>
+            <div id="coauthors">
+
+                        {% for coauther in form.coauthers %}
+
+                            <div class="form-group-326">
+                                <label for="Co-AuthorName" class="label-105">Co-Author<span class="field-required">*</span></label>
+                                {{ form_widget(coauther.coauthor,{'attr':{'class':'input-200 input-yellow','disabled':'disabled' } }) }}
+                            </div>
+                            <div class="form-group-326 col">
+                                <label for="Co-AuthorEmail" class="label-92-pad">Email<span class="field-required">*</span></label>
+                                {{ form_widget(coauther.coauthoremail,{'attr':{'class':'input-200 input-yellow','required':'required' } }) }}
+                            </div>
+                            <div class="clearfix"></div>
+
+                        {% endfor %}
+
+          </div>
+            <div class="form-group-326">
+                <label for="SubmitterName" class="label-105">Submitter<span class="field-required">*</span></label>
+                {{ form_widget(form.submiter,{'attr':{'class':'input-200 input-yellow','disabled':'disabled' } }) }}
+            </div>
+
+            {{ form_widget(form._token) }}
+            {{ form_widget(form.submit,{'attr':{'class':'btn-red-146 btn-submit','style':'margin: 4% auto;float: right;' } }) }}
+
+        </form>
+            </div>
+    </div>
+
+    <script type="text/javascript">
+        var WordsLim = 30;
+        var WordsUs = 0;
+        var WordsRem = 30;
+        var regexx = /\s+/gi;
+        $(document).ready(function () {
+
+            $('.MyTitleBox').live("keyup", function (e) {
+                var v = "";
+                $('.MyTitleBox').each(function() { v = v + " " + $(this).val().trim(); });
+                v = v.trim();
+                console.log(v);
+                var WordsUs = v.replace(regexx, ' ').split(' ').length;
+                WordsRem = parseInt(WordsLim) - parseInt(WordsUs);
+                if (WordsUs == WordsLim) {
+                    $('.MyTitleBox').readOnly = true;
+                    $('#count-label').html("0 Words remaining.");
+                    $('#ExtraWords').html("");
+                }
+                else if (WordsUs > WordsLim) {
+                    $('#count-label').html("0");
+                    document.getElementById('abstractTitle').readOnly = true;
+                    var extraWord = parseInt(WordsUs) - parseInt(WordsLim);
+                    $('#ExtraWords').html("You have entered " + extraWord + " extra Words!!");
+                } else {
+                    $('#count-label').html(WordsRem);
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        var WordsLimit = 350;
+        var WordsUsed = 0;
+        var WordsRemaining = 350;
+        var regex = /\s+/gi;
+        $(document).ready(function () {
+
+            $('.MyTextBox').live("keyup", function (e) {
+                var v = "";
+                $('.MyTextBox').each(function() { v = v + " " + $(this).val().trim(); });
+                v = v.trim();
+                //console.log(v);
+                var WordsUsed = v.replace(regex, ' ').split(' ').length;
+                WordsRemaining = parseInt(WordsLimit) - parseInt(WordsUsed);
+                if (WordsUsed >= WordsLimit) {
+                    $('.MyTextBox').on("keydown", function(e) {
+                        if (e.keyCode !== 8) {
+                            return false;
+                        }
+                    });
+                } else {
+                    $('.MyTextBox').off("keydown");
+                }
+                $('#remainingWords').html(WordsRemaining);
+            });
+        });
+    </script>
+
+{%endblock%}

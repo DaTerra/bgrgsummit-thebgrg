@@ -1,0 +1,67 @@
+<style>
+    .row{
+        padding: 2% 0;
+    }
+</style>
+
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title"><i class="icon-accessibility"></i> Abstract Details</h4>
+</div>
+<div class="modal-body with-padding">
+    <div class="row">
+        <div class="col-lg-4" >Title</div>
+        <div class="col-lg-8">
+            {{ entity.title }}<br> {{ entity.status }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4" >Speaker</div>
+        <div class="col-lg-8">{{ entity.speaker }}</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4" >Author</div>
+        <div class="col-lg-8">{{ entity.author }}</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4" >Co-Author(s)</div>
+        <div class="col-lg-8">
+            <ul style="list-style:square">
+                {% for coauthor in entity.coauthers %}
+                    <li>{{ coauthor.coauthor }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4" >Submitter</div>
+        <div class="col-lg-8">{{ entity.submiter }}</div>
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="col-lg-4" >Background</div>
+        <div class="col-lg-8">{{ entity.background }}</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4" >Methods</div>
+        <div class="col-lg-8">{{ entity.methods }}</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4" >Results</div>
+        <div class="col-lg-8">{{ entity.results }}</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4" >Conclusions</div>
+        <div class="col-lg-8">{{ entity.conclusions }}</div>
+    </div>
+
+
+</div>
+<div class="modal-footer">
+    <div style="float: left">
+        <a href="{{ path('admin_abstract_status',{'id':entity.id,'status':'accept'}) }}" class="btn btn-success">Accept</a>
+        <a href="{{ path('admin_abstract_status',{'id':entity.id,'status':'decline'}) }}" class="btn btn-danger">Decline</a>
+    </div>
+    <button class="btn btn-warning" data-dismiss="modal">Close</button>
+</div>

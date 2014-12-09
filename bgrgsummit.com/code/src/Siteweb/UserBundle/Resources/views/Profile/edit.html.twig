@@ -1,0 +1,132 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <h3 class="titley">Edit informations</h3>
+
+    {% for type, messages in app.session.flashBag.all %}
+        {% for message in messages %}
+            <div class="auto-alerts">
+                <div class="error">
+                    <p>{{ message|trans({}, 'FOSUserBundle') }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <span class="field-required required-helper">*Required fields</span>
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+
+    <div class="section-1">
+        <div class="form-group-260">
+            <label for="inputFirstName" class="label-92">First Name<span class="field-required">*</span></label>
+            {{ form_widget(form.fname,{'attr':{'class':'input-155 input-yellow'} }) }}
+            <p class="help-block">(Legal)</p>
+        </div>
+        <div class="form-group-260">
+            <label for="inputLastName" class="label-92">Last Name<span class="field-required">*</span></label>
+            {{ form_widget(form.lname,{'attr':{'class':'input-155 input-yellow'} }) }}
+
+        </div>
+        <div class="form-group-130" style="width:134px;">
+            <label for="inputMiddleInitial" class="label-92">Middle Initial</label>
+            {{ form_widget(form.mname,{'attr':{'class':'input-32 input-yellow'} }) }}
+        </div>
+        <div class="form-group-130">
+            <label for="inputSufix" class="label-80p">Sufix</label>
+            {{ form_widget(form.sname,{'attr':{'class':'input-32 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputDegree1" class="label-92">Degree 1<span class="field-required">*</span></label>
+            {{ form_widget(form.degree1,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputDegree2" class="label-92">Degree 2</label>
+            {{ form_widget(form.degree2,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputDegree3" class="label-92">Degree 3</label>
+            {{ form_widget(form.degree3,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputBadgeName" class="label-92">Badge Name</label>
+            {{ form_widget(form.summitbadgename,{'attr':{'class':'input-155 input-yellow'} }) }}
+            <p class="help-block">(if different from above)</p>
+        </div>
+        <div class="form-group-260">
+            <label for="inputBadgeCity" class="label-92">Badge City<span class="field-required">*</span></label>
+            {{ form_widget(form.summitbadgecity,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputBadgeState" class="label-92">Badge State<span class="field-required">*</span></label>
+            {{ form_widget(form.summitbadgestate,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputJobTitle" class="label-92">Job Title</label>
+            {{ form_widget(form.academictitle,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputOrganization" class="label-92">Organization<span class="field-required">*</span></label>
+            {{ form_widget(form.organization,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputAddress" class="label-92">Address<span class="field-required">*</span></label>
+            {{ form_widget(form.address,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputAddress2" class="label-92">Address #2</label>
+            {{ form_widget(form.address2,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputLastName" class="label-92">City<span class="field-required">*</span></label>
+            {{ form_widget(form.city,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputFirstName" class="label-92">State<span class="field-required">*</span></label>
+            {{ form_widget(form.state,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group-260">
+            <label for="inputMiddleInitial" class="label-92">Postal Code<span class="field-required">*</span></label>
+            {{ form_widget(form.postalcode,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputSufix" class="label-92">Country<span class="field-required">*</span></label>
+            {{ form_widget(form.country,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputTelephone" class="label-92">Telephone<span class="field-required">*</span></label>
+            {{ form_widget(form.telephone,{'attr':{'class':'input-155 input-yellow'} }) }}
+            <p class="help-block">(Day Time)</p>
+        </div>
+        <div class="form-group-260">
+            <label for="inputTelephoneMobile" class="label-92">Telephone 2</label>
+            {{ form_widget(form.telephone2,{'attr':{'class':'input-155 input-yellow'} }) }}
+            <p class="help-block">(Mobile)</p>
+        </div>
+        <div class="form-group-260">
+            <label for="inputPhoto" class="w92">Upload Photo:</label>
+            {{ form_widget(form.photo,{'attr':{'class':'uploadFile w105','placeholder':'Choose File'} }) }}
+
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="clearfix"></div>
+        {{ form_widget(form._token) }}
+        <button type="submit" class="btn-red-146 btn-submit">Update Profile</button>
+    </div>
+</form>
+
+{% endblock %}

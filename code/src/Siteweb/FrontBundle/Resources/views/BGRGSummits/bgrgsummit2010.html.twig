@@ -1,0 +1,90 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+    <ul class="side-menu">
+      <li><a>About Us</a>
+        <ul>
+            <li><a href="/aboutus/mission">Mission</a></li>
+            <li><a href="/aboutus/our-work">Our Work</a></li>
+            <li><a href="/aboutus/our-services">Our Services</a></li>
+            <li><a href="/aboutus/research-agenda">Research Agenda</a>
+                <ul style="display:none;">
+                    <li><a>Executive Summary</a></li>
+                    <li><a>Introduction</a></li>
+                    <li><a>Background</a></li>
+                    <li><a>Methodologies</a></li>
+                    <li><a>Recommendations</a></li>
+                    <li><a>Conclusions</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li class="selected"><a href="">BGRG Summits</a>
+                <ul>
+                    <li><a href="/aboutus/bgrg-summit/2005">2005</a></li>
+                    <li class="selected"><a href="/aboutus/bgrg-summit/2010">2010</a></li>
+                    <li><a href="/aboutus/bgrg-summit/2012">2012</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="#">Annual Reports</a>
+                <ul>
+                    <li><a href="/aboutus/annual-report/2008">2008</a></li>
+                    <li><a href="/aboutus/annual-report/2009">2009</a></li>
+                    <li><a href="/aboutus/annual-report/2010">2010</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="/aboutus/posts/a-way-forward">Posts &amp; News</a></li>
+        </ul>    
+      </li>
+    </ul>
+
+    <main class="content contentRich" id="content">
+        <header class="content-header">
+            <h1>BGRG Summits</h1>
+            <div class="clearfix"></div>
+            <hr class="book-header">
+            <div class="font-size-control" style="display:none;">
+                <a class="smaller" onclick="resizeText(-1)">-</a>
+                <p>A<span>A</span></p>
+                <a class="bigger" onclick="resizeText(1)">+</a>
+            </div>
+            <div class="clearfix"></div>
+        </header>        
+        <section>
+
+
+            <h2>2010 Atlanta, Georgia</h2>
+            <p><span class="drop-capp">'R</span>eclaiming our place: Emerging Research & Dialogues on the Lives of Black Gay Men' was the theme of the 2010 BGRG Summit in Atlanta, GA. The daytime program included four featured panels including “Beyond Borders: International Perspectives on Black MSM” which included delegates from Ghana, England, and Canada presenting finds from the respective countries. The panel was also a direct reflection of the BGRG’s ongoing effort to build research partnerships with Black gay communicates on the African continent and throughout the worldwide African Diaspora.</p>
+
+            <p>Other highlights was the Luncheon Plenary “The Science Behind HPTN 061 & HVTN 505” which explored the development and implementation on two new HIV behavioral prevention and clinical vaccine research studies targeting Black gay men.</p>
+                    
+            <p>BGRG also celebrated the achievements of scholars and activists in the field who exemplify a commitment to the health and wellbeing of Black gay men with its first ever BGRG Awards. Awards were presented at an evening reception and keynote address and performance. The awards and recipients included:</p>
+                    
+            <p>Ron Simmons, PhD, President / CEO of Us Helping Us, People into Living, Inc. [UHU], Washington, DC., with the BGRG Lifetime Achievement Award for Distinguished Scholarly Contributions & Leadership. Mr. Kenneth T. Jones, MSW, PhD(c), Columbia University, School of Social Work, New York, received the BGRG Emerging Scholar & Leadership Award.</p>
+                    
+            <p>The BGRG Founders’ Spirit & Soul Award for Outstanding Contributions in Service to the Black Gay Community was shared by Ernest Hopkins, Director of Federal Affairs, San Francisco AIDS Foundation and Roosevelt Mosby Jr., Sexual Minority Alliance of Alameda County Youth Center, Oakland, CA.</p>
+                    
+            <p>Following the award ceremony, the keynote address and performance by E. Patrick Johnson Ph.D., Chair, Northwestern University Department of Performance Studies and author of “Sweet Tea: Black Gay Men of the South” which gives voice to a population rarely acknowledged in southern history, and chronicles the lives of Black gay men who were born, raised and live in the South. Johnson’s acclaimed solo performance was based on the narratives in his book.</p>
+
+            <p><strong>Sponsors:</strong> Nell Hodgson Woodruff School of Nursing; The University of Rochester School of Nursing; The San Francisco AIDS Foundation; amfaR AIDS Research; The Center for Health & Behavioral Training; The Lawrence S. Bloomberg Faculty of Nursing at the University of Toronto.</p> 
+
+             <a href="{{asset('bundles/sitewebfront/img/summits/summit_2010_0001.jpg')}}" data-lightbox="summit2010">
+                <img class="lbox" src="{{asset('bundles/sitewebfront/img/summits/thumbs/summit_2010_0001.jpg')}}"/>
+            </a>
+            <a href="{{asset('bundles/sitewebfront/img/summits/summit_2010_0002.jpg')}}" data-lightbox="summit2010">
+                <img class="lbox" src="{{asset('bundles/sitewebfront/img/summits/thumbs/summit_2010_0002.jpg')}}"/>
+            </a>
+            <a href="{{asset('bundles/sitewebfront/img/summits/summit_2010_0003.jpg')}}" data-lightbox="summit2010">
+                <img class="lbox" src="{{asset('bundles/sitewebfront/img/summits/thumbs/summit_2010_0003.jpg')}}"/>
+            </a>
+            <a href="{{asset('bundles/sitewebfront/img/summits/summit_2010_0004.jpg')}}" data-lightbox="summit2010">
+                <img class="lbox" src="{{asset('bundles/sitewebfront/img/summits/thumbs/summit_2010_0004.jpg')}}"/>
+            </a>
+            <a href="{{asset('bundles/sitewebfront/img/summits/summit_2010_0005.jpg')}}" data-lightbox="summit2010">
+                <img class="lbox" src="{{asset('bundles/sitewebfront/img/summits/thumbs/summit_2010_0005.jpg')}}"/>
+            </a>
+        </section>
+    </main>
+
+{%endblock%}

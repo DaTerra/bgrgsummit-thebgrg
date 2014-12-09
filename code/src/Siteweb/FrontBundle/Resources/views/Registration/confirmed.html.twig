@@ -1,0 +1,44 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+
+<style>
+    .checkemail{
+        text-align: center;
+    }
+    .checkemail h1 {
+        font-size: 24px;
+        line-height: 22px;
+        margin-bottom: 20px;
+        padding-top:50px;
+    }
+    .checkemail p {
+        font-size:20px;
+    }
+    .checkemail a{
+        font-size: 20px;
+        line-height: 50px;
+        display: inline-block;
+        margin: 20px 0px;
+        color: #FFF;
+        margin-top:50px;
+    }
+</style>
+
+    <div class="page-top">
+        <h1 class="page-title btn-yellow-100">Email Confirmed</h1>
+    </div>
+    <div class="checkemail">
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}, 'FOSUserBundle') }}</p>
+    {% if app.session is not empty %}
+        {% set targetUrl = app.session.get('_security.' ~ app.security.token.providerKey ~ '.target_path') %}
+        {% if targetUrl is not empty %}<p><a href="{{ targetUrl }}">{{ 'registration.back'|trans({}, 'FOSUserBundle') }}</a></p>{% endif %}
+    {% endif %}
+</div>
+
+    <script>
+        $(window).load(function() {
+            window.setTimeout(window.location.href = "{{ url('fos_user_profile_show') }}",5000);
+        });
+    </script>
+    {% endblock %}

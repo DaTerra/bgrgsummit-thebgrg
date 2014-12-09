@@ -1,0 +1,3 @@
+siteweb_back_homepage:
+    pattern:  /admin
+    defaults: { _controller: SitewebBackBundle:Default:index }

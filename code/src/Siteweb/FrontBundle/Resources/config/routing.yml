@@ -1,0 +1,134 @@
+siteweb_front_homepage:
+    pattern:  /
+    defaults: { _controller: SitewebFrontBundle:Default:index }
+
+new_summit_registration:
+    pattern:  /reg
+    defaults: { _controller: SitewebFrontBundle:Default:summitregistration }
+
+summit_abstracts:
+    pattern:  /abstracts
+    defaults: { _controller: SitewebFrontBundle:Abstract:abstract }
+
+
+summit_abstract_submission:
+    pattern:  /track/{id}/abstract/submission
+    defaults: { _controller: SitewebFrontBundle:Abstract:abstractregister }
+
+
+summit_paypal_payment:
+    pattern:  /payment
+    defaults: { _controller: SitewebFrontBundle:Payment:preparePaypalExpressCheckoutPayment }
+
+
+summit_paypal_payment_done:
+    pattern:  /payment/done
+    defaults: { _controller: SitewebFrontBundle:Payment:captureDone }
+
+summit_payment_renew:
+    pattern:  /renew/payment
+    defaults: { _controller: SitewebFrontBundle:RenewPayment:prepareRenewPayment }
+
+bgrg_registration_existusers:
+    pattern:  /existuser/register
+    defaults: { _controller: SitewebUserBundle:Registration:existusersregister }
+
+summit_aboutus_mission:
+    pattern:  /aboutus/mission
+    defaults: { _controller: SitewebFrontBundle:Mission:mission }
+
+summit_aboutus_ourwork:
+    pattern:  /aboutus/our-work
+    defaults: { _controller: SitewebFrontBundle:OurWork:ourwork }
+
+summit_aboutus_research_agenda:
+    pattern:  /aboutus/research-agenda
+    defaults: { _controller: SitewebFrontBundle:ResearchAgenda:researchagenda }
+
+summit_aboutus_posts:
+    pattern:  /aboutus/posts
+    defaults: { _controller: SitewebFrontBundle:Posts:posts }
+
+summit_aboutus_posts_a_way_forward:
+    pattern:  /aboutus/posts/a-way-forward
+    defaults: { _controller: SitewebFrontBundle:AWayForward:awayforward }
+
+summit_aboutus_ourservices:
+    pattern:  /aboutus/our-services
+    defaults: { _controller: SitewebFrontBundle:OurServices:ourservices }
+
+summit_aboutus_bgrg_summits:
+    pattern:  /aboutus/bgrg-summits
+    defaults: { _controller: SitewebFrontBundle:BGRGSummits:bgrgsummits }
+
+summit_aboutus_bgrg_summit_2005:
+    pattern:  /aboutus/bgrg-summit/2005
+    defaults: { _controller: SitewebFrontBundle:BGRGSummits:bgrgsummit2005 }
+
+summit_aboutus_bgrg_summit_2010:
+    pattern:  /aboutus/bgrg-summit/2010
+    defaults: { _controller: SitewebFrontBundle:BGRGSummits:bgrgsummit2010 }
+
+summit_aboutus_bgrg_summit_2012:
+    pattern:  /aboutus/bgrg-summit/2012
+    defaults: { _controller: SitewebFrontBundle:BGRGSummits:bgrgsummit2012 }
+
+summit_aboutus_annual_reports:
+    pattern:  /aboutus/annual-reports
+    defaults: { _controller: SitewebFrontBundle:AnnualReports:annualreports }
+
+summit_aboutus_annual_report_2008:
+    pattern:  /aboutus/annual-report/2008
+    defaults: { _controller: SitewebFrontBundle:AnnualReports:annualreport2008 }
+
+summit_aboutus_annual_report_2009:
+    pattern:  /aboutus/annual-report/2009
+    defaults: { _controller: SitewebFrontBundle:AnnualReports:annualreport2009 }
+
+summit_aboutus_annual_report_2010:
+    pattern:  /aboutus/annual-report/2010
+    defaults: { _controller: SitewebFrontBundle:AnnualReports:annualreport2010 }
+
+summit_members_all_members:
+    pattern:  /members/all-members
+    defaults: { _controller: SitewebFrontBundle:AllMembers:allmembers }
+
+summit_members_founding_members:
+    pattern:  /members/founding-members
+    defaults: { _controller: SitewebFrontBundle:AllMembers:foundingmembers }
+
+summit_members_board_of_directors:
+    pattern:  /members/board-of-directors
+    defaults: { _controller: SitewebFrontBundle:AllMembers:boardofdirectors }
+
+summit_members_organizational_members:
+    pattern:  /members/organizational-members
+    defaults: { _controller: SitewebFrontBundle:AllMembers:organizationalmembers }
+
+summit_members_affiliate_members:
+    pattern:  /members/affiliate-members
+    defaults: { _controller: SitewebFrontBundle:AllMembers:affiliatemembers }
+
+summit_members_committees:
+    pattern:  /members/committees
+    defaults: { _controller: SitewebFrontBundle:Committees:committees }
+
+summit_advertise:
+    pattern:  /support/advertise
+    defaults: { _controller: SitewebFrontBundle:Advertise:advertise }
+
+summit_donate:
+    pattern:  /support/donate
+    defaults: { _controller: SitewebFrontBundle:Donate:donate }
+
+summit_volunteer:
+    pattern:  /support/volunteer
+    defaults: { _controller: SitewebFrontBundle:Volunteer:volunteer }
+
+summit_job_opportunities:
+    pattern:  /support/jobs
+    defaults: { _controller: SitewebFrontBundle:JobOpportunities:jobopportunities }
+
+summit_contact:
+    pattern:  /support/contact
+    defaults: { _controller: SitewebFrontBundle:Contact:contact }

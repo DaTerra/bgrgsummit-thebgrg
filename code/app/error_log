@@ -1,0 +1,1 @@
+[14-Sep-2014 14:14:43 America/Chicago] PHP Fatal error:  Siteweb\UserBundle\Controller\RegistrationController cannot implement Symfony\Component\DependencyInjection\ContainerAware - it is not an interface in /home/bgrgorg/public_html/bgrgsummit.com/code/src/Siteweb/UserBundle/Controller/RegistrationController.php on line 33

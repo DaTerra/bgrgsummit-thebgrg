@@ -1,0 +1,334 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+   
+    <ul class="side-menu">
+      <li><a>Members</a></li>
+    </ul>
+
+    <input name="reSizeUP" type="button" value="&nbsp;+&nbsp;" onclick="resizeText(1)" />
+    <input name="reSizeDOWN" type="button" value="&nbsp;-&nbsp;" onclick="resizeText(-1)" />
+    <script type="text/">
+           function resizeText(multiplier) {
+                var elem = document.getElementById("foo");
+                var currentSize = elem.style.fontSize || 1;
+                elem.style.fontSize = ( parseFloat(currentSize) + (multiplier * 0.2)) + "em";
+            }
+            </script>
+
+    <main class="content">
+    <header class="content-header">
+        <h1>Become a Member</h1>
+        <div class="clearfix"></div>
+        <hr class="book-header">
+        <div class="font-size-control" style="display:none;">
+            <a class="smaller">-</a>
+            <p>A<span>A</span></p>
+            <a class="bigger">+</a>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+    <div class="clearfix"></div>
+    {% if form_errors(form) %}
+        <div class="auto-alerts">
+            <div class="error">
+                <p>{{ form_errors(form) }}</p>
+            </div>
+        </div>
+    {% endif %}
+
+    {% for type, messages in app.session.flashBag.all %}
+        {% for message in messages %}
+            <div class="auto-alerts">
+                <div class="error">
+                    <p>{{ message|trans({}, 'FOSUserBundle') }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% endfor %}    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register" >
+    <section>
+        <header class="article-header">
+            <h2 class="article-title">Membership Categories</h2>
+            <a class="article-top-link" href="{{ path('fos_user_security_login') }}">Login with your <span>2015 UCLA H<sup>3</sup>/BGRG Summit</span> account!</a>
+        </header>
+        <article class="article-content">
+            {% for usermembershiptype in usermembershiptypes %}
+                <div class="ms_type noline">
+                    <p>{{ usermembershiptype.description | raw}}</p>
+                    <label class="ms_price ms_odd">${{ usermembershiptype.price }}<span>/year</span>
+                        {% if loop.index == 1 %}
+                            <input name="membership-type" type="radio" value="{{ usermembershiptype.id }}" checked/>
+                        {% else %}
+                            <input name="membership-type" type="radio" value="{{ usermembershiptype.id }}"/>
+                        {% endif %}
+                    </label>
+                    <div class="clearfix"></div>
+                </div>
+            {% endfor %}
+
+            <div class="ms_type corporate" style="background:none;">
+                <p><span>Corporate:</span> <span>Based on Yearly Operating Budget (YOB)</span>. This level of membership is open to all corporations with an expressed interest in supporting research activities related to the lives of Black Gay Men.
+                    <span>Note:</span> Corporate support members are not eligible to vote or hold positions on the BGRG leadership steering committee.</p>
+                <div class="clearfix"></div>
+                <div class="ms_subtype">
+                    <p class="ms_title">Yearly Operating Budget (YOB) Fee Schedule</p>
+                    {% for usercoroporatemembershiptype in usercoroporatemembershiptypes %}
+                    <div class="ms_type">
+                        <p>{{ usercoroporatemembershiptype.description}}</p>
+                        <label class="ms_price">${{ usercoroporatemembershiptype.price }}<span>/year</span><input name="membership-type" type="radio" value="{{ usercoroporatemembershiptype.id }}"/></label>
+                        <div class="clearfix"></div>
+                    </div>
+                    {% endfor %}
+                    <div class="clearfix"></div>                    
+                </div>
+                <div class="clearfix"></div>
+            </div>
+                <div class="clearfix"></div>
+        </article>
+    </section>
+    
+    <section>
+        <div class="ms_total">
+            <p>Full Membership - 1 Year:<span>$100</span></p>
+        </div>
+    </section>
+    <section>
+        <header class="form_section_header">
+            <hr>
+            <h2>Personal Info</h2>
+
+        </header>
+        <article>
+            <p><span class="required-helper">*Required fields</span>
+            <div class="form-group w310">
+                <label for="inputFirstName" class="w100">First Name:<span class="field-required">*</span></label>
+                {{ form_widget(form.fname,{'attr':{'class':'w200'} }) }}
+            </div>
+            <div class="form-group w310">
+                <label for="inputLastName" class="w100">Last Name:<span class="field-required">*</span></label>
+                {{ form_widget(form.lname,{'attr':{'class':'w200'} }) }}
+
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group">
+                <label for="inputyAddress" class="w100">Address:<span class="field-required">*</span></label>
+                {{ form_widget(form.address,{'attr':{'class':'w512'} }) }}
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group w310">
+                <label for="inputCity" class="w100">City:<span class="field-required">*</span></label>
+                {{ form_widget(form.city,{'attr':{'class':'w200'} }) }}
+            </div>
+            <div class="form-group w170">
+                <label for="inputState" class="w60">State:<span class="field-required">*</span></label>
+                {{ form_widget(form.state,{'attr':{'class':'w100'} }) }}
+            </div>
+            <div class="form-group w150">
+                <label for="inputZip" class="w50">Zip:<span class="field-required">*</span></label>
+                {{ form_widget(form.postalcode,{'attr':{'class':'w82'} }) }}
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group w310">
+                <label for="inputPhone1" class="w110">Home Phone:<span class="field-required">*</span></label>
+                {{ form_widget(form.telephone,{'attr':{'class':'w191'} }) }}
+            </div>
+            <div class="form-group w310">
+                <label for="inputPhone2" class="w110">Mobile Phone:<span class="field-required">*</span></label>
+                {{ form_widget(form.telephone2,{'attr':{'class':'w191'} }) }}            </div>
+            <div class="clearfix"></div>
+
+            <div class="form-group">
+                <label for="inputPhoto" class="w110">Profile Photo:</label>
+                {{ form_widget(form.photo,{'attr':{'class':'uploadFile w191','placeholder':'Choose File','disabled':'disabled'} }) }}
+                <div class="fileUpload btn_purple">
+                    <span>Upload</span>
+                    <input id="photoUploadBtn" type="file" class="upload btn_purple" />
+                </div>
+                <script type="text/javascript">
+                    document.getElementById("photoUploadBtn").onchange = function () {
+                        document.getElementById("photoUploadFile").value = this.value;
+                    }
+                </script>
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail" class="w110">E-mail:<span class="field-required">*</span></label>
+                {{ form_widget(form.email,{'attr':{'class':'w191'} }) }}
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="form-group w310">
+                <label for="inputPassword" class="w110">Password:<span class="field-required">*</span></label>
+                {{ form_widget(form.plainPassword,{'attr':{'class':'w191'} }) }}
+            </div>
+
+            <div class="form-group w310">
+                <label for="inputPassword" class="w200">Make profile public?<span class="field-required">*</span></label>
+                {% for publicprofile in form.publicprofile %}
+                    <span class="radio-inline">
+                {{ form_widget(publicprofile) }}{{ form_label(publicprofile) }}
+            </span>
+                {% endfor %}
+            </div>
+
+
+            <div class="clearfix"></div>
+        </article>
+    </section>
+
+    <section>
+    <header class="form_section_header">
+        <hr>
+        <h2>Professional Employment</h2>
+        <h2>DEMOGRAPHIC INFORMATION (THIS INFORMATION WILL REMAIN CONFIDENTIAL)</h2>
+    </header>
+    <article class="demographics">
+        <div class="form-group">
+            <p>Age Range<span class="field-required">*</span></p>
+
+    {% for agerange in form.demographic.agerange %}
+        <span class="radio-inline w95">
+                {{ form_widget(agerange) }} {{ form_label(agerange) }}
+            </span>
+    {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <p class="label-bold">What is your sex or current gender?<span class="field-required">*</span></p>
+
+            {% for currentgender in form.demographic.currentgender %}
+                <span class="radio-inline w190">
+            {{ form_widget(currentgender) }} {{ form_label(currentgender) }}
+        </span>
+            {% endfor %}
+
+            {{ form_widget(form.demographic.currentgenderother) }}
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group mb-15">
+            <p  class="label-bold">Race/Ethnicity (Check all that apply)<span class="field-required">*</span></p>
+            {% for ethnicity in form.demographic.ethnicity %}
+                <span class="checkbox-inline w245">
+            {{ form_widget(ethnicity) }} {{ form_label(ethnicity) }}
+             </span>
+            {% endfor %}
+            {{ form_widget(form.demographic.ethnicityother) }}
+
+            </label>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <p class="label-bold">HIV Status?<span class="field-required">*</span></p>
+            {% for hiv in form.demographic.hiv %}
+                <span class="radio-inline w150">
+            {{ form_widget(hiv) }} {{ form_label(hiv) }}
+                        </span>
+            {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group col-sm-12">
+            <p class="label-bold">Geographical Location<span class="field-required">*</span></p>
+            {% for geographicallocation in form.demographic.geographicallocation %}
+                <span class="radio-inline w150">
+
+            {{ form_widget(geographicallocation) }} {{ form_label(geographicallocation) }}
+
+             </span>
+
+            {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <p class="label-bold">Type of Geographic Area I Serve<span class="field-required">*</span></p>
+            {% for geographicaltype in form.demographic.geographicaltype %}
+                <span class="radio-inline w150">
+            {{ form_widget(geographicaltype) }} {{ form_label(geographicaltype) }}
+        </span>
+            {% endfor %}
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <p  class="label-bold">What type of organization do you work for? (Check all that apply)<span class="field-required">*</span></p>
+            <p class="qhelper">Please make at least 1 selection from the choices below.</p>
+            {% for organizationtype in form.demographic.organizationtype %}
+                <span class="checkbox-inline w245">
+            {{ form_widget(organizationtype) }} {{ form_label(organizationtype) }}
+        </span>
+            {% endfor %}
+            {{ form_widget(form.demographic.organizationother) }}
+        </div>
+        
+        <div class="clearfix"></div>
+        <hr class="horizontal-separator">
+        <div class="form-group">
+            <label class="w612">Please submit a copy of your professional CV and one copy of a peer-reviewed published article to which you contributed. If you do not have a peer-review publication, please submit a document that demonstrates scholarly work in your primary area of research or community program practice. (.PDF; .DOC; .TXT)</label>
+        </div>
+        <div class="clearfix"></div>
+    </article>
+    <article>
+        <div class="form-group">
+            <label for="inputPhoto" class="w140">Curriculum Vitae:</label>
+            <input id="curriculumUploadFile" class="uploadFile w191" type="text" placeholder="Choose File" disabled="disabled"/>
+            <div class="fileUpload btn_purple">
+                <span>Upload</span>
+                <input id="curriculumUploadBtn" type="file" class="upload" />
+            </div>
+            <script type="text/javascript">
+                document.getElementById("curriculumUploadBtn").onchange = function () {
+                    document.getElementById("curriculumUploadFile").value = this.value;
+                }
+            </script>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <label for="inputPhoto" class="w140">Article:</label>
+            <input id="articleUploadFile" class="uploadFile w191" type="text" placeholder="Choose File" disabled="disabled"/>
+            <div class="fileUpload btn_purple">
+                <span>Upload</span>
+                <input id="articleUploadBtn" type="file" class="upload" />
+            </div>
+            <script type="text/javascript">
+                document.getElementById("articleUploadBtn").onchange = function () {
+                    document.getElementById("articleUploadFile").value = this.value;
+                }
+            </script>
+        </div>
+        <hr class="horizontal-separator">
+        <div class="clearfix"></div>
+        {{ form_widget(form._token) }}
+        <input class="btn-submit btn_purple" type="submit" value="Submit">
+    </article>
+    </section>
+    </form>
+    </main>
+    <script language="javascript" type="text/javascript">   
+        $(document).ready(function(){
+            $("input[name='membership-type']").on("change", function(){
+                if ($(this).val() == "2") {
+                     $(".ms_total").html("<p>Full Membership - 1 Year:<span>$100</span></p>");                  
+                } else if ($(this).val() == "3") {
+                     $(".ms_total").html("<p>Affiliate Membership - 1 Year:<span>$50</span></p>");                  
+                } else if ($(this).val() == "4") {
+                     $(".ms_total").html("<p>Student Membership - 1 Year:<span>$25</span></p>");                  
+                } else if ($(this).val() == "7") {
+                     $(".ms_total").html("<p>Organizational Membership - 1 Year:<span>$100</span></p>");                  
+                } else if ($(this).val() == "8") {
+                     $(".ms_total").html("<p>Corporate Membership - 1 Year:<span>$500</span></p>");                  
+                } else if ($(this).val() == "9") {
+                     $(".ms_total").html("<p>Corporate Membership - 1 Year:<span>$1000</span></p>");                  
+                } else if ($(this).val() == "10") {
+                     $(".ms_total").html("<p>Corporate Membership - 1 Year:<span>$3000</span></p>");                  
+                } else if ($(this).val() == "11") {
+                     $(".ms_total").html("<p>Corporate Membership - 1 Year:<span>$4500</span></p>");                  
+                } else if ($(this).val() == "12") {
+                     $(".ms_total").html("<p>Corporate Membership - 1 Year:<span>$6500</span></p>");                  
+                } else if ($(this).val() == "13") {
+                     $(".ms_total").html("<p>Corporate Membership - 1 Year:<span>$7500</span></p>");                  
+                }
+            }); 
+        });
+    </script>
+
+{%endblock%}

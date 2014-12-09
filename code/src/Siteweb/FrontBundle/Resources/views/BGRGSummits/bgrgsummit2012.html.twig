@@ -1,0 +1,75 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+    <ul class="side-menu">
+      <li><a>About Us</a>
+        <ul>
+            <li><a href="/aboutus/mission">Mission</a></li>
+            <li><a href="/aboutus/our-work">Our Work</a></li>
+            <li><a href="/aboutus/our-services">Our Services</a></li>
+            <li><a href="/aboutus/research-agenda">Research Agenda</a>
+                <ul style="display:none;">
+                    <li><a>Executive Summary</a></li>
+                    <li><a>Introduction</a></li>
+                    <li><a>Background</a></li>
+                    <li><a>Methodologies</a></li>
+                    <li><a>Recommendations</a></li>
+                    <li><a>Conclusions</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li class="selected"><a href="">BGRG Summits</a>
+                <ul>
+                    <li><a href="/aboutus/bgrg-summit/2005">2005</a></li>
+                    <li><a href="/aboutus/bgrg-summit/2010">2010</a></li>
+                    <li class="selected"><a href="/aboutus/bgrg-summit/2012">2012</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="#">Annual Reports</a>
+                <ul>
+                    <li><a href="/aboutus/annual-report/2008">2008</a></li>
+                    <li><a href="/aboutus/annual-report/2009">2009</a></li>
+                    <li><a href="/aboutus/annual-report/2010">2010</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="/aboutus/posts/a-way-forward">Posts &amp; News</a></li>
+        </ul>    
+      </li>
+    </ul>
+
+    <main class="content contentRich" id="content">
+        <header class="content-header">
+            <h1>BGRG Summits</h1>
+            <div class="clearfix"></div>
+            <hr class="book-header">
+            <div class="font-size-control" style="display:none;">
+                <a class="smaller" onclick="resizeText(-1)">-</a>
+                <p>A<span>A</span></p>
+                <a class="bigger" onclick="resizeText(1)">+</a>
+            </div>
+            <div class="clearfix"></div>
+        </header>        
+        <section>
+
+
+            <h2>2012 New Orleans, Louisiana</h2>
+            <p><span class="drop-capp">"C</span>ongratulations to the Black Gay Research Group for your vision &amp; commitment to addressing health disparities among Black men. We applaud your unwavering support &amp; mentorship of aspiring your investigators. All the best!! <i>Your friends &amp; Colleagures at CFAR Center for AIDS Research, UCLA"</i>.</p>
+
+            <p><strong>'Designing a Decade: A New Agenda for Black Gay Research &amp; Practice'</strong> highlighted the scholarship and creative contributions of those who study the lives of Black gay men from a variety of interdisciplinary perspectives. '</p>
+            <p><strong>Sponsors:</strong> UCLA AIDS Institute; The Legacy Project; Center for AIDS Prevention Studies (CAPS) at the University California, San Francisco (UCSF); The MSMGF Advocates; NAESM.</p>
+            <p> 
+             <a href="{{asset('bundles/sitewebfront/img/summits/summit_2012_0001.jpg')}}" data-lightbox="summit2010">
+                <img class="lbox" src="{{asset('bundles/sitewebfront/img/summits/thumbs/summit_2012_0001.jpg')}}"/>
+            </a>
+            <a href="{{asset('bundles/sitewebfront/img/summits/summit_2012_0002.jpg')}}" data-lightbox="summit2010">
+                <img class="lbox" src="{{asset('bundles/sitewebfront/img/summits/thumbs/summit_2012_0002.jpg')}}"/>
+            </a>
+            <a href="{{asset('bundles/sitewebfront/img/summits/summit_2012_0003.jpg')}}" data-lightbox="summit2010">
+                <img class="lbox" src="{{asset('bundles/sitewebfront/img/summits/thumbs/summit_2012_0003.jpg')}}"/>
+            </a>
+        </section>
+    </main>
+
+{%endblock%}

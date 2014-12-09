@@ -1,0 +1,339 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+    <style>
+        .radio-inline {
+            margin: 0 0;
+        }
+
+    </style>
+
+
+    <div class="page-top">
+        <h1 class="page-title btn-yellow-100">Registration</h1>
+        <p></p>
+    </div>
+    <div class="section-0 summitreg">
+        <h2 class="titlen">Registration Fee Schedule</h2>
+        <h3 class="titley">REGISTRATION COVERS CONFERENCE MATERIALS, ALL WORKSHOPS, PLENARY SESSIONS, SCHEDULED MEALS, RECEPTION, OTHER SPECIAL EVENTS</h3>
+
+        <div class="group1">
+            <p>Online Registration Fee. Price until Tuesday, January, 13, 2015 ...........................................$150<span>checked</span></p>
+            <p>On Wednesday, January 15 2014 on-site registration fee will be...........................................$175</p>
+        </div>
+        <div class="group2">
+            <p class="">BGRG Membership Discounted Rate! Renew your FULL membership  for $100 and receive 30% off the H3/BGRG Summit registration fee. <a href="#">RENEW NOW!</a></p>
+        </div>
+        <div class="group3">
+            <p>NAESM Registration Discount! Receive $100 off he Early Bird Registration, Standard Registration to the 2015 NAESM Conference.</p>
+            <p>To receive the discount you must register through the NAESM website http://www.naesm.org using your H3/BGRG Summit confirmation code.</p>
+        </div>
+        <h2 class="titlen">Registration Form</h2>
+        <a class="form-top-link" href="{{ path('fos_user_security_login') }}">Login with your <span>TheBGRG.org</span> account!</a>
+        <h3 class="titley">SECTION 1: APPLICANT INFORMATION (THIS INFORMATION WILL REMAIN CONFIDENTIAL)</h3>
+        <p><span class="field-required required-helper">*Required fields</span>
+    </div>
+    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register" >
+
+    {% if form_errors(form) %}
+    <div class="auto-alerts">
+        <div class="error">
+            <p>{{ form_errors(form) }}</p>
+        </div>
+    </div>
+    {% endif %}
+
+    {% for type, messages in app.session.flashBag.all %}
+        {% for message in messages %}
+                <div class="auto-alerts">
+                    <div class="error">
+                        <p>{{ message|trans({}, 'FOSUserBundle') }}</p>
+                    </div>
+                </div>
+        {% endfor %}
+    {% endfor %}
+
+
+    <div class="section-1">
+        <div class="form-group-260">
+            <label for="inputLastName" class="label-92">Last Name<span class="field-required">*</span></label>
+            {{ form_widget(form.lname,{'attr':{'class':'input-155 input-yellow'} }) }}
+
+        </div>
+        <div class="form-group-260">
+            <label for="inputFirstName" class="label-92">First Name<span class="field-required">*</span></label>
+            {{ form_widget(form.fname,{'attr':{'class':'input-155 input-yellow'} }) }}
+            <p class="help-block">(Legal)</p>
+        </div>
+        <div class="form-group-130">
+            <label for="inputMiddleInitial" class="label-92">Middle Initial</label>
+            {{ form_widget(form.mname,{'attr':{'class':'input-32 input-yellow'} }) }}
+        </div>
+        <div class="form-group-130">
+            <label for="inputSufix" class="label-80p">Sufix</label>
+            {{ form_widget(form.sname,{'attr':{'class':'input-32 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputDegree1" class="label-92">Degree 1<span class="field-required">*</span></label>
+            {{ form_widget(form.degree1,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputDegree2" class="label-92">Degree 2</label>
+            {{ form_widget(form.degree2,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputDegree3" class="label-92">Degree 3</label>
+            {{ form_widget(form.degree3,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputBadgeName" class="label-92">Badge Name</label>
+            {{ form_widget(form.summitbadgename,{'attr':{'class':'input-155 input-yellow'} }) }}
+            <p class="help-block">(if different from above)</p>
+        </div>
+        <div class="form-group-260">
+            <label for="inputBadgeCity" class="label-92">Badge City<span class="field-required">*</span></label>
+            {{ form_widget(form.summitbadgecity,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputBadgeState" class="label-92">Badge State<span class="field-required">*</span></label>
+            {{ form_widget(form.summitbadgestate,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputJobTitle" class="label-92">Job Title</label>
+            {{ form_widget(form.academictitle,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputOrganization" class="label-92">Organization<span class="field-required">*</span></label>
+            {{ form_widget(form.organization,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputAddress" class="label-92">Address<span class="field-required">*</span></label>
+            {{ form_widget(form.address,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputAddress2" class="label-92">Address #2</label>
+            {{ form_widget(form.address2,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputLastName" class="label-92">City<span class="field-required">*</span></label>
+            {{ form_widget(form.city,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <label for="inputFirstName" class="label-92">State<span class="field-required">*</span></label>
+            {{ form_widget(form.state,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-130">
+            <label for="inputMiddleInitial" class="label-92">Postal Code<span class="field-required">*</span></label>
+            {{ form_widget(form.postalcode,{'attr':{'class':'input-32 input-yellow'} }) }}
+        </div>
+        <div class="form-group-130">
+            <label for="inputSufix" class="label-80p">Country<span class="field-required">*</span></label>
+            {{ form_widget(form.country,{'attr':{'class':'input-32 input-yellow'} }) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group-260">
+            <label for="inputTelephone" class="label-92">Telephone<span class="field-required">*</span></label>
+            {{ form_widget(form.telephone,{'attr':{'class':'input-155 input-yellow'} }) }}
+            <p class="help-block">(Day Time)</p>
+        </div>
+        <div class="form-group-260">
+            <label for="inputTelephoneMobile" class="label-92">Telephone 2</label>
+            {{ form_widget(form.telephone2,{'attr':{'class':'input-155 input-yellow'} }) }}
+            <p class="help-block">(Mobile)</p>
+        </div>
+        <div class="form-group-260">
+            <label for="inputPhoto" class="w92">Upload Photo:</label>
+            <input id="uploadFile" class="uploadFile w105" type="text" placeholder="Choose File" disabled="disabled"/>
+            <div class="fileUpload">
+                <span>Upload</span>
+                <input id="uploadBtn" type="file" class="upload" />
+            </div>
+            <script type="text/javascript">
+                document.getElementById("uploadBtn").onchange = function () {
+                    document.getElementById("uploadFile").value = this.value;
+                }
+            </script>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="clearfix"></div>
+        <div class="form-group-260">
+            <label for="inputEmail" class="label-92">Password<span class="field-required">*</span></label>
+            {{ form_widget(form.plainPassword,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+
+        <div class="form-group-260">
+            <label for="inputConfirm" class="label-92">Email<span class="field-required">*</span></label>
+            {{ form_widget(form.email,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <p class="label-bold label-inline" style="width: 160px; float: left">Make profile public?<span class="field-required">*</span></p>
+            {% for publicprofile in form.publicprofile %}
+                <span class="radio-inline">
+                {{ form_widget(publicprofile) }}{{ form_label(publicprofile) }}
+            </span>
+            {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <h3 class="titley">SECTION 2: DEMOGRAPHIC INFORMATION (THIS INFORMATION WILL REMAIN CONFIDENTIAL)<span class="logo-stamp"></span></h3>
+    <div class="yellowBG">
+        <div class="form-group">
+            <p class="label-bold">Age Range<span class="field-required">*</span></p>
+            {% for agerange in form.demographic.agerange %}
+                <span class="radio-inline w95">
+                {{ form_widget(agerange) }} {{ form_label(agerange) }}
+            </span>
+            {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group">
+            <p class="label-bold">What is your sex or current gender?<span class="field-required">*</span></p>
+            {% for currentgender in form.demographic.currentgender %}
+                <span class="radio-inline w190">
+            {{ form_widget(currentgender) }} {{ form_label(currentgender) }}
+        </span>
+            {% endfor %}
+
+            {{ form_widget(form.demographic.currentgenderother) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group">
+            <p class="label-bold">What sex were you assigned at birth?<span class="field-required">*</span></p>
+            {% for birthgender in form.demographic.birthgender %}
+                <span class="radio-inline w150">
+            {{ form_widget(birthgender) }} {{ form_label(birthgender) }}
+                </span>
+
+            {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group mb-15">
+            <p  class="label-bold">Race/Ethnicity (Check all that apply)<span class="field-required">*</span></p>
+            {% for ethnicity in form.demographic.ethnicity %}
+                <span class="checkbox-inline w245">
+            {{ form_widget(ethnicity) }} {{ form_label(ethnicity) }}
+     </span>
+            {% endfor %}
+            {{ form_widget(form.demographic.ethnicityother) }}
+
+
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group">
+            <p class="label-bold">HIV Status?<span class="field-required">*</span></p>
+            {% for hiv in form.demographic.hiv %}
+                <span class="radio-inline w150">
+            {{ form_widget(hiv) }} {{ form_label(hiv) }}
+                        </span>
+            {% endfor %}
+            </span>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group col-sm-12">
+            <p class="label-bold">Geographical Location<span class="field-required">*</span></p>
+            {% for geographicallocation in form.demographic.geographicallocation %}
+                <span class="radio-inline w150">
+
+            {{ form_widget(geographicallocation) }} {{ form_label(geographicallocation) }}
+
+             </span>
+
+            {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group">
+            <p class="label-bold">Type of Geographic Area I Serve<span class="field-required">*</span></p>
+
+            {% for geographicaltype in form.demographic.geographicaltype %}
+                <span class="radio-inline w150">
+            {{ form_widget(geographicaltype) }} {{ form_label(geographicaltype) }}
+        </span>
+            {% endfor %}
+
+
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group">
+            <p class="label-bold">Have you attended the UCLA H3 Conference or the BGRG Summit before?<span class="field-required">*</span></p>
+            {% for pastattendance in form.demographic.pastattendance %}
+                <span class="radio-inline w55">
+            {{ form_widget(pastattendance) }} {{ form_label(pastattendance) }}
+        </span>
+            {% endfor %}
+            <div class="form-group-610">
+                {% for pastattendanceedition in form.demographic.pastattendanceedition %}
+                    <span class="checkbox-inline w190">
+                {{ form_widget(pastattendanceedition) }} {{ form_label(pastattendanceedition) }}
+            </span>
+                {% endfor%}
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group">
+            <p  class="label-bold">What type of organization do you work for? (Check all that apply)<span class="field-required">*</span></p>
+            <p class="qhelper">Please make at least 1 selection from the choices below.</p>
+            {% for organizationtype in form.demographic.organizationtype %}
+                <span class="checkbox-inline w245">
+            {{ form_widget(organizationtype) }} {{ form_label(organizationtype) }}
+        </span>
+            {% endfor %}
+            {{ form_widget(form.demographic.organizationother) }}
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group">
+            <p  class="label-bold">Are you planning to attend the 2015 National African American MSM Leadership Conference?<span class="field-required">*</span></p>
+            {% for naasm in form.demographic.naasm %}
+                <span class="radio-inline w55">
+            {{ form_widget(naasm) }} {{ form_label(naasm) }}
+        </span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <p  class="label-bold">Would you be willing to participate in a focus group about Black MSM in sero- discordant couples?<span class="field-required">*</span></p>
+            {% for focusgroup in form.demographic.focusgroup %}
+                <span class="radio-inline w245">
+            {{ form_widget(focusgroup) }} {{ form_label(focusgroup) }}
+
+        </span>
+            {% endfor %}
+            {{ form_widget(form.demographic.focusgroupemail) }}  <span  class="label-bold">May we contact you by email ?</span>
+
+        </div>
+
+        <div class="form-group">
+            <p  class="label-bold">Why do you want to attend the Summit including what you expect to gain or learn by participating in the Summit?<span class="field-required">*</span></p>
+            {{ form_widget(form.demographic.summitreason) }}
+        </div>
+
+
+        <div class="clearfix"></div>
+        {{ form_widget(form._token) }}
+        <button type="submit" class="btn-red-146 btn-submit">Submit Registration</button>
+    </div>
+    </form>
+
+{%endblock%}

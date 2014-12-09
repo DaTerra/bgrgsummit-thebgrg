@@ -1,0 +1,77 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+    <ul class="side-menu">
+      <li><a>Members</a>
+        <ul>
+            <li><a>Membership Status</a>
+        </ul>
+      </li>
+    </ul>
+    <main class="content">
+        <header class="content-header">
+            <h1>Welcome {{ app.user.fname }}  {{ app.user.lname }}</h1>
+            <div class="clearfix"></div>
+            <hr class="book-header">
+            <div class="font-size-control" style="display:none;">
+                <a class="smaller">-</a>
+                <p>A<span>A</span></p>
+                <a class="bigger">+</a>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+        <div class="clearfix"></div>
+
+        <div class="clearfix"></div>
+
+            {% for membership in usermemberships %}
+                     <section class="membership-card">
+                        <article>
+                            {% if (membership.usermembershiptype.id >= '1') and (membership.usermembershiptype.id <= '14') %}            
+                            <h1>The BGRG</h1>
+                            {% else %}
+                            <h1>2015 UCLA H<sup>3</sup>/BGRG Summit</h1>
+                            {% endif %}
+                            <h2>{{ membership.usermembershiptype.title }}</h2>
+                            <p class="status red">Status: {{ membership.status }}<p>
+                            
+                            {% if (membership.status == 'Valid') or (membership.status == 'Expired') %}
+                            <p class="exp">Expiration {{ membership.expiration|date('m-d-Y') }}</p>
+                            {% endif %}
+                            {% if (membership.status == 'Unpaid') and (membership.usermembershiptype.id >= '1') and (membership.usermembershiptype.id <= '14') %}   
+                            <a class="btn btn_purple" href="{{ url('summit_paypal_payment') }}">Pay</a>
+                            {% elseif (membership.status == 'Pending') or (membership.status == 'Valid') %}
+                            {% else %}
+                            <a class="btn btn_purple" href="http://www.bgrgsummit.com/login">Login to BGRGSummit.com</a>
+                            {% endif %}
+                            {% if membership.status == 'Paid' %}
+                            {% elseif ((membership.usermembershiptype.id >= '1') and (membership.usermembershiptype.id <= '14')) and membership.expiration|date("Y-m-d H:m:s") < "now"|date("Y-m-d H:m:s") %}
+                            <a class="btn btn_purple" href="{{ path('summit_payment_renew') }}">Renew</a>
+                            {% endif %}
+                        </article>
+                        {% if (membership.usermembershiptype.id >= '1') and (membership.usermembershiptype.id <= '14') %}            
+                        <img src="{{ asset('bundles/sitewebfront/img/membership-logo-bgrg-74x91.png') }}">
+                        {% else %}
+                        <img src="{{ asset('bundles/sitewebfront/img/membership-logo-summit-74x91.png') }}">
+                        {% endif %}
+                        <hr/>
+                    </section>
+
+            {% endfor %}
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

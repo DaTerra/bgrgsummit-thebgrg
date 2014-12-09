@@ -1,0 +1,174 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+
+          <div class="page-top">  
+            <h1 class="page-title btn-yellow-124">Agenda<i class="fa fa-chevron-circle-right"></i>
+</h1>          
+            <p></p>
+          </div>
+          <div class="col12of12 agenda">
+            
+            <section>
+              <time>8:00AM</time>
+              <div class="subsession">
+                <p class="maintitle">Registration/Check-In<i class="fa fa-chevron-circle-right"></i>
+</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section> 
+
+            <section>
+              <time>8:30AM</time>
+              <div class="subsession">
+                <p class="maintitle">Continental Breakfast</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>9:00AM</time>
+              <div class="subsession">
+                <p class="maintitle">Welcome - Dr. Leo Wilton, Dr. LaRon Nelson, Craig Hutchinson</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>9:15AM</time>
+              <div class="subsession">
+                <p class="maintitle"><span>1A -</span> Advances in HIV Prevention Research</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+              <div class="subsession">
+                <p class="maintitle"><span>1B -</span> Black Queer Studies and Performing and Visual Arts</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>10:30AM</time>
+              <div class="subsession">
+                <p class="maintitle">Break</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>10:45AM</time>
+              <div class="subsession">
+                <p class="maintitle"><span>2A -</span> Education and Agency</p>
+                <p></p>
+              </div>
+              <div class="subsession">
+                <p class="maintitle"><span>2B -</span> International Contexts, African Diasporic Inquiry, and Human Rights</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>12:00PM</time>
+              <div class="subsession">
+                <p class="maintitle">Lunch Plenary - Dr. Gail Wyatt, Professor in the UCLA Department of Psychiatry and Biobehavioral Sciences</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>1:15PM</time>
+              <div class="subsession">
+                <p class="maintitle"><span>3A -</span> Policy, Advocacy, and Social Justice</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+              <div class="subsession">
+                <p class="maintitle"><span>3B -</span> Religion and Spirituality</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+              <div class="subsession">
+                <p class="maintitle"><span>3C -</span> Round Table Discussions</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>2:30PM</time>
+              <div class="subsession">
+                <p class="maintitle"><span>4A -</span> Theoretical Approaches &amp; Innovative Methodological Directions</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+              <div class="subsession">
+                <p class="maintitle"><span>4B -</span> Round Table Discussions</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>3:45PM</time>
+              <div class="subsession">
+                <p class="maintitle">Break</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>4:00PM</time>
+              <div class="subsession">
+                <p class="maintitle">Keynote Speaker - Francis Boakye, Executive Director of Priorities on Rights and Sexual Health (PORSH) in Ghana.</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>5:00PM</time>
+              <div class="subsession">
+                <p class="maintitle">Closing Remarks</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>6:00PM</time>
+              <div class="subsession">
+                <p class="maintitle">Reception</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>7:00PM</time>
+              <div class="subsession">
+                <p class="maintitle">Award Ceremony</p>
+                <p>
+                  <ul>
+                    <li>Emerging Scholar and Leadership Award</li>
+                    <li>Founders’ Spirit &amp; Soul Award</li>
+                    <li>Lifetime Achievement Award</li>
+                  </ul>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+            </section> 
+            
+
+            <div class="clearfix"></div>            
+          </div>
+          <div class="clearfix"></div>              
+{%endblock%}

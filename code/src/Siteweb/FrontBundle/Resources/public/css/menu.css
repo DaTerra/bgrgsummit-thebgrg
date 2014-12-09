@@ -1,0 +1,93 @@
+ul.menu{    
+    padding:0;
+    margin:0;
+    list-style: none;
+    position: relative;
+    display:block; 
+    z-index: 100;       
+    }   
+ul.menu li {
+    float:left;
+    display:list-item;    
+    min-width:97px; 
+    }       
+ul.menu li a {
+    display:block;
+    text-decoration: none;                
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 100;
+    font-size: 18px;   
+}  
+      
+ul.menu>li {
+    min-height:38px;
+    line-height:30px;  
+    }  
+ul.menu>li>a{
+    height:38px;
+    line-height:30px;  
+    text-align: center;  
+    color:#414042; 
+    background:none;
+    }   
+ul.menu>li:hover{
+    margin-bottom:-4px;    
+} 
+ul.menu>li:hover>a {
+    color:#421847;
+    font-weight: bold;
+}
+ul.menu ul {
+    background:#ffffff;     
+    border-top:4px solid #a7c539;  
+    padding:0;
+}
+ul.menu ul li{    
+    min-height:20px;       
+    padding:0 5px;
+}
+ul.menu ul a{
+    font-size:12px;
+    line-height: 19px;
+    border-bottom:1px solid #6d6e71;
+    display: block;
+}
+ul.menu ul li:hover>a{
+    color:#ffffff;
+    font-weight: bold;
+}
+/* Hide Dropdowns by Default */
+ul.menu ul {
+    display: none;    
+    position: absolute; top: 38px;
+}     
+
+ul.menu ul li:hover{
+    background:#421847;
+    margin-top:-1px;
+}
+ul.menu ul>li:last-child>a{
+    border:none;
+}
+/* Display Dropdowns on Hover */
+ul.menu li:hover > ul {
+    display:list-item;   
+    list-style: none; 
+}     
+ul.menu ul ul{
+    border:none;
+}
+/* Fisrt Tier Dropdown */
+ul.menu ul li {
+    min-width:87px;
+    float:none;
+    position: relative;
+    border-bottom:none;
+    list-style: none;
+} 
+/* Second, Third and more Tiers */
+ul.menu ul ul {
+    position: absolute relative;    
+    top:0px;
+    left:97px;
+}

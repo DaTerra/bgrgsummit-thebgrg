@@ -1,0 +1,67 @@
+<style>
+    .row{
+        padding: 2% 0;
+    }
+</style>
+
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title"><i class="icon-user"></i> User Details</h4>
+</div>
+<div class="modal-body with-padding">
+    <div class="row">
+        <div class="col-md-5">
+            <img src="
+                    {% if file_exists('/upload/userphotos/'~entity.id~'/'~entity.photo) %}
+                        {{asset('/upload/userphotos/'~entity.id~'/'~entity.photo)}}
+                    {% elseif file_exists('http://www.thebgrg.org/code/web/upload/userphotos/'~entity.id~'/'~entity.photo) %}
+                        {{ 'http://bgrgsummit.com/code/web/upload/userphotos/'~entity.id~'/'~entity.photo }}
+                     {% else %}
+                        {{ 'http://bgrgsummit.com/code/web/bundles/sitewebfront/img/placeholder.png'}}
+                    {% endif %}
+                     ">
+        </div>
+        <div class="col-md-5">
+            <form action="" method="post" >
+                <div class="form-group">
+                    <label>User Status</label>
+                    <select name="photostatus">
+                        <option value="Approuved">Approuved</option>
+                        <option value="Declined">Declined</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success">Save</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">{{ entity.fname }} {{ entity.mname }} {{ entity.lname }} {{ entity.sname }}</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <ul>
+                <li>{{ entity.degree1 }}</li>
+                {% if entity.degree2 != null %} <li>{{ entity.degree2 }}</li> {% endif %}
+                {% if entity.degree3 != null %} <li>{{ entity.degree3 }}</li> {% endif %}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">{{ entity.telephone }}</div>
+        <div class="col-md-5">{{ entity.telephone2 }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">Email</div>
+        <div class="col-md-5">{{ entity.email }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">Address</div>
+        <div class="col-md-5">{{ entity.city }} {{ entity.state }} {{ entity.postalcode }}</div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" data-dismiss="modal">Close</button>
+</div>

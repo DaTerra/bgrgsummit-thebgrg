@@ -1,0 +1,58 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <main class="content">
+        <header class="content-header">
+            <h1>Welcome {{ app.user.fname }}  {{ app.user.fname }}</h1>
+            <div class="clearfix"></div>
+            <hr class="book-header">
+            <div class="font-size-control" style="xdisplay:none;">
+                <a class="smaller">-</a>
+                <p>A<span>A</span></p>
+                <a class="bigger">+</a>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+        <div class="clearfix"></div>
+
+        <div class="clearfix"></div>
+
+            {% for membership in usermemberships %}
+                     <section class="membership-card">
+                        <article>
+                            <h1>{{ membership.usermembershiptype.title }}</h1>
+                            <h2>{{ membership.usermembershiptype.title }}</h2>
+                            <p class="status red">Status: {{ membership.status }}<p>
+                            <div class="clearfix"></div>
+                            <p class="exp">Expiration {{ membership.expiration|date('m-d-Y') }}</p>
+                             {% if membership.status == 'Unpaid' %}
+                            <a class="btn btn_purple" href="{{ url('summit_paypal_payment') }}">Pay</a>
+                                 {% elseif membership.status == 'Paid' %}
+                             {% elseif membership.usermembershiptype.title != 'SUMMIT2015_Attendees' and membership.expiration|date("Y-m-d H:m:s") < "now"|date("Y-m-d H:m:s") %}
+                                 <a class="btn btn_purple" href="{{ path('summit_payment_renew') }}">Renew</a>
+                             {% endif %}
+                        </article>
+                        <img src="{{ asset('/bundles/sitewebfront/img/membership-logo-bgrg-74x91.png') }}">
+                        <hr/>
+                    </section>
+
+            {% endfor %}
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

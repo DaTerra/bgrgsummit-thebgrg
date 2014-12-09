@@ -1,0 +1,18 @@
+parameters:
+    siteweb.twig_extension.class: Siteweb\FrontBundle\Twig\TwigExtension
+
+services:
+    siteweb_user.registration.form.type:
+        class: Siteweb\UserBundle\Form\UserType
+        tags:
+            - { name: form.type, alias: siteweb_user_registration }
+
+    bgrg.payment.payum.action.store_notification:
+        class: Siteweb\FrontBundle\Payum\Action\StoreNotificationAction
+        arguments:
+            - @doctrine
+
+    siteweb.twig_extension:
+        class: %siteweb.twig_extension.class%
+        tags:
+            - { name: twig.extension }
