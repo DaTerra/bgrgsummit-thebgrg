@@ -45,3 +45,7 @@ admin_abstract_status:
 admin_meetings:
     pattern:  /admin/meetings
     defaults: { _controller: SitewebBackBundle:Meetings:index }
+
+SitewebBackBundle_contact:
+    resource: "@SitewebBackBundle/Resources/config/routing/contact.yml"
+    prefix:   /contact

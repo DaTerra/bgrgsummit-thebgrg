@@ -6,9 +6,10 @@ new_summit_registration:
     pattern:  /reg
     defaults: { _controller: SitewebFrontBundle:Default:summitregistration }
 
-#summit_abstracts:
-#    pattern:  /abstracts
-#    defaults: { _controller: SitewebFrontBundle:Abstract:abstract }
+new_summit_contact:
+    pattern:  /new
+    defaults: { _controller: "SitewebFrontBundle:Contact:new" }
+
 
 summit_abstracts:
     pattern: /abstracts
