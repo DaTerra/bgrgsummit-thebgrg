@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7d3a0674a20637e2b23f35784279658f",
+    "hash": "99092b8bb1c5c9b1b372fd268f685523",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1810,12 +1810,8 @@
             "time": "2013-10-30 08:20:53"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "payum/paypal-express-checkout-nvp": 0
@@ -1824,7 +1820,5 @@
     "platform": {
         "php": ">=5.3.3"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }

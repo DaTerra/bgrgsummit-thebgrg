@@ -20,6 +20,7 @@ return array(
     'Payum\\Paypal\\ExpressCheckout\\Nvp' => array($vendorDir . '/payum/paypal-express-checkout-nvp'),
     'Payum\\Core\\' => array($vendorDir . '/payum/core'),
     'Payum\\Bundle\\PayumBundle' => array($vendorDir . '/payum/payum-bundle'),
+    'Genemu\\Bundle\\FormBundle' => array($vendorDir . '/genemu/form-bundle'),
     'Monolog' => array($vendorDir . '/monolog/monolog/src'),
     'Incenteev\\ParameterHandler' => array($vendorDir . '/incenteev/composer-parameter-handler'),
     'Fp\\JsFormValidatorBundle' => array($vendorDir . '/fp/jsformvalidator-bundle'),

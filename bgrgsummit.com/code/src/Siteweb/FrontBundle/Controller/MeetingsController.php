@@ -129,12 +129,22 @@ class MeetingsController extends Controller
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('SitewebUserBundle:User')->findOneById($this->getUser()->getId());
 
+        $accepteddmeetings1 = $em->getRepository('SitewebBackBundle:Meeting')->findBy(array(
+            'status' => 'accepted',
+            'invitee' => $user
+        ));
+        $accepteddmeetings2 = $em->getRepository('SitewebBackBundle:Meeting')->findBy(array(
+            'status' => 'accepted',
+            'proposer' => $user
+        ));
         $sentmeetings = $em->getRepository('SitewebBackBundle:Meeting')->findByInvitee($user);
         $recievedmeetings = $em->getRepository('SitewebBackBundle:Meeting')->findByProposer($user);
 
         return $this->render('SitewebFrontBundle:Meetings:myproposals.html.twig',array(
             'sentmeetings' => $sentmeetings,
-            'recievedmeetings' => $recievedmeetings
+            'recievedmeetings' => $recievedmeetings,
+            'accepteddmeetings1' => $accepteddmeetings1,
+            'accepteddmeetings2' => $accepteddmeetings2
         ));
     }
 

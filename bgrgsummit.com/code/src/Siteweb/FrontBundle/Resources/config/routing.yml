@@ -7,8 +7,8 @@ new_summit_registration:
     defaults: { _controller: SitewebFrontBundle:Default:summitregistration }
 
 new_summit_contact:
-    pattern:  /new
-    defaults: { _controller: "SitewebFrontBundle:Contact:new" }
+    pattern:  /contact
+    defaults: { _controller: "SitewebFrontBundle:Contact:contact" }
 
 
 summit_abstracts:

@@ -79,6 +79,7 @@
                     </div>
                 </div>
                 <div class="clearfix"></div>
+            </div>
         </article>
     </section>
     <section>
@@ -140,16 +141,19 @@
 
             <div class="form-group">
                 <label for="inputPhoto" class="w110">Profile Photo:</label>
+
                 {{ form_widget(form.photo,{'attr':{'class':'uploadFile w191','placeholder':'Choose File','disabled':'disabled' }) }}
                 <div class="fileUpload btn_purple">
                     <span>Upload</span>
                     <input id="photoUploadBtn" type="file" class="upload btn_purple" />
                 </div>
-                <script type="text/javascript">
+
+                <script>
                     document.getElementById("photoUploadBtn").onchange = function () {
-                        document.getElementById("photoUploadFile").value = this.value;
+                        document.getElementById("photoUploadFile").value = this.value
                     }
                 </script>
+
             </div>
 
             <div class="clearfix"></div>

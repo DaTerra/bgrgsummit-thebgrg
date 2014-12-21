@@ -5,6 +5,47 @@
         <p></p>
     </div>
     <div class="main-left">
+
+        <h3 class="titley">Accepted Proposal</h3>
+        <br/>
+        <div class="section-0">
+            <div class="form-group-326">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Proposer</th>
+                        <th>Invitee</th>
+                        <th>Location</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+
+                    {% for meeting in accepteddmeetings1 %}
+                        <tr>
+                            <td>{{ meeting.id }}</td>
+                            <td>{{ meeting.proposer.fname }} {{ meeting.proposer.lname }}</td>
+                            <td>{{ meeting.invitee.fname }} {{ meeting.invitee.lname }}</td>
+                            <td>{{ meeting.location }}</td>
+                            <td>{{ meeting.time }}</td>
+                            <td>{{ meeting.status }}</td>
+                        </tr>
+                    {% endfor %}
+                    {% for meeting in accepteddmeetings2 %}
+                        <tr>
+                            <td>{{ meeting.id }}</td>
+                            <td>{{ meeting.proposer.fname }} {{ meeting.proposer.lname }}</td>
+                            <td>{{ meeting.invitee.fname }} {{ meeting.invitee.lname }}</td>
+                            <td>{{ meeting.location }}</td>
+                            <td>{{ meeting.time }}</td>
+                            <td>{{ meeting.status }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+
         <h3 class="titley">Sent Proposal</h3>
         <br/>
             <div class="section-0">
@@ -34,7 +75,7 @@
                 <div class="clearfix"></div>
             </div>
 
-        <h3 class="titley">Relieved Proposal</h3>
+        <h3 class="titley">Recieved Proposal</h3>
         <br/>
         <div class="section-0">
             <div class="form-group-326">
