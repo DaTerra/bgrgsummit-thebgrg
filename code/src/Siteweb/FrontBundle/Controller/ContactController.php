@@ -29,12 +29,12 @@ class ContactController extends Controller
            $contact = $form->getData();
 
             $message = \Swift_Message::newInstance()
-                ->setSubject('H3|BGRG Summit 2015 - You have a new message')
+                ->setSubject('BGRG | - You have a new message')
                 ->setFrom($contact->getEmail())
                 ->setTo('submissions@bgrgsummit.com')
                 ->setBody(
                     $this->renderView(
-                        'SitewebFrontBundle:contact:email.txt.twig',
+                        'SitewebFrontBundle:Contact:email.txt.twig',
                         array('contact' => $contact)
                     )) ;
             $this->get('mailer')->send($message);

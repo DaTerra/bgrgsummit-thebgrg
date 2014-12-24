@@ -23,7 +23,8 @@
         "payum/payum-bundle":"*@stable",
         "payum/paypal-express-checkout-nvp": "*@stable",
         "fp/jsformvalidator-bundle":"dev-master",
-        "genemu/form-bundle": "2.2.*"
+        "genemu/form-bundle": "2.2.*",
+
     },
     "scripts": {
         "post-install-cmd": [

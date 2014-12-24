@@ -34,7 +34,7 @@ class ContactController extends Controller
                 ->setTo('submissions@bgrgsummit.com')
                 ->setBody(
                     $this->renderView(
-                        'SitewebFrontBundle:contact:email.txt.twig',
+                        'SitewebFrontBundle:Contact:email.txt.twig',
                         array('contact' => $contact)
                     )) ;
             $this->get('mailer')->send($message);
