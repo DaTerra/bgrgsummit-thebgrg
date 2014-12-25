@@ -28,4 +28,5 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/existuser/register, role: IS_AUTHENTICATED_FULLY }
         - { path: ^/proposals, role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/accept/agreement, role: IS_AUTHENTICATED_FULLY }
         - { path: ^/admin/, role: ROLE_ADMIN }

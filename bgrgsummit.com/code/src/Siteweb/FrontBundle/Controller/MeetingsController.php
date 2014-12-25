@@ -148,8 +148,71 @@ class MeetingsController extends Controller
         ));
     }
 
+    public function declineAction($id , Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
 
+        $meeting = $em->getRepository('SitewebBackBundle:Meeting')->findOneById($id);
 
+        if(!$meeting){
+            $this->createNotFoundException('No Meeting found with that id');
+        }
+
+            $meeting->setStatus('refused');
+            $em->persist($meeting);
+            $em->flush();
+
+            $message = \Swift_Message::newInstance()
+                ->setSubject('H3|BGRG Summit 2015 - Your proposal has been sent')
+                ->setFrom(array('submissions@bgrgsummit.com' => '2015 UCLA H3/BGRG Summit'))
+                ->setTo(''.$meeting->getInvitee()->getEmail())
+                ->setBody(
+                    $this->renderView(
+                        'SitewebFrontBundle:Meetings:refusedemail.txt.twig',
+                        array('name' => $meeting->getInvitee()->getFname().' '.$meeting->getInvitee()->getLname(),
+                        )
+                    )
+                )
+            ;
+            $this->get('mailer')->send($message);
+
+            $this->get('session')->getFlashBag()->add('The Meeting proposal has been Refused.');
+
+            return $this->redirect($this->generateUrl('siteweb_front_homepage'));
+    }
+
+    public function approuveAction($id , Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $meeting = $em->getRepository('SitewebBackBundle:Meeting')->findOneById($id);
+
+        if(!$meeting){
+            $this->createNotFoundException('No Meeting found with that id');
+        }
+
+        $meeting->setStatus('accepted');
+        $em->persist($meeting);
+        $em->flush();
+
+        $message = \Swift_Message::newInstance()
+            ->setSubject('H3|BGRG Summit 2015 - Your proposal has been sent')
+            ->setFrom(array('submissions@bgrgsummit.com' => '2015 UCLA H3/BGRG Summit'))
+            ->setTo(''.$meeting->getInvitee()->getEmail())
+            ->setBody(
+                $this->renderView(
+                    'SitewebFrontBundle:Meetings:acceptedemail.txt.twig',
+                    array('name' => $meeting->getInvitee()->getFname().' '.$meeting->getInvitee()->getLname(),
+                    )
+                )
+            )
+        ;
+        $this->get('mailer')->send($message);
+
+        $this->get('session')->getFlashBag()->add('The Meeting proposal has been Approuved.');
+
+        return $this->redirect($this->generateUrl('siteweb_front_homepage'));
+    }
 
 
 

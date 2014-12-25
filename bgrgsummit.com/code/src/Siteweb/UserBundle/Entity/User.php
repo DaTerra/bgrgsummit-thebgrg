@@ -31,6 +31,18 @@ class User extends BaseUser
     /**
      * @ORM\Column(type="string", length=45, nullable=true)
      */
+    private $speaker_ipaddress;
+
+    /**
+     * @ORM\Column(type="string", length=45, nullable=true)
+     */
+    private $speaker_datetime;
+
+
+
+    /**
+     * @ORM\Column(type="string", length=45, nullable=true)
+     */
     private $organization;
 
     /**
@@ -952,5 +964,51 @@ class User extends BaseUser
     public function getScolarshiprequest()
     {
         return $this->scolarshiprequest;
+    }
+
+    /**
+     * Set speaker_ipaddress
+     *
+     * @param string $speakerIpaddress
+     * @return User
+     */
+    public function setSpeakerIpaddress($speakerIpaddress)
+    {
+        $this->speaker_ipaddress = $speakerIpaddress;
+    
+        return $this;
+    }
+
+    /**
+     * Get speaker_ipaddress
+     *
+     * @return string 
+     */
+    public function getSpeakerIpaddress()
+    {
+        return $this->speaker_ipaddress;
+    }
+
+    /**
+     * Set speaker_datetime
+     *
+     * @param string $speakerDatetime
+     * @return User
+     */
+    public function setSpeakerDatetime($speakerDatetime)
+    {
+        $this->speaker_datetime = $speakerDatetime;
+    
+        return $this;
+    }
+
+    /**
+     * Get speaker_datetime
+     *
+     * @return string 
+     */
+    public function getSpeakerDatetime()
+    {
+        return $this->speaker_datetime;
     }
 }

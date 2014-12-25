@@ -100,7 +100,7 @@
                             <td>{{ meeting.status }}</td>
                             <td>
                                 <a href="" >Accept</a>
-                                <a href="" >Deny</a>
+                                <a href="{{ path('summit_meeting_refuse',{'id':meeting.id}) }}" >Deny</a>
                                 <a href="{{ path('proposeanother',{'id':meeting.id}) }}" >Propose another time</a>
                             </td>
                         </tr>

@@ -7,6 +7,7 @@ use Siteweb\UserBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccountStatusException;
 
@@ -16,6 +17,30 @@ class DefaultController extends Controller implements ContainerAwareInterface
     public function indexAction()
     {
         return $this->render('SitewebFrontBundle:Default:index.html.twig');
+    }
+
+    public function speakeragreementAction(Request $request)
+    {
+      if ($request->getMethod() == 'POST'){
+
+          $um = $this->get('fos_user.user_manager');
+
+         $user =  $um->findUserByEmail($this->getUser()->getEmail());
+
+          $user->setSpeakerIpaddress($request->get('ipaddress'));
+          $user->setSpeakerDatetime($request->get('speakerdatetime'));
+
+          $um->updateUser($user, false);
+
+          $this->getDoctrine()->getManager()->flush();
+
+          $this->get('session')->getFlashBag()->set('notice','information updated');
+
+          return $this->redirect($this->generateUrl('siteweb_front_homepage'));
+
+      }
+
+        return $this->render('SitewebFrontBundle:Default:speakeragreement.html.twig');
     }
 
     public function summitregistrationAction()

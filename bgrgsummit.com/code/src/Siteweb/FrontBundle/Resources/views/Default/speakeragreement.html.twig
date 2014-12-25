@@ -1,0 +1,46 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+
+
+    <div class="page-top">
+        <h1 class="page-title btn-yellow-100">SUMMIT - Speaker Agreement </h1>
+        <p></p>
+    </div>
+    <div class="section-0">
+
+        <div class="group1">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus semper lorem quis sapien viverra interdum.
+                Sed efficitur libero vel ex rutrum convallis. Quisque at erat interdum justo aliquam molestie nec eget libero.
+                Aenean maximus, arcu vitae aliquet rhoncus, libero nunc euismod diam, et tempor tellus orci in sem.
+                Suspendisse eu arcu enim. Ut eget nisi sed orci aliquam dignissim. Praesent ornare eleifend nibh,
+                vitae malesuada tellus. Quisque congue non justo quis fermentum. Mauris egestas, magna ac aliquam vulputate,
+                purus odio mollis risus, sed molestie magna orci in eros. Nullam elementum ligula mauris,
+                ut ornare ipsum porta eget. Mauris ac porttitor velit.
+                Vestibulum quis purus mollis, efficitur justo et, consequat dui. Quisque et felis at lectus egestas sollicitudin eu et diam. Ut faucibus eget dolor id elementum. Donec enim erat, interdum dapibus ligula eu, varius hendrerit nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris vel eros ut mauris tempor maximus dictum et leo. Vivamus molestie mi et nibh laoreet egestas.
+                Phasellus egestas eros vel ex congue, id commodo erat hendrerit. Phasellus in quam non felis consequat vulputate sed eget est. Mauris elit velit, dignissim nec ligula at, vestibulum luctus metus. Cras quis tristique ipsum. In at tincidunt erat. Integer mattis aliquet nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean pretium quis dolor eget vehicula.
+            </p>
+        </div>
+
+        <form action="{{ path('summit_speaker_agreement') }}" method="POST" class="fos_user_registration_register">
+
+            <label>IP Address</label>
+            <input type="text" name="ipaddress" id="ipaddress" class="input-155 input-yellow" readonly>
+            <label>Datetime</label>
+            <input type="datetime" name="datetime" class="input-155 input-yellow" required="required">
+            <input type="submit" name="speakerdatetime" value="Agree" class="btn-red-146 btn-submit">
+
+        </form>
+
+
+    </div>
+<script>
+    $(document).ready(function () {
+        $.get('http://jsonip.com', function (res) {
+            $('#ipaddress').val(res.ip);
+        });
+    });
+
+</script>
+{%endblock%}

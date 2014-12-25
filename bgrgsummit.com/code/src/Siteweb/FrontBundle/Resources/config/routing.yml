@@ -83,6 +83,10 @@ summit_propose_meeting:
     pattern:  /user/{id}/meeting/propose
     defaults: { _controller: SitewebFrontBundle:Meetings:propose }
 
+summit_meeting_refuse:
+    pattern:  /meeting/{id}/refuse
+    defaults: { _controller: SitewebFrontBundle:Meetings:decline }
+
 #summit_scholarship:
 #    pattern:  /scholarship/registration
 #    defaults: { _controller: SitewebUserBundle:Registration:scholarshipregister }
@@ -102,6 +106,10 @@ summit_attendees:
 summit_my_proposals:
     pattern:  /proposals
     defaults: { _controller: SitewebFrontBundle:Meetings:myproposals }
+
+summit_speaker_agreement:
+    pattern:  /accept/agreement
+    defaults: { _controller: SitewebFrontBundle:Default:speakeragreement }
 
 summit_edit_proposal:
     pattern:  /meeting/{id}/newproposal
