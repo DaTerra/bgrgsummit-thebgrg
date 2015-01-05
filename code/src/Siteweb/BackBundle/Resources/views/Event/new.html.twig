@@ -1,0 +1,123 @@
+{% extends "SitewebBackBundle::layout.html.twig" %}
+
+{% block content %}
+    <link href="{{ asset ('bundles/sitewebback/timepicker/css/bootstrap-timepicker.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset ('bundles/sitewebback/timepicker/css/bootstrap-responsive.css')}}" rel="stylesheet" type="text/css">
+    <h1>Event creation</h1>
+
+    <div class="page-content">
+
+        <div style="color:red">{{form_errors(form)}}</div>
+        {{ form_start(form) }}
+
+        <div class="panel panel-default">
+            <div class="popup-header"><span class="text-semibold">Add Event</span>
+
+            </div>
+            <div class="panel-body" style="padding: 2% 4%;">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback">
+                            {{ form_label(form.name) }}
+                            {{ form_widget(form.name,{'attr':{'class':'form-control'} }) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback">
+                            {{ form_label(form.time) }}
+                            {{ form_widget(form.time,{'attr':{'class':'form-control'} }) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback">
+                            {{ form_label(form.keynotes) }}
+                            {{ form_errors(form.keynotes) }}
+                            <ul>
+                                {% for keynote in form.keynotes %}
+                                    <li>
+                                        {{ form_widget(form.keynote,{'attr':{'class':'form-control'} }) }}
+                                    </li>
+
+                                    <a class="btn-sm btn-success" href="#" id="add-another-email">Add another email</a>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback">
+                            {{ form_label(form.description) }}
+                            {{ form_widget(form.description,{'attr':{'class':'form-control'} }) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback">
+                            {{ form_label(form.moderator) }}
+                            {{ form_widget(form.moderator,{'attr':{'class':'form-control'} }) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group has-feedback">
+                            {{ form_label(form.local) }}
+                            {{ form_widget(form.local,{'attr':{'class':'form-control'} }) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-8" style="padding: 0 5%;">
+                            {% for abstract in form.abstracts %}
+                        <div class="row">
+                        {{ form_widget(abstract,{'attr':{'class':'span1'} }) }}
+                                {{ form_label(abstract,{},{'attr':{'class':'span8'} }) }}
+                        </div>
+                            {% endfor %}
+
+                    </div>
+                </div>
+
+                {{ form_widget(form._token) }}
+                <button type="submit" class="btn btn-warning pull-right"><i class="icon-menu2"></i> Add event </button>
+            </div>
+        </div>
+
+        {{ form_widget(form._token)}}
+        {{ form_end(form) }}
+
+    </div>
+    <script type="text/javascript">
+
+        var emailCount = '{{ form.keynotes|length }}';
+
+        jQuery(document).ready(function() {
+            jQuery('#add-another-email').click(function() {
+                var emailList = jQuery('#email-fields-list');
+
+                var newWidget = emailList.attr('data-prototype');
+                newWidget = newWidget.replace(/__name__/g, emailCount);
+                emailCount++;
+
+                var newLi = jQuery('<li></li>').html(newWidget);
+                newLi.appendTo(jQuery('#email-fields-list'));
+
+                return false;
+            });
+        })
+    </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/bootstrap.min.js"></script>
+    <script src="{{ asset ('bundles/sitewebback/timepicker/js/bootstrap-timepicker.min.js')}}"></script>
+
+{% endblock %}

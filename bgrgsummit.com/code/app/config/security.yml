@@ -29,4 +29,5 @@ security:
         - { path: ^/existuser/register, role: IS_AUTHENTICATED_FULLY }
         - { path: ^/proposals, role: IS_AUTHENTICATED_FULLY }
         - { path: ^/accept/agreement, role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/user/250/meeting/propose, role: IS_AUTHENTICATED_FULLY }
         - { path: ^/admin/, role: ROLE_ADMIN }

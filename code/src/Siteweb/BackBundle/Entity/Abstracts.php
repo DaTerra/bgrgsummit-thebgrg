@@ -63,6 +63,13 @@ class Abstracts
     private $methods;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Event", inversedBy="abstracts")
+     * @ORM\JoinColumn(name="event_id", referencedColumnName="id", nullable=true)
+     */
+    private $event;
+
+
+    /**
      * @ORM\Column(type="text", nullable=true)
      */
     private $results;
@@ -495,5 +502,28 @@ class Abstracts
     public function getSubmissiondate()
     {
         return $this->submissiondate;
+    }
+
+    /**
+     * Set event
+     *
+     * @param \Siteweb\BackBundle\Entity\Event $event
+     * @return Abstracts
+     */
+    public function setEvent(\Siteweb\BackBundle\Entity\Event $event = null)
+    {
+        $this->event = $event;
+    
+        return $this;
+    }
+
+    /**
+     * Get event
+     *
+     * @return \Siteweb\BackBundle\Entity\Event 
+     */
+    public function getEvent()
+    {
+        return $this->event;
     }
 }

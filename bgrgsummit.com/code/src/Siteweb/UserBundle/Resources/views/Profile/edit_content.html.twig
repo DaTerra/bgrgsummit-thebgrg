@@ -26,6 +26,7 @@
 
 
     <div class="section-1">
+     {{ form_errors(form) }}
         <div class="form-group-260">
             <label for="inputFirstName" class="label-92">First Name<span class="field-required">*</span></label>
             {{ form_widget(form.fname,{'attr':{'class':'input-155 input-yellow'} }) }}

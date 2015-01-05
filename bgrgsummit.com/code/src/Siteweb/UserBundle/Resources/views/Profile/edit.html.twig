@@ -15,6 +15,8 @@
     {% endfor %}
 
     <span class="field-required required-helper">*Required fields</span>
+    {{ form_errors(form) }}
+
 <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
 
     <div class="section-1">
@@ -118,15 +120,57 @@
         </div>
         <div class="form-group-260">
             <label for="inputPhoto" class="w92">Upload Photo:</label>
-            {{ form_widget(form.photo,{'attr':{'class':'uploadFile w105','placeholder':'Choose File'} }) }}
-
+            {{ form_widget(form.photoattach,{'attr':{'class':'uploadFile w105','placeholder':'Choose File'} }) }}
+            {#<div class="fileUpload">#}
+            {#<span>Upload</span>#}
+            {#<input id="uploadBtn" type="file" class="upload" />#}
+            {#</div>#}
+            {#<script type="text/javascript">#}
+            {#document.getElementById("uploadBtn").onchange = function () {#}
+            {#document.getElementById("uploadFile").value = this.value;#}
+            {#}#}
+            {#</script>#}
             <div class="clearfix"></div>
         </div>
-
         <div class="clearfix"></div>
-        {{ form_widget(form._token) }}
+        <div class="clearfix"></div>
+        <div class="form-group-260">
+            <label for="inputEmail" class="label-92">Password<sup><span class="labelhelper" onclick="alert('Choose a password to login to your account later');">?</span></sup><span class="field-required">*</span></label>
+            {{ form_widget(form.plainPassword,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+
+        <div class="form-group-260">
+            <label for="inputConfirm" class="label-92">Email<span class="field-required">*</span></label>
+            {{ form_widget(form.email,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
+            <p class="label-bold label-inline" style="width: 165px; float: left">Make profile public<sup><span class="labelhelper" onclick="alert('If yes, your profile will be public and visible for all website visitors');">?</span></sup></p>
+            {% for publicprofile in form.publicprofile %}
+                <span class="radio-inline publicprofile">
+                {{ form_widget(publicprofile) }}{{ form_label(publicprofile) }}
+            </span>
+            {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+
+        {{ form_rest(form) }}
         <button type="submit" class="btn-red-146 btn-submit">Update Profile</button>
     </div>
 </form>
+
+    <script language="javascript" type="text/javascript">
+        function registerControl(radioGroups, checkboxes) {
+            radioGroups.click(function () {
+                if ($(this).val() === "no") {
+                    checkboxes.prop("disabled", true);
+                    checkboxes.prop("checked", false);
+                } else {
+                    checkboxes.prop("disabled", false);
+                }
+            });
+        }
+        registerControl($('.demographic_pastattendance_radio'), $('.demographic_pastattendance'));
+    </script>
+
 
 {% endblock %}

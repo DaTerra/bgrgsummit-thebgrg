@@ -30,6 +30,10 @@ user_edit_photo_status:
     pattern:  /admin/user/{id}/edituserphotostatus
     defaults: { _controller: SitewebBackBundle:Users:Usersstatus }
 
+user_director_founder:
+    pattern:  /admin/user/{id}/promote/{role}
+    defaults: { _controller: SitewebBackBundle:Users:UserFounderOrDirector }
+
 admin_abstracts:
     pattern:  /admin/abstracts
     defaults: { _controller: SitewebBackBundle:Abstracts:abstracts }
@@ -46,6 +50,7 @@ admin_meetings:
     pattern:  /admin/meetings
     defaults: { _controller: SitewebBackBundle:Meetings:index }
 
-SitewebBackBundle_contact:
-    resource: "@SitewebBackBundle/Resources/config/routing/contact.yml"
-    prefix:   /contact
+
+SitewebBackBundle_event:
+    resource: "@SitewebBackBundle/Controller/EventController.php"
+    type:     annotation

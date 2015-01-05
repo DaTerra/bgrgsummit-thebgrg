@@ -33,15 +33,31 @@
         {% for entity in entities %}
             <tr>
                 <td>{{ entity.id }}</td>
-                <td><img src="
-                    {% if file_exists('/upload/userphotos/'~entity.id~'/'~entity.photo) %}
+                <td>
+                    <img src="
+                {% if entity.photo != null %}
+
+                    {% if file_exists(web_path~'/upload/userphotos/'~entity.id~'/'~entity.photo) %}
                         {{asset('/upload/userphotos/'~entity.id~'/'~entity.photo)}}
-                    {% elseif file_exists('http://www.thebgrg.org/code/web/upload/userphotos/'~entity.id~'/'~entity.photo) %}
+                    {% else %}
                         {{ 'http://bgrgsummit.com/code/web/upload/userphotos/'~entity.id~'/'~entity.photo }}
-                     {% else %}
-                        {{ 'http://bgrgsummit.com/code/web/bundles/sitewebfront/img/placeholder.png'}}
                     {% endif %}
+                {% else %}
+                    {{ 'http://bgrgsummit.com/code/web/bundles/sitewebfront/img/placeholder.png'}}
+                {% endif %}
                      ">
+                    <div class="col-md-5">
+                        <form action="{{ path('user_edit_photo_status') }}" method="post" >
+                            <div class="form-group">
+                                <label>User Status</label>
+                                <select name="photostatus">
+                                    <option value="Approuved">Approuved</option>
+                                    <option value="Declined">Declined</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-success">Save</button>
+                        </form>
+                    </div>
                 </td>
                 <td><a href="{{ path('user_show',{'id':entity.id}) }}" data-target="#remote_modal" role="button" data-toggle="modal">{{ entity.fname }} {{ entity.lname }}</a></td>
                 <td>{{ entity.email }}</td>
@@ -62,6 +78,10 @@
                 <ul style="list-style: none">
                     <li>
                         <a class="btn btn-danger" data-toggle="modal" role="button" data-href="{{ path('user_delete', { 'id': entity.id }) }}" data-target="#confirm-delete"  href="#">Delete</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-primary" role="button" href="{{ path('user_director_founder', { 'id': entity.id ,'role':'director'}) }}" >Make Director</a>
+                        <a class="btn btn-primary" role="button" href="{{ path('user_director_founder', { 'id': entity.id ,'role':'founder'}) }}" >Make Founder</a>
                     </li>
                     <li>
                         <a href="{{ path('user_edit', { 'id': entity.id }) }}" class="btn btn-success" style="width: 73px; margin-top: 10px;">edit</a>

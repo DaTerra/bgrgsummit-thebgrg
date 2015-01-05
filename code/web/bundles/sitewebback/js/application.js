@@ -24,6 +24,7 @@ $(function() {
 
 	oTable = $('.datatable table').dataTable({
 		"bJQueryUI": false,
+		"oSearch": {"bSmart": false},
 		"bAutoWidth": false,
 		"sPaginationType": "full_numbers",
 		"sDom": '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',

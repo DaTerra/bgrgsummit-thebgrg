@@ -141,7 +141,7 @@
 
             <div class="form-group">
                 <label for="inputPhoto" class="w110">Profile Photo:</label>
-                {{ form_widget(form.photo,{'attr':{'class':'upload btn_purple'} }) }}
+                {{ form_widget(form.photoattach,{'attr':{'class':'upload btn_purple'} }) }}
             </div>
 
             <div class="form-group">
@@ -281,10 +281,10 @@
     <article>
         <div class="form-group">
             <label for="inputPhoto" class="w140">Curriculum Vitae:</label>
-            {{ form_widget(form.cv,{'attr':{'class':'upload btn_purple'} }) }}
+            {{ form_widget(form.cvattach,{'attr':{'class':'upload btn_purple'} }) }}
             <div class="fileUpload btn_purple">
                 <span>Upload</span>                
-                {{ form_widget(form.cv,{'attr':{'class':'upload btn_purple'} }) }}
+                {{ form_widget(form.cvattach,{'attr':{'class':'upload btn_purple'} }) }}
             </div>
             <script type="text/javascript">
                 document.getElementById("fos_user_registration_form_cv").onchange = function () {
@@ -302,7 +302,7 @@
 
             <div class="fileUpload btn_purple">
                 <span>Upload</span>
-                {{ form_widget(form.document,{'attr':{'class':'upload btn_purple'}}) }}
+                {{ form_widget(form.documentattach,{'attr':{'class':'upload btn_purple'}}) }}
             </div>
             <script type="text/javascript">
                 document.getElementById("fos_user_registration_form_document").onchange = function () {

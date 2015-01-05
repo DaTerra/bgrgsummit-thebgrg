@@ -100,7 +100,6 @@ class UsersController extends Controller {
             'method' => 'POST',
         ));
 
-        
         $user->setEnabled(true);
         $form->setData($user);
         if ('POST' === $request->getMethod()) {
@@ -181,6 +180,33 @@ class UsersController extends Controller {
                 return $this->redirect($this->generateUrl('admin_users'));
 
             }
+        return $this->redirect($this->generateUrl('admin_users'));
+
+    }
+
+    public function UserFounderOrDirectorAction($id,$role,Request $request) {
+        $em=$this->getDoctrine()->getManager();
+        $user = $em->getRepository('SitewebUserBundle:User')->findOneById($id);
+
+        if(!$user){
+            throw $this->createNotFoundException('No User with this id= '.$id);
+        }
+
+        if ($role == 'founder') {
+
+            $user->setRoles(array('ROLE_FOUNDER'));
+            $em->persist($user);
+            $em->flush();
+            return $this->redirect($this->generateUrl('admin_users'));
+
+        }elseif ($role == 'director') {
+
+            $user->setRoles(array('ROLE_DIRECTOR'));
+            $em->persist($user);
+            $em->flush();
+            return $this->redirect($this->generateUrl('admin_users'));
+
+        }
         return $this->redirect($this->generateUrl('admin_users'));
 
     }

@@ -13,17 +13,19 @@
     <div class="row">
         <div class="col-md-5">
             <img src="
-                    {% if file_exists('/upload/userphotos/'~entity.id~'/'~entity.photo) %}
+                {% if entity.photo != null %}
+                    {% if file_exists(web_path~'/upload/userphotos/'~entity.id~'/'~entity.photo) %}
                         {{asset('/upload/userphotos/'~entity.id~'/'~entity.photo)}}
-                    {% elseif file_exists('http://www.thebgrg.org/code/web/upload/userphotos/'~entity.id~'/'~entity.photo) %}
+                    {% else %}
                         {{ 'http://bgrgsummit.com/code/web/upload/userphotos/'~entity.id~'/'~entity.photo }}
-                     {% else %}
-                        {{ 'http://bgrgsummit.com/code/web/bundles/sitewebfront/img/placeholder.png'}}
                     {% endif %}
+                {% else %}
+                    {{ 'http://bgrgsummit.com/code/web/bundles/sitewebfront/img/placeholder.png'}}
+                {% endif %}
                      ">
         </div>
         <div class="col-md-5">
-            <form action="" method="post" >
+            <form action="{{ path('user_edit_photo_status') }}" method="post" >
                 <div class="form-group">
                     <label>User Status</label>
                     <select name="photostatus">
@@ -61,6 +63,77 @@
         <div class="col-md-5">Address</div>
         <div class="col-md-5">{{ entity.city }} {{ entity.state }} {{ entity.postalcode }}</div>
     </div>
+
+    <h3>demographic information</h3>
+    <div class="row">
+        <div class="col-md-5">age range</div>
+        <div class="col-md-5">{{ entity.demographic.agerange }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">birth gender</div>
+        <div class="col-md-5">{{ entity.demographic.birthgender }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">current gender</div>
+        <div class="col-md-5">{{ entity.demographic.currentgender }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">current gender other</div>
+        <div class="col-md-5">{{ entity.demographic.currentgenderother }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">ethnicity</div>
+        <div class="col-md-5">
+            <ul style="list-style: none">
+                {% for ethnicity in entity.demographic.ethnicity %}
+                <li>{{ ethnicity }}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">ethnicity other</div>
+        <div class="col-md-5">{{ entity.demographic.ethnicityother }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">HIV Status</div>
+        <div class="col-md-5">{{ entity.demographic.hiv }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">Geographical Location</div>
+        <div class="col-md-5">{{ entity.demographic.geographicallocation }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">Type of Geographic Area Serve</div>
+        <div class="col-md-5">{{ entity.demographic.geographicaltype }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">organization work for</div>
+        <div class="col-md-5">
+            <ul style="list-style: none">
+                {% for organizationtype in entity.demographic.organizationtype %}
+                    <li>{{ organizationtype }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">other organization</div>
+        <div class="col-md-5">{{ entity.demographic.organizationother }}</div>
+    </div>
+
+
 </div>
 <div class="modal-footer">
     <button class="btn btn-warning" data-dismiss="modal">Close</button>

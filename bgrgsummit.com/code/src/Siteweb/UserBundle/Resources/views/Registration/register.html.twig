@@ -41,8 +41,6 @@
             {% endif %}
         <h3 class="titley">SECTION 1: APPLICANT INFORMATION (THIS INFORMATION WILL REMAIN CONFIDENTIAL)</h3>
         <p><span class="field-required required-helper">*Required fields</span>
-    </div>
-    
 
     {% for type, messages in app.session.flashBag.all %}
         {% for message in messages %}
@@ -156,7 +154,7 @@
         </div>
         <div class="form-group-260">
             <label for="inputPhoto" class="w92">Upload Photo:</label>
-            {{ form_widget(form.photo,{'attr':{'class':'uploadFile w105','placeholder':'Choose File'} }) }}
+            {{ form_widget(form.photoattach,{'attr':{'class':'uploadFile w105','placeholder':'Choose File'} }) }}
             {#<div class="fileUpload">#}
                 {#<span>Upload</span>#}
                 {#<input id="uploadBtn" type="file" class="upload" />#}
@@ -169,12 +167,6 @@
             <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
-        <div class="clearfix"></div>
-        <div class="form-group-260">
-            <label for="inputEmail" class="label-92">Password<sup><span class="labelhelper" onclick="alert('Choose a password to login to your account later');">?</span></sup><span class="field-required">*</span></label>
-            {{ form_widget(form.plainPassword,{'attr':{'class':'input-155 input-yellow'} }) }}
-        </div>
-
         <div class="form-group-260">
             <label for="inputConfirm" class="label-92">Email<span class="field-required">*</span></label>
             {{ form_widget(form.email,{'attr':{'class':'input-155 input-yellow'} }) }}
@@ -192,6 +184,7 @@
 
     <h3 class="titley">SECTION 2: DEMOGRAPHIC INFORMATION (THIS INFORMATION WILL REMAIN CONFIDENTIAL)<span class="logo-stamp"></span></h3>
     <div class="yellowBG">
+        {{ form_errors(form.demographic) }}
         <div class="form-group">
             <p class="label-bold">Age Range<span class="field-required">*</span></p>
             {% for agerange in form.demographic.agerange %}

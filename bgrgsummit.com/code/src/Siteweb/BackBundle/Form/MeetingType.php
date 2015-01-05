@@ -15,10 +15,22 @@ class MeetingType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('location')
-            ->add('time',null,array(
-                'widget' => 'single_text'
+            ->add('location','choice', array(
+                'choices'   => array(
+                    'A' => 'A',
+                    'B' => 'B',
+                    'C' => 'C',
+                    'D' => 'D',
+                    'E' => 'E',
+                    'F' => 'F',
+                    'G' => 'G',
+                    'H' => 'H',
+                    'I' => 'I',
+                    'J' => 'J',
+                ),
+                'required'  => true,
             ))
+            ->add('time','text')
         ;
     }
     

@@ -56,8 +56,7 @@ class ProfileController extends ContainerAware
         }
 
 
-        //$form = $this->container->get('fos_user.registration.form');
-        $form = $this->container->get('form.factory')->create(new ExistUserType(),$user);
+        $form = $this->container->get('fos_user.profile.form');
         $formHandler = $this->container->get('fos_user.profile.form.handler');
 
         $process = $formHandler->process($user);

@@ -94,6 +94,8 @@ class MeetingsController extends Controller
 
             $meeting->setInvitee($invitee);
             $meeting->setProposer($proposer);
+            $date = date("H:i", strtotime("04:25 PM"));
+            $meeting->setTime(new \DateTime($date));
             $meeting->setStatus('Pending');
             $em->persist($meeting);
 
@@ -113,7 +115,7 @@ class MeetingsController extends Controller
             ;
             $this->get('mailer')->send($message);
 
-            $this->get('session')->getFlashBag()->add('Meeting proposal has been submitted.');
+            $this->get('session')->getFlashBag()->add('notice','Meeting proposal has been submitted.');
 
             return $this->redirect($this->generateUrl('siteweb_front_homepage'));
         }

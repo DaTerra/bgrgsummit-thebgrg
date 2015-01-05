@@ -157,28 +157,53 @@ class User extends BaseUser
     private $publicprofile = false;
 
     /**
-     * @ORM\Column(type="string", length=45, nullable=true)
-     * @Assert\File( maxSize = "2048k", mimeTypesMessage = "Please upload a valid Image")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $photo;
 
     /**
-     * @ORM\Column(type="string", length=45, nullable=true)
-     * @Assert\File( maxSize = "2048k", mimeTypesMessage = "Please upload a valid Document")
+     * @ORM\Column(type="string", length=145, nullable=true)
      */
     private $cv;
 
     /**
-     * @ORM\Column(type="string", length=45, nullable=true)
-     * @Assert\File( maxSize = "2048k", mimeTypesMessage = "Please upload a valid Document")
+     * @ORM\Column(type="string", length=145, nullable=true)
      */
     private $document;
+
+    /**
+     * @Assert\File(maxSize = "2048k", mimeTypesMessage = "Please upload a valid Image")
+     */
+    public $photoattach;
+
+    /**
+     * @Assert\File(maxSize = "2048k", mimeTypesMessage = "Please upload a valid CV")
+     */
+    public $cvattach;
+
+    /**
+     * @Assert\File(maxSize = "2048k", mimeTypesMessage = "Please upload a valid Doc")
+     */
+    public $documentattach;
+
 
     /**
      * @ORM\Column(type="string", length=45, nullable=true)
      */
     private $photostatus;
-    
+
+
+    /**
+     * @ORM\Column(type="string", length=45, nullable=true)
+     */
+    private $speaker_ipaddress;
+
+    /**
+     * @ORM\Column(type="string", length=45, nullable=true)
+     */
+    private $speaker_datetime;
+
+
 
     /**
      * Get id
@@ -791,60 +816,6 @@ class User extends BaseUser
     }
 
 
-    public function getFullPhotoPath() {
-        return null === $this->photo ? null : $this->getUploadRootDir(). $this->photo;
-    }
-
-    protected function getUploadRootDir() {
-        // the absolute directory path where uploaded documents should be saved
-        return $this->getTmpUploadRootDir().$this->getId()."/";
-    }
-
-    protected function getTmpUploadRootDir() {
-        // the absolute directory path where uploaded documents should be saved
-        return __DIR__ . '/../../../../web/upload/userphotos/';
-    }
-
-    /**
-     * @ORM\PrePersist()
-     */
-    public function uploadPhoto() {
-        // the file property can be empty if the field is not required
-        if (null === $this->photo) {
-            return;
-        }
-        if(!$this->id){
-            $this->photo->move($this->getTmpUploadRootDir(), $this->photo->getClientOriginalName());
-        }else{
-            $this->photo->move($this->getUploadRootDir(), $this->photo->getClientOriginalName());
-        }
-        $this->setPhoto($this->photo->getClientOriginalName());
-    }
-
-    /**
-     * @ORM\PostPersist()
-     */
-    public function movePhoto()
-    {
-        if (null === $this->photo) {
-            return;
-        }
-        if(!is_dir($this->getUploadRootDir())){
-            mkdir($this->getUploadRootDir());
-        }
-        copy($this->getTmpUploadRootDir().$this->photo, $this->getFullPhotoPath());
-        unlink($this->getTmpUploadRootDir().$this->photo);
-    }
-
-    /**
-     * @ORM\PreRemove()
-     */
-    public function removeImage()
-    {
-        unlink($this->getFullPhotoPath());
-        rmdir($this->getUploadRootDir());
-    }
-
     /**
      * Add usermembership
      *
@@ -959,34 +930,138 @@ class User extends BaseUser
         return $this->document;
     }
 
-    public function getFullCvPath() {
-        return null === $this->cv ? null : $this->getCvUploadRootDir(). $this->cv;
+    /**
+     * Set speaker_ipaddress
+     *
+     * @param string $speakerIpaddress
+     * @return User
+     */
+    public function setSpeakerIpaddress($speakerIpaddress)
+    {
+        $this->speaker_ipaddress = $speakerIpaddress;
+
+        return $this;
     }
 
-    protected function getCvUploadRootDir() {
-        // the absolute directory path where uploaded documents should be saved
-        return $this->getCvTmpUploadRootDir().$this->getId()."/";
+    /**
+     * Get speaker_ipaddress
+     *
+     * @return string
+     */
+    public function getSpeakerIpaddress()
+    {
+        return $this->speaker_ipaddress;
     }
 
-    protected function getCvTmpUploadRootDir() {
+    /**
+     * Set speaker_datetime
+     *
+     * @param string $speakerDatetime
+     * @return User
+     */
+    public function setSpeakerDatetime($speakerDatetime)
+    {
+        $this->speaker_datetime = $speakerDatetime;
+
+        return $this;
+    }
+
+    /**
+     * Get speaker_datetime
+     *
+     * @return string
+     */
+    public function getSpeakerDatetime()
+    {
+        return $this->speaker_datetime;
+    }
+
+
+
+    public function getFullPhotoPath() {
+        return null === $this->photoattach ? null : $this->getUploadRootDir().$this->photo;
+    }
+
+    public function getFullcvPath() {
+        return null === $this->cvattach ? null : $this->getUploadRootDir().$this->cv;
+    }
+
+    public function getFulldocumentPath() {
+        return null === $this->documentattach ? null : $this->getUploadRootDir().$this->document;
+    }
+
+    protected function getUploadRootDir() {
         // the absolute directory path where uploaded documents should be saved
-        return __DIR__ . '/../../../../web/upload/usercv/';
+        return $this->getTmpUploadRootDir().$this->getId()."/";
+    }
+
+    protected function getTmpUploadRootDir() {
+        // the absolute directory path where uploaded documents should be saved
+        return __DIR__ . '/../../../../web/upload/userphotos/';
     }
 
     /**
      * @ORM\PrePersist()
      */
-    public function uploadCv() {
+    public function uploadPhoto() {
         // the file property can be empty if the field is not required
-        if (null === $this->cv) {
+        if (null === $this->photoattach) {
             return;
         }
         if(!$this->id){
-            $this->cv->move($this->getCvTmpUploadRootDir(), $this->cv->getClientOriginalName());
+            $this->photoattach->move($this->getTmpUploadRootDir(), $this->photoattach->getClientOriginalName());
         }else{
-            $this->cv->move($this->getCvUploadRootDir(), $this->cv->getClientOriginalName());
+            $this->photoattach->move($this->getUploadRootDir(), $this->photoattach->getClientOriginalName());
         }
-        $this->setCv($this->cv->getClientOriginalName());
+        $this->setPhoto($this->photoattach->getClientOriginalName());
+        $this->setPhotostatus('pending');
+    }
+
+    /**
+     * @ORM\PrePersist()
+     */
+    public function uploadcv() {
+        // the file property can be empty if the field is not required
+        if (null === $this->cvattach) {
+            return;
+        }
+        if(!$this->id){
+            $this->cvattach->move($this->getTmpUploadRootDir(), $this->cvattach->getClientOriginalName());
+        }else{
+            $this->cvattach->move($this->getUploadRootDir(), $this->cvattach->getClientOriginalName());
+        }
+        $this->setCv($this->cvattach->getClientOriginalName());
+    }
+
+    /**
+     * @ORM\PrePersist()
+     */
+    public function documentloadcv() {
+        // the file property can be empty if the field is not required
+        if (null === $this->documentattach) {
+            return;
+        }
+        if(!$this->id){
+            $this->documentattach->move($this->getTmpUploadRootDir(), $this->documentattach->getClientOriginalName());
+        }else{
+            $this->documentattach->move($this->getUploadRootDir(), $this->documentattach->getClientOriginalName());
+        }
+        $this->setDocument($this->documentattach->getClientOriginalName());
+    }
+
+    /**
+     * @ORM\PostPersist()
+     */
+    public function movePhoto()
+    {
+        if (null === $this->photoattach) {
+            return;
+        }
+        if(!is_dir($this->getUploadRootDir())){
+            mkdir($this->getUploadRootDir(),0777);
+        }
+        copy($this->getTmpUploadRootDir().$this->photoattach->getClientOriginalName(), $this->getFullPhotoPath());
+        unlink($this->getTmpUploadRootDir().$this->photoattach->getClientOriginalName());
     }
 
     /**
@@ -994,15 +1069,40 @@ class User extends BaseUser
      */
     public function moveCv()
     {
-        if (null === $this->cv) {
+        if (null === $this->cvattach) {
             return;
         }
-        if(!is_dir($this->getCvUploadRootDir())){
-            mkdir($this->getCvUploadRootDir());
+        if(!is_dir($this->getUploadRootDir())){
+            mkdir($this->getUploadRootDir(),0777);
         }
-        copy($this->getCvTmpUploadRootDir().$this->cv, $this->getFullCvPath());
-        unlink($this->getCvTmpUploadRootDir().$this->cv);
+        copy($this->getTmpUploadRootDir().$this->cvattach->getClientOriginalName(), $this->getFullCvPath());
+        unlink($this->getTmpUploadRootDir().$this->cvattach->getClientOriginalName());
     }
+
+    /**
+     * @ORM\PostPersist()
+     */
+    public function moveDocument()
+    {
+        if (null === $this->documentattach) {
+            return;
+        }
+        if(!is_dir($this->getUploadRootDir())){
+            mkdir($this->getUploadRootDir(),0777);
+        }
+        copy($this->getTmpUploadRootDir().$this->documentattach->getClientOriginalName(), $this->getFullDocumentPath());
+        unlink($this->getTmpUploadRootDir().$this->documentattach->getClientOriginalName());
+    }
+
+
+    /**
+     * @ORM\PreRemove()
+     */
+    public function removeImage()
+    {
+        unlink($this->getFullPhotoPath());
+    }
+
 
     /**
      * @ORM\PreRemove()
@@ -1010,63 +1110,15 @@ class User extends BaseUser
     public function removeCv()
     {
         unlink($this->getFullCvPath());
-        rmdir($this->getCvUploadRootDir());
     }
 
-
-
-
-    public function getFullDocumentPath() {
-        return null === $this->document ? null : $this->getDocUploadRootDir(). $this->document;
-    }
-
-    protected function getDocUploadRootDir() {
-        // the absolute directory path where uploaded documents should be saved
-        return $this->getDocTmpUploadRootDir().$this->getId()."/";
-    }
-
-    protected function getDocTmpUploadRootDir() {
-        // the absolute directory path where uploaded documents should be saved
-        return __DIR__ . '/../../../../web/upload/userdocs/';
-    }
-
-    /**
-     * @ORM\PrePersist()
-     */
-    public function uploadDocs() {
-        // the file property can be empty if the field is not required
-        if (null === $this->document) {
-            return;
-        }
-        if(!$this->id){
-            $this->document->move($this->getDocTmpUploadRootDir(), $this->document->getClientOriginalName());
-        }else{
-            $this->document->move($this->getDocUploadRootDir(), $this->document->getClientOriginalName());
-        }
-        $this->setDocument($this->document->getClientOriginalName());
-    }
-
-    /**
-     * @ORM\PostPersist()
-     */
-    public function moveDoc()
-    {
-        if (null === $this->document) {
-            return;
-        }
-        if(!is_dir($this->getDocUploadRootDir())){
-            mkdir($this->getDocUploadRootDir());
-        }
-        copy($this->getDocTmpUploadRootDir().$this->document, $this->getFullDocumentPath());
-        unlink($this->getDocTmpUploadRootDir().$this->document);
-    }
 
     /**
      * @ORM\PreRemove()
      */
-    public function removeDoc()
+    public function removeDocument()
     {
         unlink($this->getFullDocumentPath());
-        rmdir($this->getDocUploadRootDir());
     }
+
 }

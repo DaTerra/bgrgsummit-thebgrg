@@ -25,7 +25,10 @@ class RegistrationFormType extends AbstractType {
                 ))
                 ->add('Roles', 'choice', array(
                     'choices' => array(
-                        'ROLE_ADMIN' => 'Admin'),
+                        'ROLE_ADMIN' => 'Admin',
+                        'ROLE_Founder' => 'Founder',
+                        'ROLE_DIRECTOR' => 'director'
+                    ),
                         'multiple' => true,
                 ))
         ;

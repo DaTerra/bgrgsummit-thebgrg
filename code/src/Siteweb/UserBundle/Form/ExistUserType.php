@@ -68,14 +68,17 @@ class ExistUserType extends AbstractType
                     'required' => true
                 ))
 
-            ->add('cv','file',array(
-                'required' => true,
-                'data_class' => null
+            ->add('photoattach', 'file', array(
+                'required' =>false
             ))
-            ->add('document','file',array(
-                'required' => true,
-                'data_class' => null
+
+            ->add('documentattach','file',array(
+                'required' => false
             ))
+            ->add('cvattach','file',array(
+                'required' => false
+            ))
+
             ->add('publicprofile', 'choice', array(
                 'multiple' => false,
                 'expanded' => true,

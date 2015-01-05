@@ -6,6 +6,10 @@ services:
         class: Siteweb\UserBundle\Form\UserType
         tags:
             - { name: form.type, alias: siteweb_user_registration }
+    siteweb_user.profile.form.type:
+            class: Siteweb\UserBundle\Form\EditUserType
+            tags:
+                - { name: form.type, alias: siteweb_edit_user_registration }
 
     bgrg.payment.payum.action.store_notification:
         class: Siteweb\FrontBundle\Payum\Action\StoreNotificationAction

@@ -85,7 +85,7 @@
 
                 <div class="form-group w310">
                     <label class="w200">Make profile public?<span class="field-required">*</span></label>
-                    <input type="text" value="{% if user.publicprofile == 0 %}No{% else %}Yes{% endif %}"  readonly class="disabled w512">
+                    {% if user.publicprofile == 0 %}No{% else %}Yes{% endif %}
                 </div>
 
                 <div class="clearfix"></div>

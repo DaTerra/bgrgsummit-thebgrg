@@ -19,7 +19,7 @@
 
     <div class="section-1">
         <h2 class="titlen">Welcome {{ user.fname }} {{ user.lname }} {% if user.photo != null and user.photostatus == '1' or user.photostatus == 1 %}<span><a class="center circular-95" style="background: url({{ asset('upload/userphotos/'~user.id~'/'~user.photo) }}) no-repeat;background-size:95px 95px;"></a></span>{% endif %} </h2>
-
+        <a class="register-btn btn-red-124" style="float: right;" href="{{ path('fos_user_profile_edit') }}">Edit Profile</a>
         <h3 class="titley">Membership Status</h3>
 
         {% if test == 'false' %}

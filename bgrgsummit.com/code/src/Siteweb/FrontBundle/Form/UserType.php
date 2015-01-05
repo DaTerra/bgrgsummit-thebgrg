@@ -63,7 +63,7 @@ class UserType extends AbstractType
             ->add('postalcode',null,array(
                     'required' => true
                 ))
-            ->add('photo','file',array(
+            ->add('photoattach','file',array(
                     'required' => false
                 ))
             ->add('demographic',new DemographicType())

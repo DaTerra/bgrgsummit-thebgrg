@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Siteweb\UserBundle\Form\Type;
+namespace Siteweb\UserBundle\Form;
 
 use Siteweb\BackBundle\Form\DemographicType;
 use Symfony\Component\Form\AbstractType;
@@ -71,9 +71,6 @@ class ProfileFormType extends AbstractType
     protected function buildUserForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email',null,array(
-                'required' => true
-            ))
             ->add('fname',null,array(
                 'required' => true
             ))
@@ -123,13 +120,16 @@ class ProfileFormType extends AbstractType
                 'required' => true
             ))
 
-            ->add('cv','file',array(
-                'required' => true
+            ->add('photoattach', 'file', array(
+                'required' =>false
             ))
-            ->add('document','file',array(
-                'required' => true
+
+            ->add('documentattach','file',array(
+                'required' => false
             ))
-            ->add('demographic',new DemographicType())
+            ->add('cvattach','file',array(
+                'required' => false
+            ))
             ->add('publicprofile', 'choice', array(
                 'multiple' => false,
                 'expanded' => true,
