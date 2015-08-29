@@ -22,7 +22,6 @@ class AppKernel extends Kernel
             new Siteweb\FrontBundle\SitewebFrontBundle(),
             new Payum\Bundle\PayumBundle\PayumBundle(),
             new Fp\JsFormValidatorBundle\FpJsFormValidatorBundle(),
-            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
 
         );
 

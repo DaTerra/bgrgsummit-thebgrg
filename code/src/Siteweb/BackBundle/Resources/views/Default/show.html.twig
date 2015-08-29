@@ -12,31 +12,67 @@
 <div class="modal-body with-padding">
     <div class="row">
         <div class="col-md-5">
+            {% set verif = 0 %}
             <img src="
                 {% if entity.photo != null %}
                     {% if file_exists(web_path~'/upload/userphotos/'~entity.id~'/'~entity.photo) %}
                         {{asset('/upload/userphotos/'~entity.id~'/'~entity.photo)}}
+                        {% set verif = 1 %}
                     {% else %}
                         {{ 'http://bgrgsummit.com/code/web/upload/userphotos/'~entity.id~'/'~entity.photo }}
+            {% set verif = 1 %}}
                     {% endif %}
                 {% else %}
                     {{ 'http://bgrgsummit.com/code/web/bundles/sitewebfront/img/placeholder.png'}}
                 {% endif %}
                      ">
         </div>
-        <div class="col-md-5">
-            <form action="{{ path('user_edit_photo_status') }}" method="post" >
+        {% if verif == 1 and entity.photostatus != 'Approved' %}
+        <div class="col-md-7">
+            <form action="{{ path('user_edit_photo_status',{'id':entity.id}) }}" method="post" >
                 <div class="form-group">
-                    <label>User Status</label>
-                    <select name="photostatus">
-                        <option value="Approuved">Approuved</option>
+                    <label class="col-md-5">photo Status</label>
+                    <select class="col-md-4" name="photostatus">
+                        <option value="Approved">Approved</option>
                         <option value="Declined">Declined</option>
                     </select>
+                    <button type="submit" class="btn btn-success col-md-3">Save</button>
                 </div>
-                <button type="submit" class="btn btn-success">Save</button>
+
+            </form>
+        </div>
+        {% endif %}
+        {% if entity.usermembership|first.usermembershiptype.id < 15 or entity.usermembership|last.usermembershiptype.id < 15 %}
+            <div class="col-md-7">
+                <form action="{{ path('user_edit_photo_status',{'id':entity.id}) }}" method="post" >
+                    <div class="form-group">
+                        <label class="col-md-5">BGRG User</label>
+                        <select class="col-md-4" name="status">
+                            <option value="Approve">Approve</option>
+                            <option value="Unapprove">Unapprove</option>
+                        </select>
+                        <button type="submit" class="btn btn-success col-md-3">Save</button>
+                    </div>
+
+                </form>
+            </div>
+        {% endif %}
+        <div class="col-md-7">
+            <form action="{{ path('user_edit_photo_status',{'id':entity.id}) }}" method="post" >
+                <div class="form-group">
+                    <label class="col-md-5">User Status</label>
+                    <select class="col-md-4" name="lock">
+                        <option value="active">active</option>
+                        <option value="unactive">unactive</option>
+                    </select>
+                    <button type="submit" class="btn btn-success col-md-3">Save</button>
+                </div>
+
             </form>
         </div>
     </div>
+
+
     <div class="row">
         <div class="col-lg-8">{{ entity.fname }} {{ entity.mname }} {{ entity.lname }} {{ entity.sname }}</div>
     </div>

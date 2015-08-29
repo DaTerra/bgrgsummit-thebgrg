@@ -67,16 +67,9 @@ class UserType extends AbstractType
             ->add('postalcode',null,array(
                     'required' => true
                 ))
-            ->add('photoattach', 'file', array(
-                'required' =>false
-            ))
-
-            ->add('documentattach','file',array(
-                'required' => false
-            ))
-            ->add('cvattach','file',array(
-                'required' => false
-            ))
+            ->add('photo','file',array(
+                    'required' => false
+                ))
             ->add('demographic',new DemographicType())
             ->add('publicprofile', 'choice', array(
                 'multiple' => false,
@@ -84,8 +77,8 @@ class UserType extends AbstractType
                 'data' => false,
                 'required' => true,
                 'choices'  => array(
-                    true => 'Yes',
-                    false => 'No',
+                    true => 'yes',
+                    false     => 'no',
                 )));
     }
     

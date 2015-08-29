@@ -163,6 +163,21 @@ class UsersController extends Controller {
         return $this->redirect($this->generateUrl('admin_users'));
     }
 
+    public function UserCheckinAction($id){
+
+        $em = $this->getDoctrine()->getManager();
+
+        $membership = $em->getRepository('SitewebBackBundle:Usermembership')->findOneById($id);
+
+        if ($membership){
+            $membership->setCheckin(1);
+            $em->persist($membership);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('admin_users'));
+    }
+
     public function UsersstatusAction($id,Request $request) {
         $em=$this->getDoctrine()->getManager();
         $user = $em->getRepository('SitewebUserBundle:User')->findOneById($id);
@@ -180,6 +195,51 @@ class UsersController extends Controller {
                 return $this->redirect($this->generateUrl('admin_users'));
 
             }
+        return $this->redirect($this->generateUrl('admin_users'));
+
+    }
+
+    public function activeaprouveAction($id,Request $request) {
+        $em=$this->getDoctrine()->getManager();
+        $user = $em->getRepository('SitewebUserBundle:User')->findOneById($id);
+
+        if(!$user){
+            throw $this->createNotFoundException('No User with this id= '.$id);
+        }
+
+        if ('POST' === $request->getMethod()) {
+
+            $status = $request->get('status');
+            $lock = $request->get('lock');
+
+            if($status != null){
+                if($status == 'Approve'){
+                    $user->setEnabled(1);
+                    $em->persist($user);
+                    $em->flush();
+                }elseif($status == 'Unapprove'){
+                    $user->setEnabled(0);
+                    $em->persist($user);
+                    $em->flush();
+                }
+            }elseif($lock != null){
+                if($status == 'active'){
+                    $user->setLocked(0);
+                    $em->persist($user);
+                    $em->flush();
+                }elseif($status == 'unactive'){
+                    $user->setLocked(1);
+                    $em->persist($user);
+                    $em->flush();
+                }
+            }
+
+
+
+
+            return $this->redirect($this->generateUrl('admin_users'));
+
+        }
         return $this->redirect($this->generateUrl('admin_users'));
 
     }

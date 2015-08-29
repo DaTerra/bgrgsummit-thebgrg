@@ -1,0 +1,1 @@
+[10-Sep-2014 12:26:34 America/Chicago] PHP Fatal error:  Class 'Doctrine\Common\Persistence\Mapping\AbstractClassMetadataFactory' not found in /home/bgrgorg/public_html/code/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php on line 46

@@ -164,21 +164,16 @@ class User extends BaseUser
 
     /**
      * @ORM\Column(type="string", length=45, nullable=true)
-     * @Assert\File( maxSize = "2048k", mimeTypesMessage = "Please upload a valid Document")
-     */
-    private $cv;
-
-    /**
-     * @ORM\Column(type="string", length=45, nullable=true)
-     * @Assert\File( maxSize = "2048k", mimeTypesMessage = "Please upload a valid Document")
-     */
-    private $document;
-
-    /**
-     * @ORM\Column(type="string", length=45, nullable=true)
      */
     private $photostatus;
     
+    
+    public function construct()
+    {
+        parent::construct();
+
+
+    }
 
     /**
      * Get id
@@ -775,7 +770,6 @@ class User extends BaseUser
     public function setDemographic(\Siteweb\BackBundle\Entity\Demographic $demographic = null)
     {
         $this->demographic = $demographic;
-        $demographic->setUser($this);
 
         return $this;
     }
@@ -877,39 +871,5 @@ class User extends BaseUser
     {
         return $this->usermembership;
     }
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->usermembership = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Set payment
-     *
-     * @param \Siteweb\FrontBundle\Entity\PaymentDetails $payment
-     * @return User
-     */
-    public function setPayment(\Siteweb\FrontBundle\Entity\PaymentDetails $payment = null)
-    {
-        $this->payment = $payment;
-
-        return $this;
-    }
-
-    /**
-     * Get payment
-     *
-     * @return \Siteweb\FrontBundle\Entity\PaymentDetails 
-     */
-    public function getPayment()
-    {
-        return $this->payment;
-    }
-
-
 
 }

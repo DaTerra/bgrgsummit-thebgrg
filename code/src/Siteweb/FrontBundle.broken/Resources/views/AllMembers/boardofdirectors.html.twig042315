@@ -1,0 +1,88 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+    <ul class="side-menu">
+      <li><a>Members</a>
+        <ul>
+            <li><a href="/members/all-members">All Members</a></li>
+            <li><a href="/register">Become a Member</a></li>
+            <li class="selected"><a href="/members/board-of-directors">Board of Directors</a></li>        
+            <li><a href="/members/committees">Committees</a></li>
+            <li><a href="/members/affiliate-members">Affiliate Members</a></li>
+            <li><a href="/members/founding-members">Founding Members</a></li>
+            <li><a href="/members/organizational-members">Organizational Members</a></li>
+        </ul>    
+      </li>
+    </ul>
+
+    <main class="content contentRich" id="content">
+        <header class="content-header">
+            <h1>Board of Directors</h1>
+            <div class="clearfix"></div>
+            <hr class="book-header">
+            <div class="font-size-control" style="display:none;">
+                <a class="smaller" onclick="resizeText(-1)">-</a>
+                <p>A<span>A</span></p>
+                <a class="bigger" onclick="resizeText(1)">+</a>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+        <div class="clearfix"></div>
+        <section>
+            <ul class="booklist">
+                <li>
+                    <a>Dr. Lance McCready, PhD</a>
+                    <article>                        
+                        <p><span class="drop-capp">L</span>ance T. McCready, PhD is an Assistant Professor of Urban Education at the Ontario Institute for Studies in Education at the University of Toronto. He received his doctorate in Social and Cultural Studies with a designated emphasis in Women, Gender, and Sexuality Studies from the University of California, Berkeley.  Dr. McCready teaches School & Society in the Secondary Initial Teacher Education program and teaches graduate courses on urban education, gender equity and qualitative research methods in the Curriculum Studies and Teacher Development program. His research focuses on the education, health and well-being of young black men and boys in North American metropolitan regions. </p>
+
+                        <img class="right" src="{{asset('bundles/sitewebfront/img/McCready.png')}}"/>
+
+                        <p>Dr. McCready is a lead researcher on the Black and Latino Male School Intervention Study (BLMSIS) of single-sex schools based at New York University’s Metro Center and Co-Principal Investigator of the Many Men Many Voices (3MV) HIV/AIDS community-based translational research project at the Black Coalition for AIDS Prevention in Toronto, Ontario. He recently published Making Space for Diverse Masculinities, a critical ethnography of gay and gender non-conforming black male students, with Peter Lang Academic Publishers. </p>
+
+                        <p>Contact: <a href='mailto:lance.mccready@utoronto.ca'>lance.mccready@utoronto.ca </a></p>
+
+                    </article>
+                </li>
+                <li>
+                    <a>Dr. LaRon E. Nelson, PhD, RN, NP</a>
+                    <article>                        
+                        <p><span class="drop-capp">L</span>aRon E. Nelson, PhD, RN, NP, is currently an Assistant Professor and Assistant Dean of Global & Community Affairs in the College of Nursing at the University of South Florida. His research focuses on the primary prevention of HIV and other sexually transmissible infections among men who have sex with men within African and African Diaspora communities. His work is primarily concerned with understanding social and structural factors that influence HIV infection and related clinical outcomes with the goal of generating knowledge that can be used in developing interventions that address social/structural factors as part of integrated (e.g., behavioral, biomedical, social/structural) local public health STD/HIV prevention strategies. </p>
+
+                        <img class="right" src="{{asset('bundles/sitewebfront/img/LaRon.jpg')}}"/>
+
+                        <p>Dr. Nelson’s career has always been grounded in public health, starting as a registered nurse in a health department STD clinic, to working as a family nurse practitioner in an inner-city community health center, and on to serving as Associate Director of Public Health for Monroe County (Rochester), New York. Dr. Nelson has held faculty positions at prestigious institutions around the world including the University of Toronto and the Hospital for Sick Children as well as a visiting professorship at University of California San Francisco Center for AIDS Prevention Studies. He is the Chair of the Black Gay Research Group, a Distinguished Practitioner in the U. S. National Academies of Practice and in 2011 was named one of Canada’s Rising Start in Global Health for his HIV prevention research with MSM in Ghana. Dr. Nelson’s research has been funded by National Institute of Nursing Research, Grand Challenges Canada and U.S. Centers for Disease Control and Prevention.</p>
+                        
+                    </article>
+                </li>
+                <li>
+                    <a>Dr. Leo Wilton, PhD</a>
+                    <article>                        
+                        <p><span class="drop-capp">L</span>eo Wilton is an Associate Professor of Human Development in the College of Community and Public Affairs at the State University of New York at Binghamton. Dr. Wilton is a founding member and immediate past chair of the Black Gay Research Group. His primary research interests include health disparities (primary and secondary HIV prevention); community based research and evaluation; and Black psychological development and mental health. Dr. Wilton's scholarly research on the AIDS epidemic focuses on the intersectionality of race, gender, and sexuality, as situated in macro-and -micro-level inequalities in Black communities, both nationally and internationally. His international research focuses on the socio-cultural contexts of HIV-related health disparities health in the African Diaspora.</p>
+
+                        <img class="right" src="{{asset('bundles/sitewebfront/img/Leo.jpg')}}"/>
+
+                        <p>The overall objective of Dr. Wilton's scholarly research program has been to focus on the impact of socio-cultural factors that influence sexual/drug-risk and protective behavior and mental health for Black men who have sex with men (MSM) in urban communities. His research interests examine socio-cultural factors that provide the basis for the development of culturally grounded HIV prevention interventions for Black MSM. Dr. Wilton is a recipient of the Chancellor's Award for Excellence in Teaching in the State University of New York (SUNY). He completed a PhD degree in counseling psychology at New York University, predoctoral clinical psychology fellowship in the Department of Psychiatry at the Yale School of Medicine, a three-year postdoctoral research fellowship in HIV behavioral research and evaluation at New York University, and a postdoctoral summer fellowship in the Empirical Summer Program in Multi-Ethnic Research at the University of Michigan.</p>
+                       
+                    </article>
+                </li>
+                <li>
+                    <a>Rudolph H. Carn</a>
+                    <article>                        
+                        <p><span class="drop-capp">R</span>udolph “Rudy” H. Carn is the Founder and CEO of NAESM, Inc., a non-profit National Leadership, Advocacy and Service Organization in Atlanta, GA. Since starting the organization in 1990 along with Mae Reed and Madam Edna Brown, Rudy has remained committed to providing HIV/AIDS prevention, education, services, leadership development, advocacy and technical assistance primarily to African American [men who have sex with men] both in Atlanta and nationally. Under his leadership, NAESM has grown from an outreach activity to a nationally recognized organization which has been instrumental in addressing the health and social disparities associated with the incidence and prevalence of HIV/AIDS and other Health Disparities that affect black gay men. Rudy convened the first every National African American MSM Leadership Conference on HIV/AIDS in 2000; 2013 will service as the 10th year anniversary for this one of a kind national conference that focus on Black gay men around HIV/AIDS and other health disparities that affect Black gay men locally and nationally. </p>
+                        
+                        <img class="right" src="{{asset('bundles/sitewebfront/img/Carn.jpg')}}"/>
+
+                        <p>In addition to working for NAESM for more than 22 years, Rudy has served on various local, statewide and national HIV/AIDS committees and advisory groups/boards including: Georgia’s HIV Prevention Community Planning Group [community co-chair three terms]; Fulton County Board of Commissioners Ryan White Title I Planning Council; Georgia AIDS Task Force; CDC’s Advisory Committee for Black Gay Men’s Health; the National Black Gay Men’s Advocacy Coalition [board chairperson] and a member of the Black Gay Research Group. His other accomplishments include creating the National African American MSM Leadership Conference on HIV/AIDS inaugurated 2001, the eight held in Brooklyn, New York in 2011. In 1992, he helped organized Georgia Shares, Inc., a federation of non-profit organizations deeply committed to social justice for all Georgians. Rudy has also been featured in several new articles and TV programs, such as the Bill O’Reilly Show and Essence Magazine as well as co-authoring: “Homelessness and Hunger as HIV Risk Factors for African American Male Commercial Sex Workers” in the Journal of African American Men, Volume 5, Issue 1 [2000]. In 2009 Rudy was one of the founding members of the HPTN 061 Black Caucus and a member of the HPTN Science Review Committee of which I am still a member of serving as the community representative.</p>
+
+                        <p>Before starting his commitment in HIV/AIDS prevention and other Health Disparities, Rudy was born in Manhattan, NY and completed his undergraduate studies in math and education at St. Francis College in Brooklyn, NY. In 1988 he attend LA Southwest College and completed his diploma in nursing; becoming a registered nurse. Rudy served 12 years in the U.S. Air Force as a flight nurse.</p>
+
+                        <p>Contact: <a href='mailto:RCarn8AESM@aol.com'>RCarn8AESM@aol.com</a></p>
+
+                        
+                    </article>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+{%endblock%}

@@ -1,0 +1,55 @@
+{{ app.request.requesturi }}
+{{ app.request.requesturi }}
+
+if menu aboutus\
+{% if app.request.attributes.get('_route') == '_list' %}active{% endif %}
+show about us menu
+
+if menu members
+show members menu
+
+if menu supports
+show support menu
+
+
+
+{% block sidemenu %}    
+    <ul class="side-menu">
+
+      <li><a>About Us</a>
+        <ul>
+            <li><a href="/aboutus/mission">Mission</a></li>
+            <li><a href="/aboutus/our-work">Our Work</a></li>
+            <li><a href="/aboutus/our-services">Our Services</a></li>
+            <li class='has-sub'><a href="/aboutus/research-agenda">Research Agenda</a>
+                <ul>
+                    <li><a>Executive Summary</a></li>
+                    <li><a>Introduction</a></li>
+                    <li><a>Background</a></li>
+                    <li><a>Methodologies</a></li>
+                    <li><a>Recommendations</a></li>
+                    <li><a>Conclusions</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li class='has-sub'><a href="/aboutus/bgrg-summits">BGRG Summits</a>
+                <ul>
+                    <li><a href="/aboutus/bgrg-summit/2005">2005</a></li>
+                    <li><a href="/aboutus/bgrg-summit/2010">2010</a></li>
+                    <li><a href="/aboutus/bgrg-summit/2012">2012</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li class="selected"><a href="#">Annual Reports</a>
+                <ul>
+                    <li class="selected"><a href="/aboutus/annual-report/2008">2008</a></li>
+                    <li><a href="/aboutus/annual-report/2009">2009</a></li>
+                    <li><a href="/aboutus/annual-report/2010">2010</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="/posts/a-way-forward">Posts &amp; News</a></li>
+        </ul>    
+      </li>
+    </ul>
+{%endblock%}

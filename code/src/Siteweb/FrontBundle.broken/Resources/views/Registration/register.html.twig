@@ -1,0 +1,431 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <input name="reSizeUP" type="button" value="&nbsp;+&nbsp;" onclick="resizeText(1)" />
+    <input name="reSizeDOWN" type="button" value="&nbsp;-&nbsp;" onclick="resizeText(-1)" />
+    <script type="text/">
+           function resizeText(multiplier) {
+                var elem = document.getElementById("foo");
+                var currentSize = elem.style.fontSize || 1;
+                elem.style.fontSize = ( parseFloat(currentSize) + (multiplier * 0.2)) + "em";
+            }
+            </script>
+
+    <main class="content">
+    <header class="content-header">
+        <h1>Become a Member</h1>
+        <div class="clearfix"></div>
+        <hr class="book-header">
+        <div class="font-size-control" style="display:none;">
+            <a class="smaller">-</a>
+            <p>A<span>A</span></p>
+            <a class="bigger">+</a>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+    <div class="clearfix"></div>
+    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register" >
+    <section>
+        <header class="article-header">
+            <h2 class="article-title">Membership Categories</h2>
+            <a class="article-top-link" href="./login">Login with your <span>2015 UCLA H<sup>3</sup>/BGRG Summit</span> account!</a>
+        </header>
+        <article class="article-content">
+            {% for usermembershiptype in usermembershiptypes %}
+            <div class="ms_type">
+                <p><span>Full:</span> This level of membership is open to all self-identified Black Gay Men / MSM with an expressed interest in research activities related to the lives of Black Gay Men.
+                    <span>Note:</span> Only full members are eligible to vote and hold positions on the BGRG leadership steering committee.</p>
+                <label class="ms_price ms_odd">${{ usermembershiptype.price }}<span>/year</span><input name="membership-type" type="radio" value="{{ usermembershiptype.id }}"/></label>
+                <div class="clearfix"></div>
+            </div>
+             {% endfor %}
+
+            <div class="ms_type corporate" style="background:none;">
+                <p><span>Corporate:</span> <span>Based on Yearly Operating Budget (YOB)</span>. This level of membership is open to all corporations with an expressed interest in supporting research activities related to the lives of Black Gay Men.
+                    <span>Note:</span> Corporate support members are not eligible to vote or hold positions on the BGRG leadership steering committee.</p>
+                <div class="clearfix"></div>
+                <div class="ms_subtype">
+                    <p class="ms_title">Yearly Operating Budget (YOB) Fee Schedule</p>
+                    <div class="ms_type">
+                        <p>Budget < $250K</p>
+                        <label class="ms_price ms_even">$500<span>/year</span><input name="membership-type" type="radio" value=""/></label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="ms_type">
+                        <p>Budget $500K < $2M</p>
+                        <label class="ms_price ms_odd">$1,000<span>/year</span><input name="membership-type" type="radio" value=""/></label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="ms_type">
+                        <p>Budget $2M â€“ $5M</p>
+                        <label class="ms_price ms_even">$3,000<span>/year</span><input name="membership-type" type="radio" value=""/></label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="ms_type">
+                        <p>Budget $5M â€“ $10M</p>
+                        <label class="ms_price ms_odd">$4,500<span>/year</span><input name="membership-type" type="radio" value=""/></label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="ms_type">
+                        <p>Budget $10M â€“ $15M</p>
+                        <label class="ms_price ms_even">$6,500<span>/year</span><input name="membership-type" type="radio" value=""/></label>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="ms_type">
+                        <p>Budgets above $15M</p>
+                        <label class="ms_price ms_odd">$7,500<span>/year</span><input name="membership-type" type="radio" value=""/></label>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+        </article>
+    </section>
+    <section>
+        <div class="ms_total">
+            <p>Corporate Membership - 1 Year:<span>$7,5000</span></p>
+        </div>
+    </section>
+    <section>
+        <header class="form_section_header">
+            <hr>
+            <h2>Personal Info</h2>
+            <div class="auto-msg">
+                <div class="error">
+                    <p>Please verify information</p>
+                </div>
+                <div class="success">
+                    <p>Congratulations</p>
+                </div>
+            </div>
+        </header>
+        <article>
+            <p><span class="required-helper">*Required fields</span>
+            <div class="form-group w310">
+                <label for="inputFirstName" class="w100">First Name:<span class="field-required">*</span></label>
+                {{ form_widget(form.lname,{'attr':{'class':'w200'} }) }}
+            </div>
+            <div class="form-group w310">
+                <label for="inputLastName" class="w100">Last Name:<span class="field-required">*</span></label>
+                {{ form_widget(form.lname,{'attr':{'class':'w200'} }) }}
+
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group">
+                <label for="inputyAddress" class="w100">Address:<span class="field-required">*</span></label>
+                <{{ form_widget(form.address,{'attr':{'class':'w512'} }) }}
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group w310">
+                <label for="inputCity" class="w100">City:<span class="field-required">*</span></label>
+                {{ form_widget(form.city,{'attr':{'class':'w200'} }) }}
+            </div>
+            <div class="form-group w170">
+                <label for="inputState" class="w60">State:<span class="field-required">*</span></label>
+                {{ form_widget(form.state,{'attr':{'class':'w200'} }) }}
+            </div>
+            <div class="form-group w150">
+                <label for="inputZip" class="w50">Zip:<span class="field-required">*</span></label>
+                {{ form_widget(form.zipcode,{'attr':{'class':'w82'} }) }}
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group w310">
+                <label for="inputPhone1" class="w110">Home Phone:<span class="field-required">*</span></label>
+                {{ form_widget(form.telephone,{'attr':{'class':'w191'} }) }}
+            </div>
+            <div class="form-group w310">
+                <label for="inputPhone2" class="w110">Mobile Phone:<span class="field-required">*</span></label>
+                {{ form_widget(form.telephone2,{'attr':{'class':'w191'} }) }}            </div>
+            <div class="clearfix"></div>
+
+            <div class="form-group">
+                <label for="inputPhoto" class="w110">Profile Photo:</label>
+                {{ form_widget(form.photo,{'attr':{'class':'uploadFile w191','placeholder':'Choose File','disabled':'disabled' }) }}
+                <div class="fileUpload btn_purple">
+                    <span>Upload</span>
+                    <input id="photoUploadBtn" type="file" class="upload btn_purple" />
+                </div>
+                <script type="text/javascript">
+                    document.getElementById("photoUploadBtn").onchange = function () {
+                        document.getElementById("photoUploadFile").value = this.value;
+                    }
+                </script>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="form-group">
+                <label for="inputEmail" class="w110">E-mail:<span class="field-required">*</span></label>
+                {{ form_widget(form.email,{'attr':{'class':'w191'} }) }}
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="form-group w310">
+                <label for="inputPassword" class="w110">Password:<span class="field-required">*</span></label>
+                {{ form_widget(form.plainpassword|first,{'attr':{'class':'w191'} }) }}
+            </div>
+            <div class="form-group w310">
+                <label for="inputPassword2" class="w150">Confirm Password:<span class="field-required">*</span></label>
+                {{ form_widget(form.plainpassword|last,{'attr':{'class':'w191'} }) }}
+            </div>
+            <div class="clearfix"></div>
+        </article>
+    </section>
+    <section>
+        <header class="form_section_header">
+            <hr>
+            <h2>Professional Employment</h2>
+        </header>
+        <article>
+            <div class="form-group">
+                <label for="inputOrganization" class="w360">Employer / Educational Institution (for students):<span class="field-required">*</span></label>
+                <input type="text" class="w252" id="inputOrganization">
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group">
+                <label for="inputOAddress" class="w100">Adress:<span class="field-required">*</span></label>
+                <input type="text" class="w512" id="inputOAddress">
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group w310">
+                <label for="inputOCity" class="w100">City:<span class="field-required">*</span></label>
+                <input type="text" class="w200" id="inputOCity">
+            </div>
+            <div class="form-group w170">
+                <label for="inputOState" class="w60">State:<span class="field-required">*</span></label>
+                <input type="text" class="w100" id="inputOState">
+            </div>
+            <div class="form-group w150">
+                <label for="inputOZip" class="w50">Zip:<span class="field-required">*</span></label>
+                <input type="text" class="w82" id="inputOZip">
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group w310">
+                <label for="inputOPhone1" class="w110">Home Phone:<span class="field-required">*</span></label>
+                <input type="text" class="w191" id="inputOPhone1">
+            </div>
+            <div class="form-group w310">
+                <label for="inputOPhoneExt" class="w150">Phone Extension:<span class="field-required">*</span></label>
+                <input type="text" class="w150" id="inputOPhoneExt">
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group">
+                <label for="inputInterest" class="">Areas of Interest/Expertise:<span class="field-required">*</span></label>
+                <div class="clearfix"></div>
+                <textarea class="w612" id="inputInterest"></textarea>
+            </div>
+            <div class="clearfix"></div>
+        </article>
+    </section>
+    <section>
+    <header class="form_section_header">
+        <hr>
+        <h2>Professional Employment</h2>
+        <h2>DEMOGRAPHIC INFORMATION (THIS INFORMATION WILL REMAIN CONFIDENTIAL)</h2>
+    </header>
+    <article class="demographics">
+        <div class="form-group">
+            <p>Age Range<span class="field-required">*</span></p>
+            <label class="radio-inline w150">
+                <input type="radio" name="ageRange" id="ageRange1" value="Under 20"> Under 20
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="ageRange" id="ageRange2" value="20-24"> 20-24
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="ageRange" id="ageRange3" value="25-34"> 25-34
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="ageRange" id="ageRange4" value="35-44"> 35-44
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="ageRange" id="ageRange5" value="45-54"> 45-54
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="ageRange" id="ageRange6" value="55-64"> 55-64
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="ageRange" id="ageRange7" value="65+"> 65+
+            </label>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <p class="label-bold">What is your sex or current gender?<span class="field-required">*</span></p>
+            <label class="radio-inline w55">
+                <input type="radio" name="currentSex" id="currentSex1" value="Male"> Male
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="currentSex" id="currentSex2" value="Female"> Female
+            </label>
+            <label class="radio-inline w190">
+                <input type="radio" name="currentSex" id="currentSex3" value="TransMale/Transman"> TransMale/Transman
+            </label>
+            <label class="radio-inline w189">
+                <input type="radio" name="currentSex" id="currentSex4" value="Genderqueer"> Genderqueer
+            </label>
+            <label class="radio-inline w252">
+                <input type="radio" name="currentSex" id="currentSex5" value="TransFemale/Transwomen"> TransFemale/Transwomen
+            </label>
+            <div class="clearfix"></div>
+            <label class="radio-inline w150">
+                <input type="radio" name="currentSex" id="currentSex6" value="Decline to answer"> Decline to answer
+            </label>
+            <label class="radio-inline w340">
+                <input type="radio" name="currentSex" id="currentSex7" value="Additional Category"> Additional Category
+                <input type="text" class="input-white" name="currentSexOther" id="currentSexOther">
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group mb-15">
+            <p  class="label-bold">Race/Ethnicity (Check all that apply)<span class="field-required">*</span></p>
+            <label class="checkbox-inline w340">
+                <input type="checkbox" name="raceEthnicity[]" id="raceEthnicity1" value="Asian/Pacific Islander/Native Hawaiian"> Asian/Pacific Islander/Native Hawaiian
+            </label>
+            <label class="checkbox-inline w190">
+                <input type="checkbox" name="raceEthnicity[]" id="raceEthnicity2" value="Black/African American"> Black/African American
+            </label>
+            <label class="checkbox-inline w150">
+                <input type="checkbox" name="raceEthnicity[]" id="raceEthnicity3" value="Latino/Hispanic"> Latino/Hispanic
+            </label>
+            <div class="clearfix"></div>
+            <label class="checkbox-inline w200">
+                <input type="checkbox" name="raceEthnicity[]" id="raceEthnicity4" value="Mixed Race/Heritage"> Mixed Race/Heritage
+            </label>
+            <label class="checkbox-inline w190">
+                <input type="checkbox" name="raceEthnicity[]" id="raceEthnicity5" value="White/ Caucasian"> White/ Caucasian
+            </label>
+            <label class="checkbox-inline w380">
+                <input type="checkbox" name="raceEthnicity[]" id="raceEthnicity6" value="Other"> Other (Please specify):
+                <input type="text" class="input-white" name="raceEthnicityOther" id="raceEthnicityOther">
+            </label>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <p class="label-bold">HIV Status?<span class="field-required">*</span></p>
+            <label class="radio-inline w150">
+                <input type="radio" name="hivStatus" id="hivStatus1" value="hivStatus1"> Positive
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="hivStatus" id="hivStatus2" value="hivStatus2"> Negative
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="hivStatus" id="hivStatus3" value="hivStatus3"> Unknown
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="hivStatus" id="hivStatus4" value="hivStatus4"> Undeclared
+            </label>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group col-sm-12">
+            <p class="label-bold">Geographical Location<span class="field-required">*</span></p>
+            <label class="radio-inline w150">
+                <input type="radio" name="geoLocation" id="geoLocation1" value="Northeast"> Northeast
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="geoLocation" id="geoLocation2" value="Midwest"> Midwest
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="geoLocation" id="geoLocation3" value="South"> South
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="geoLocation" id="geoLocation4" value="West"> West
+            </label>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <p class="label-bold">Type of Geographic Area I Serve<span class="field-required">*</span></p>
+            <label class="radio-inline w55">
+                <input type="radio" name="geoType" id="geoType1" value="Rural"> Rural
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="geoType" id="geoType2" value="Suburban"> Suburban
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="geoType" id="geoType3" value="Urban"> Urban
+            </label>
+            <label class="radio-inline w95">
+                <input type="radio" name="geoType" id="geoType4" value="Other"> Other
+                <input type="text" class="input-white" name="geoTypeOther" id="geoTypeOther">
+            </label>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <p  class="label-bold">What type of organization do you work for? (Check all that apply)<span class="field-required">*</span></p>
+            <p class="qhelper">Please make at least 1 selection from the choices below.</p>
+            <label class="checkbox-inline w245">
+                <input type="checkbox" name="organizationType[]" id="organizationType1" value="AIDS-specific organization"> AIDS-specific organization
+            </label>
+            <label class="checkbox-inline w190">
+                <input type="checkbox" name="organizationType[]" id="organizationType2" value="Community Health Clinic"> Community Health Clinic
+            </label>
+            <label class="checkbox-inline w190">
+                <input type="checkbox" name="organizationType[]" id="organizationType3" value="Health Department"> Health Department
+            </label>
+            <label class="checkbox-inline w225">
+                <input type="checkbox" name="organizationType[]" id="organizationType4" value="Religious/Faith-based organization"> Religious/Faith-based organization
+            </label>
+            <div class="clearfix"></div>
+            <label class="checkbox-inline w245">
+                <input type="checkbox" name="organizationType[]" id="organizationType5" value="PLWHA Coalition"> PLWHA Coalition
+            </label>
+            <label class="checkbox-inline w190">
+                <input type="checkbox" name="organizationType[]" id="organizationType6" value="University"> University
+            </label>
+            <label class="checkbox-inline w190">
+                <input type="checkbox" name="organizationType[]" id="organizationType7" value="Hospital"> Hospital
+            </label>
+            <label class="checkbox-inline w225">
+                <input type="checkbox" name="organizationType[]" id="organizationType8" value="Minority-specific organization"> Minority-specific organization
+            </label>
+            <div class="clearfix"></div>
+            <label class="checkbox-inline w245">
+                <input type="checkbox" name="organizationType[]" id="organizationType9" value="Federal/State Government"> Federal/State Government
+            </label>
+            <label class="checkbox-inline w55">
+                <input type="checkbox" name="organizationType[]" id="organizationType10" value="Other"> Other
+            </label>
+            <input type="text" class="input-white" name="organizationTypeOther" id="organizationTypeOther">
+        </div>
+        <div class="clearfix"></div>
+        <hr class="horizontal-separator">
+        <div class="form-group">
+            <label class="w612">Please submit a copy of your professional CV and one copy of a peer-reviewed published article to which you contributed. If you do not have a peer-review publication, please submit a document that demonstrates scholarly work in your primary area of research or community program practice. (.PDF; .DOC; .TXT)</label>
+        </div>
+        <div class="clearfix"></div>
+    </article>
+    <article>
+        <div class="form-group">
+            <label for="inputPhoto" class="w140">Curriculum Vitae:</label>
+            <input id="curriculumUploadFile" class="uploadFile w191" type="text" placeholder="Choose File" disabled="disabled"/>
+            <div class="fileUpload btn_purple">
+                <span>Upload</span>
+                <input id="curriculumUploadBtn" type="file" class="upload" />
+            </div>
+            <script type="text/javascript">
+                document.getElementById("curriculumUploadBtn").onchange = function () {
+                    document.getElementById("curriculumUploadFile").value = this.value;
+                }
+            </script>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <label for="inputPhoto" class="w140">Article:</label>
+            <input id="articleUploadFile" class="uploadFile w191" type="text" placeholder="Choose File" disabled="disabled"/>
+            <div class="fileUpload btn_purple">
+                <span>Upload</span>
+                <input id="articleUploadBtn" type="file" class="upload" />
+            </div>
+            <script type="text/javascript">
+                document.getElementById("articleUploadBtn").onchange = function () {
+                    document.getElementById("articleUploadFile").value = this.value;
+                }
+            </script>
+        </div>
+        <hr class="horizontal-separator">
+        <div class="clearfix"></div>
+        <input class="btn-submit btn_purple" type="submit" value="Submit">
+    </article>
+    </section>
+    </form>
+    </main>
+
+
+{%endblock%}

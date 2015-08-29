@@ -1,0 +1,82 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+
+{% block content %}
+    <ul class="side-menu">
+      <li><a>About Us</a>
+        <ul>
+            <li><a href="/aboutus/mission">Mission</a></li>
+            <li class="selected"><a href="/aboutus/our-work">Our Work</a></li>
+            <li><a href="/aboutus/our-services">Our Services</a></li>
+            <li><a href="/aboutus/research-agenda">Research Agenda</a>
+                <ul style="display:none;">
+                    <li><a>Executive Summary</a></li>
+                    <li><a>Introduction</a></li>
+                    <li><a>Background</a></li>
+                    <li><a>Methodologies</a></li>
+                    <li><a>Recommendations</a></li>
+                    <li><a>Conclusions</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="">BGRG Summits</a>
+                <ul>
+                    <li><a href="/aboutus/bgrg-summit/2005">2005</a></li>
+                    <li><a href="/aboutus/bgrg-summit/2010">2010</a></li>
+                    <li><a href="/aboutus/bgrg-summit/2012">2012</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="#">Annual Reports</a>
+                <ul>
+                    <li><a href="/aboutus/annual-report/2008">2008</a></li>
+                    <li><a href="/aboutus/annual-report/2009">2009</a></li>
+                    <li><a href="/aboutus/annual-report/2010">2010</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="/aboutus/posts/a-way-forward">Posts &amp; News</a></li>
+        </ul>    
+      </li>
+    </ul>
+
+    <main class="content contentRich" id="content">
+        <header class="content-header">
+            <h1>Our Work</h1>
+            <div class="clearfix"></div>
+            <hr class="book-header">
+            <div class="font-size-control" style="display:none;">
+                <a class="smaller" onclick="resizeText(-1)">-</a>
+                <p>A<span>A</span></p>
+                <a class="bigger" onclick="resizeText(1)">+</a>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+        <section>
+            <div class="clearfix"></div>
+        	<p><span class="drop-capp">T</span>o respond to the urgent nature of the AIDS epidemic, a group of Black gay researchers developed the Black Gay Research Group - BGRG - to address the paucity of research regarding the disproportionate HIV infection rates among Black MSM. The BGRG is a totally volunteer organization made up of Black gay men who engage in interdisciplinary and intersectional research in the  fields of African Diaspora studies, gender studies, sexuality studies, and public health.</p>
+
+            <img class="left" src="{{asset('bundles/sitewebfront/img/ourwork.jpg')}}"/>
+
+        	<p>Today the the BGRG is a diverse group of Black gay men committed to creating a platform for presenting, discussing, and analyzing scholarly work being produced by and on Black gay men. Inaugurated in the Spring of 2001, the BGRG has evolved from an informal discussion group to a structured group of professional Black gay men who have accomplished a number of objectives:</p>
+        	<ul class="green">  
+        		<li>(1) We hosted three Black Gay Research Summits (2003, 2005, and in 2010);</li>
+        		<li>(2) We conceptualized a Black Gay Research Think Tank; and</li>
+        		<li>(3) We developed a National Black Gay Research Agenda (2007).</li>
+            </ul>
+        </section>
+    </main>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+          $('.has-sub > li').click(function(){
+            if ($(this).attr('class') != 'active'){
+              $('.has-sub ul').slideUp();
+              $(this).next().slideToggle();
+              $('.has-sub ul li a').removeClass('active');
+              $(this).addClass('active');
+            }
+          });
+        });
+    </script>
+
+{%endblock%}

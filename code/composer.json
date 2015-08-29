@@ -20,11 +20,7 @@
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "~1.3",
-        "payum/payum-bundle":"*@stable",
-        "payum/paypal-express-checkout-nvp": "*@stable",
-        "fp/jsformvalidator-bundle":"dev-master",
-        "genemu/form-bundle": "2.2.*",
-
+        "payum/paypal-express-checkout-nvp": "*@stable"
     },
     "scripts": {
         "post-install-cmd": [

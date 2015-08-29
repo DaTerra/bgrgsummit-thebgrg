@@ -30,9 +30,16 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('event_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.time }}</td>
+                <td>{{ entity.time|date }}</td>
                 <td>{{ entity.name }}</td>
-                <td>{{ entity.keynotes }}</td>
+                <td>
+                    <ul style="list-style: none">
+                        {% for keynote in entity.keynotes %}
+                            <li>{{ keynote }}</li>
+                        {% endfor %}
+                    </ul>
+
+                </td>
                 <td>{{ entity.description }}</td>
                 <td>{{ entity.moderator }}</td>
                 <td>{{ entity.local }}</td>

@@ -15,6 +15,7 @@ class DemographicType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('id')
             ->add('agerange','choice',array(
                     'multiple' => false,
                     'expanded' => true,

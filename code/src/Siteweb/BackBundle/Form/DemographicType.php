@@ -15,6 +15,7 @@ class DemographicType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('id')
             ->add('agerange','choice',array(
                     'multiple' => false,
                     'expanded' => true,
@@ -183,9 +184,7 @@ class DemographicType extends AbstractType
                         'no'     => 'No',
                     ),
                 ))
-            ->add('focusgroupemail','checkbox',array(
-                'required'  => false,
-            ))
+            ->add('focusgroupemail','checkbox')
             ->add('summitreason',null,array(
 
                     'attr'=>array(

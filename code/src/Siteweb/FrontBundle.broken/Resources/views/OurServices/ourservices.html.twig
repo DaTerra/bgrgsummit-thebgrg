@@ -1,0 +1,105 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+
+{% block content %}
+    <ul class="side-menu">
+      <li><a>About Us</a>
+        <ul>
+            <li><a href="/aboutus/mission">Mission</a></li>
+            <li><a href="/aboutus/our-work">Our Work</a></li>
+            <li class="selected"><a href="/aboutus/our-services">Our Services</a></li>
+            <li><a href="/aboutus/research-agenda">Research Agenda</a>
+                <ul style="display:none;">
+                    <li><a>Executive Summary</a></li>
+                    <li><a>Introduction</a></li>
+                    <li><a>Background</a></li>
+                    <li><a>Methodologies</a></li>
+                    <li><a>Recommendations</a></li>
+                    <li><a>Conclusions</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="">BGRG Summits</a>
+                <ul>
+                    <li><a href="/aboutus/bgrg-summit/2005">2005</a></li>
+                    <li><a href="/aboutus/bgrg-summit/2010">2010</a></li>
+                    <li><a href="/aboutus/bgrg-summit/2012">2012</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="#">Annual Reports</a>
+                <ul>
+                    <li><a href="/aboutus/annual-report/2008">2008</a></li>
+                    <li><a href="/aboutus/annual-report/2009">2009</a></li>
+                    <li><a href="/aboutus/annual-report/2010">2010</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </li>
+            <li><a href="/aboutus/posts/a-way-forward">Posts &amp; News</a></li>
+        </ul>    
+      </li>
+    </ul>
+
+    <main class="content contentRich" id="content">
+        <header class="content-header">
+            <h1>Our Services</h1>
+            <div class="clearfix"></div>
+            <hr class="book-header">
+            <div class="font-size-control" style="display:none;">
+                <a class="smaller" onclick="resizeText(-1)">-</a>
+                <p>A<span>A</span></p>
+                <a class="bigger" onclick="resizeText(1)">+</a>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+        <section>
+            <h2>Professional Fee Schedule</h2>
+			<h3>Fees for services rendered by the BGRG depend on a number of factors:</h3>
+			<ul class="listT2">
+				<li>Type of service requested</li>
+				<li>Time frame of the service (shorter lead time is usually a higher rate)</li>
+				<li>Extent of the service requested</li>
+				<li>Expertise/background of individual BGRG members/consultants assigned to the task</li>
+			</ul>
+			
+			<h3>All fees are on a sliding scale, subjected to change, and negotiated on a case by case basis with the following factors taken into consideration</h3>
+			<ul class="listT2">
+				<li>The mission and purpose of the organization/entity requesting the service</li>
+				<li>The yearly operating budget of the organization/entity</li>
+			</ul>			
+			<h3>Fee schedule guidelines</h3>
+			<img class="right" src="{{asset('bundles/sitewebfront/img/services.jpg')}}"/>
+			<ul class="listT2">
+				<li>Minimal hourly rate for all services: $100/hour</li>
+				<li>Maximum hourly rate: Not specified based on above factors</li>
+				<li>General hourly rate range for most services: $100.00 - $250.00/hour</li>
+				<li>Flat fees: Available and negotiated on a case by case basis </li>
+			</ul>	
+			<h3>BGRG Available Services </h3>
+			<ul class="listT2">
+				<li>Literature searches </li>
+				<li>Grant writing services</li>
+				<li>Grant review services</li>
+				<li>Expert research consultative services
+					<ul class="listT2">
+						<li>Statistical analysis and support services</li>
+						<li>Theory and ethnographic analysis consultative services.s</li>
+						<li>Research study planning, methodology, tool development, implementation and evaluations</li>
+					</ul>	
+				</li>
+				<li>Program evaluation services (Needs Assessments etc.)</li>
+				<li>Policy analysis, synthesis, creation, and recommendations</li>
+				<li>Capacity building related to all aspects of the lives of Black gay men</li>
+				<li>Organizational cultural assessments related to the lives of Black gay men</li>
+				<li>Technical assistance all aspects of the lives of Black gay men 
+				<li>Manual script services
+					<ul class="listT2">
+						<li>Writing</li>
+						<li>Review (content, proof reading, etc...</li>
+					</ul>
+				</li>
+			</ul>
+        </section>
+    </main>
+
+{%endblock%}

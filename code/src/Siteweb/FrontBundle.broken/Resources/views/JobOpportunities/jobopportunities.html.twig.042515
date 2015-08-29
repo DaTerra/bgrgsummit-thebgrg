@@ -1,0 +1,99 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+    <ul class="side-menu">
+      <li><a>Support</a>
+        <ul>
+            <li><a href="/support/advertise">Advertise</a></li>
+            <li><a href="/register">Become a Member</a></li>
+            <li><a href="/support/donate">Donate</a></li>
+            <li class="selected"><a href="/support/jobs">Job Opportunities</a>
+                <li>
+                    <a>Senior Communications Officer</a>            
+                </li>
+            </li>        
+            <li><a href="/support/volunteer">Volunteer</a></li>
+        </ul>    
+      </li>
+    </ul>
+
+    <main class="content contentRichs" id="content">
+        <header class="content-header">
+            <h1>Job Opportunities</h1>
+            <div class="clearfix"></div>
+            <hr class="book-header">
+            <div class="font-size-control" style="display:none;">
+                <a class="smaller">-</a>
+                <p>A<span>A</span></p>
+                <a class="bigger">+</a>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+        <div class="clearfix"></div>
+        <section>
+            <article>                      
+                <h3>SENIOR COMMUNICATIONS OFFICER</h3>
+
+                <p>THE GLOBAL FORUM ON MSM &amp; HIV (MSMGF)</p><br/>
+                <p>MSMGF AND OUR VALUES</p><br/>
+
+                <p>The Global Forum on MSM &amp; HIV (MSMGF) was founded in 2006 at the Toronto International AIDS Conference by an international group of activists concerned about the disproportionate HIV disease burden being shouldered by men who have sex with men worldwide. The silence at that time about the toll HIV was taking on men who have sex with men was deeply troubling to many community members and advocates working at the frontlines.</p><br/>
+
+                <p>The MSMGF remains the only global HIV advocacy network specifically devoted to the health and rights of gay men/MSM. Its network includes nearly 4,000 advocates and service providers representing over 1,500 organizations in more than 150 countries.</p><br/>
+
+                <p>In recent years, the MSMGF successfully:</p><br/>
+
+                <p>* Secured the inclusion and visibility of MSM in several high-level UN and PEPFAR HIV policy consultations and documents;</p><br/>
+                <p>* Increased understanding of HIV among MSM globally through targeted community-based research, policy analysis and development of several publications;</p><br/>
+                <p>* Convened stakeholders from every major region of the world and all levels of the HIV response to develop a collaborative global strategy to address HIV among MSM;</p><br/>
+                <p>* Trained hundreds of MSM advocates and providers in Central America, East, North and West Africa, Middle East, and Southeast Asia;</p><br/>
+                <p>* Produced high visibility Pre-Conference Events focused on the health and human rights concerns of men who have sex with men at the International AIDS Conferences in 2008, 2010, 2012, and 2014;</p><br/>
+                <p>* Developed a multi-lingual online knowledge hub populated with thousands of searchable research articles, which has received hundreds of thousands of visits since its launch in late 2010;</p><br/>
+                <p>* Expanded regional and linguistic information exchange networks; and</p><br/>
+                <p>* Increased global funding targeted to MSM at the country level, especially in Africa and other parts of the global south. For more details, see the MSMGF Annual Reports on the MSMGF’s About US webpage).</p><br/>
+
+                <p>SUCCESS IN THIS POSITION</p><br/>
+
+                <p>Under the direction of the Executive Director, the Senior Communications Officer works to develop the MSMGF’s brand consistency and build brand recognition among existing and potential donors and partners, both individual and organizational. He or she develops, manages, and implements communications strategies, programs, and materials to support the MSMGF’s objectives, including fundraising. He or she must also maintain the MSMGF’s commitments to information exchange and knowledge translation, helping to ensure that the global communication of advocates and organizations working for MSM health and rights has access to the information they need to do their work most effectively. Successful candidates will be collaborative, creative, and strategic. He or she will possess exceptional communication skills, and will be comfortable working with and communicating issues of concern to diverse global constituents.</p>
+                ￼
+                <p>WHAT YOU’LL DO</p><br/>
+
+                <p>* Internal Communications Strategy &amp; Best Practices</p><br/>
+                <p>* Create and support strategic communications plans for the organization, its initiatives, and events. Assist the Executive Director and Program Managers in ensuring successful achievement of the organization’s communications goals.</p><br/>
+                <p>* Develop and monitor best practices</p><br/>
+                <p>* Maintain standards for communications and visual presentations or products to ensure high quality and consistency with agency standards.</p><br/>
+                <p>* Oversee marketing, advertising and promotional activities</p><br/>
+                <p>* Provide counsel on direct mail and online fundraising communications and strategy. Direct the timely writing, editing and publishing of the organization’s collateral materials including brochures, fact sheets, fliers, handbooks, newsletters, and annual report. Manage relationships with graphic design firms, copyeditors, translators, and other contractors as necessary.</p><br/>
+                <p>Platform Management</p><br/>
+                <p>* Develop and oversee the organization's information exchange and knowledge management projects, including MSMGF.org, the MSMGF Eblast, the MSMGF Blog, and direct communications to MSMGF members and partners.</p><br/>
+                <p>* Ensure that the website is up-to-date and that the MSMGF’s social media efforts (including Facebook and Twitter) are implemented effectively.</p><br/>
+                <p>Budget</p><br/>
+                <p>* Develop and manage the communications budget in accordance with the MSMGF’s policies, and provide support to identify new funding sources and conduct active funder outreach and grant-writing.</p><br/>
+                <p>* Staff Supervision &amp; Team Support</p><br/>
+                <p>* Build and supervise a small team of interns, volunteers and (future) staff.</p><br/>
+                <p>* Support relevant staff on the development of reports, online surveys, scholarly journal articles, technical bulletins, web seminars and policy documents.</p><br/>
+                <p>* Prepare press announcements, action alerts, talking points, power point slide presentations, and op-ed pieces for the Executive Director and management staff.</p>
+                <p>External</p><br/>
+                <p>* Media Relations</p><br/>
+                <p>* Oversee media activities for all agency activities, track and report coverage and coordinate media events as appropriate.</p><br/>
+                <p>* Research and prepare news releases and other materials to support MSMGF staff.</p><br/>
+                <p>* Build and maintain relationships with key journalists in policy, health, news and features, and with counterparts at partner organizations.</p><br/>
+                <p>* Community &amp; Member Engagement</p><br/>
+                <p>* Build and support the MSMGF online membership.</p><br/>
+                <p>* Manage contact@msmgf.org, submissions@msmgf.org, and events@msmgf.org, serving as first responder to the wider community of advocates seeking to connect with the MSMGF for any reason.</p><br/>
+                <p>WHAT YOU’LL NEED (REQUIREMENTS)</p><br/>
+                <p>Proven experience writing and editing copy and supervising layout and print production. Candidates must have significant experience in media engagement, marketing, and/or public relations. Must be comfortable working in a fast-paced, team-oriented environment; and must possess a high energy level and be self-motivated. Candidates must have strong media contacts and demonstrated experience working successfully with representatives of diverse media. Candidates must also have a demonstrated ability to develop effective projects and raise funds to support them.</p><br/>
+                <p>HOW TO APPLY</p><br/>
+                <p>Interested candidates should prepare:</p><br/>
+                <p>* A cover letter;</p><br/>
+                <p>* CV;</p><br/>
+                <p>* Two letters of reference; and</p><br/>
+                <p>* A recent self-authored writing sample, which could include a press release, published op-ed, policy brief or other samples that show subject matter expertise.</p><br/>
+                <p>* Application materials should be emailed to the MSMGF Executive Director, Dr. George Ayala – gayala@msmgf.org. All inquiries should be directed to Dr. Ayala by email.</p><br/>
+                <p>* Position applications will be evaluated against the eligibility and qualification requirements listed above. Successful applicants will be invited to a series of individual and group interviews involving the MSMGF Executive Director and staff.</p><br/>
+                <p>The position will remain open until filled.</p><br/> 
+            </article>
+        </section>
+    </main>
+
+{%endblock%}

@@ -251,7 +251,7 @@ class Usermembership
      * @param \Siteweb\FrontBundle\Entity\PaymentDetails $payment
      * @return Usermembership
      */
-    public function setPayment(\Siteweb\FrontBundle\Entity\PaymentDetails $payment)
+    public function setPayment(\Siteweb\FrontBundle\Entity\PaymentDetails $payment = null)
     {
         $this->payment = $payment;
 

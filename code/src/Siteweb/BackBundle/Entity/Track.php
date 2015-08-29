@@ -43,7 +43,7 @@ class Track
     private $description;
 
     /**
-//     * @ORM\OneToMany(targetEntity="Abstracts", mappedBy="track" , cascade={"all"})
+     * @ORM\OneToMany(targetEntity="Abstracts", mappedBy="track" , cascade={"all"})
      */
     private $Abstracts;
 

@@ -63,13 +63,6 @@ class Abstracts
     private $methods;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Event", inversedBy="abstracts")
-     * @ORM\JoinColumn(name="event_id", referencedColumnName="id", nullable=true)
-     */
-    private $event;
-
-
-    /**
      * @ORM\Column(type="text", nullable=true)
      */
     private $results;
@@ -80,12 +73,12 @@ class Abstracts
     private $conclusions;
 
     /**
-     * @ORM\OneToMany(targetEntity="Abstractuser", mappedBy="abstracts" , cascade={"all"})
+     * @ORM\OneToMany(targetEntity="Abstractuser", mappedBy="abstract" , cascade={"all"})
      */
     private $coauthers;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Track", inversedBy="Abstracts")
+     * @ORM\ManyToOne(targetEntity="Track", inversedBy="abstracts")
      * @ORM\JoinColumn(name="track_id", referencedColumnName="id", nullable=true)
      */
     private $track;
@@ -94,11 +87,6 @@ class Abstracts
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $speaker_agreement;
-
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $submissiondate;
 
     /**
      * @ORM\Column(type="string", length=45, nullable=true)
@@ -110,7 +98,6 @@ class Abstracts
     public function __construct()
     {
         $this->coauthers = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->setSubmissiondate(new \DateTime());
     }
 
 
@@ -479,51 +466,5 @@ class Abstracts
     public function getTrack()
     {
         return $this->track;
-    }
-
-    /**
-     * Set submissiondate
-     *
-     * @param \DateTime $submissiondate
-     * @return Abstracts
-     */
-    public function setSubmissiondate($submissiondate)
-    {
-        $this->submissiondate = $submissiondate;
-
-        return $this;
-    }
-
-    /**
-     * Get submissiondate
-     *
-     * @return \DateTime 
-     */
-    public function getSubmissiondate()
-    {
-        return $this->submissiondate;
-    }
-
-    /**
-     * Set event
-     *
-     * @param \Siteweb\BackBundle\Entity\Event $event
-     * @return Abstracts
-     */
-    public function setEvent(\Siteweb\BackBundle\Entity\Event $event = null)
-    {
-        $this->event = $event;
-    
-        return $this;
-    }
-
-    /**
-     * Get event
-     *
-     * @return \Siteweb\BackBundle\Entity\Event 
-     */
-    public function getEvent()
-    {
-        return $this->event;
     }
 }
