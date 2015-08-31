@@ -10,4 +10,9 @@ class SponsorshipsController extends Controller
     {
         return $this->render('SitewebFrontBundle:Sponsorships:sponsorships.html.twig');
     }
+
+    public function sponsorsAction()
+    {
+        return $this->render('SitewebFrontBundle:Sponsorships:sponsors.html.twig');
+    }
 }

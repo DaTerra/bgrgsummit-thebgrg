@@ -1,0 +1,25 @@
+siteweb_front_homepage:
+    pattern:  /
+    defaults: { _controller: SitewebFrontBundle:Default:index }
+
+new_summit_registration:
+    pattern:  /reg
+    defaults: { _controller: SitewebFrontBundle:Default:summitregistration }
+
+summit_abstracts:
+    pattern:  /abstracts
+    defaults: { _controller: SitewebFrontBundle:Abstract:abstract }
+
+summit_abstract_submission:
+    pattern:  /track/{id}/abstract/submission
+    defaults: { _controller: SitewebFrontBundle:Abstract:abstractregister }
+
+
+summit_paypal_payment:
+    pattern:  /payment
+    defaults: { _controller: SitewebFrontBundle:Payment:preparePaypalExpressCheckoutPayment }
+
+
+summit_paypal_payment_done:
+    pattern:  /payment/done
+    defaults: { _controller: SitewebFrontBundle:Payment:captureDone }

@@ -1,0 +1,192 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+
+          <div class="page-top">  
+            <h1 class="page-title btn-yellow-124">Agenda<i class="fa fa-chevron-circle-right"></i>
+</h1>          
+            <p></p>
+          </div>
+          <div class="col12of12 agenda">
+            
+            <section>
+              <time>8:00 – 9:00 AM</time>
+              <div class="subsession">
+                <p class="maintitle">Registration/Check-In/Continental Breakfast<i class="fa fa-chevron-circle-right"></i></p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section> 
+
+            <section>
+              <time>9:00 – 9:15 AM</time>
+              <div class="subsession">
+                <p class="maintitle">Welcome – Dr. Leo Wilton, Dr. LaRon Nelson, and Mr. Craig Hutchinson</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>9:15 – 10:30 AM</time>
+              <div class="subsession">
+                <p class="maintitle">Advances in HIV Prevention Research (Panel I)</p>
+                <p>
+                  <a class="speaker">Mark Paige, New York Blood Center</a><br/>
+                  <a class="speaker">DaShawn Usher, New York Blood Center</a><br/>
+                  <a class="speaker">Josephine Pui-Hing Wong, Ryerson University</a><br/>
+                  <a class="speaker">Marlon Bailey, Indiana University Bloomington</a><br/>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+              <div class="subsession">
+                <p class="maintitle">Hope, Health and Healing in the Lives of Black Same Gender Loving Men: Historical Perspectives</p>
+                <p>
+                  <a class="speaker">Ron Simmons, Us Helping Us</a><br/>
+                  <a class="speaker">Cleo Manago, AmASSI Health and Cultural Centers</a><br/>
+                  <a class="speaker">Christopher Bates, Florida Department of Health Broward County</a><br/>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>10:30 – 11:45 AM</time>
+              <div class="subsession">
+                <p class="maintitle">Education &amp; Agency</p>
+                <p>
+                  <a class="speaker">Lance McCready, University of Toronto</a><br/>
+                  <a class="speaker">Ed Brockenbough, University of Rochester</a><br/>
+                  <a class="speaker">Tomas Boatwright, University of Rochester</a><br/>
+                  <a class="speaker">Darrell Hucks, Keene State College</a><br/>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+              <div class="subsession">
+                <p class="maintitle">International Contexts, African Diasporic Inquiry, and Human Rights</p>
+                <p>
+                  <a class="speaker">Cilas Kemedjio, U. of Rochester, Frederick Douglas Inst. of African &amp; African American Studies</a><br/>
+                  <a class="speaker">Orlando Harris, University of Rochester</a><br/>
+                  <a class="speaker">Ron Simmons, Us Helping Us</a><br/>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>12:00 – 1:00 PM</time>
+              <div class="subsession">
+                <p class="maintitle">Lunch Plenary</p>
+                <p>
+                  <a class="speaker">Dr. Gail Wyatt, University of California, Los Angeles<br/>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>1:00 – 2:15 PM</time>
+              <div class="subsession">
+                <p class="maintitle">Black MSM Research Strategy</p>
+                <p>
+                  <a class="speaker">Craig Hutchinson, Black Gay Research Group</a><br/>
+                  <a class="speaker">Gregorio Millett, amfAR</a><br/>
+                  <a class="speaker">DaShawn Usher, National Black Gay Men’s Advocacy Coalition</a><br/>
+                  <a class="speaker">Christopher Chauncey Watson, HIV Prevention Trials Network Black Caucus</a><br/>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>2:15 – 3:30 PM</time>
+              <div class="subsession">
+                <p class="maintitle">Keynote Speaker</p>
+                <p>
+                  <a class="speaker">Mr. Francis Boakye, Priorities on Rights &amp; Sexual Health (PORSH), Ghana, West Africa</a><br/>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>3:30 – 3:45 PM</time>
+              <div class="subsession">
+                <p class="maintitle">Break</p>
+                <p></p>
+              </div>
+              <div class="clearfix"></div>              
+            </section>
+
+            <section>
+              <time>3:45 – 5:00PM</time>
+              <div class="subsession">
+                <p class="maintitle">New Writings by Black Gay Men</p>
+                <p>
+                  <a class="speaker">Marlon Bailey, Butch Queens Up in Pumps: Gender, Performance, &amp; Ballroom Culture in Detroit</a><br/>
+                  <a class="speaker">Darrell Hucks - New Visions of Collective Achievement: The Cross-Generational Schooling Experiences of African American Males</a><br/>
+                  <a class="speaker">Dominique Jackson and Richie Giordano, The Transsexual From Tobago</a><br/>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+              <div class="subsession">
+                <p class="maintitle">Religion &amp; Spirituality</p>
+                <p> <a class="speaker">Verdell A. Wright, Howard University, Howard University</a><br/>
+                  <a class="speaker">Ja’Nina J. Walker, University of San Francisco</a><br/>
+                  <a class="speaker">Latrice Pichon, University of Memphis</a><br/>
+                  <a class="speaker">Christopher Jones, SAGE Harlem</a><br/>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>5:00 – 6:00 PM</time>
+              <div class="subsession">
+                <p class="maintitle">House/Ball Community – Partnership, Research and Capacity Building</p>
+                <p>
+                  <a class="speaker">Ayana Elliott, The Elliott Group, LLC, University of the District of Columbia</a><br/>
+                  <a class="speaker">Frank Leon Roberts, New York University</a><br/>
+                  <a class="speaker">Stephaun Wallace, Office of HIV/AIDS Network Coordination, Fred Hutchinson Cancer Research Center</a><br/>
+                  <a class="speaker">Kirk Myers, Abounding Prosperity, Inc</a><br/>
+                  <a class="speaker">Seven King</a><br/>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+              <div class="subsession">
+                <p class="maintitle">Advances in HIV Prevention Research (Panel II)</p>
+                <p>
+                  <a class="speaker">Typhannye Penniman Dyer, University of Maryland</a><br/>
+                  <a class="speaker">Gregory Edwards, Flowers Heritage Foundation</a><br/>
+                  <a class="speaker">Mitchell Wharton, University of Rochesterv</a><br/>
+                  <a class="speaker">Leo Wilton, Binghamton University</a><br/>
+                </p>
+              </div>
+              <div class="clearfix"></div>
+            </section>
+
+            <section>
+              <time>7:00PM</time>
+              <div class="subsession">
+                <p class="maintitle">Reception and Award Ceremony</p>
+                <ul>
+                  <li>
+                    <a class="speaker">Emerging Scholar and Leadership Award</a><br/>
+                    <a class="speaker">Ja’Nina J. Walker, PhD, University of San Francisco</a><br/>
+                  </li>
+                  <li>
+                    <a class="speaker">Founders’ Spirit &amp; Soul Award</a><br/>
+                    <a class="speaker">Frank Leon Roberts, Gallatin School of Individualized Study</a><br/>
+                  </li>
+                  <li>
+                    <a class="speaker">Lifetime Achievement Award</a><br/>
+                    <a class="speaker">Christopher H. Bates, Florida Department of Health in Broward County, Florida</a><br/>
+                  </li>
+                </ul>
+              </div>
+              <div class="clearfix"></div>
+            </section>                    
+            <div class="clearfix"></div>            
+          </div>
+          <div class="clearfix"></div>              
+{%endblock%}

@@ -1,0 +1,136 @@
+siteweb_front_homepage:
+    pattern:  /
+    defaults: { _controller: SitewebFrontBundle:Default:index }
+
+new_summit_registration:
+    pattern:  /reg
+    defaults: { _controller: SitewebFrontBundle:Default:summitregistration }
+
+new_summit_contact:
+    pattern:  /contact
+    defaults: { _controller: "SitewebFrontBundle:Contact:contact" }
+
+
+summit_accepted_abstracts:
+    pattern: /abstracts/accepted
+    defaults: { _controller: SitewebFrontBundle:Abstract:approuvedabstracts }
+
+summit_accepted_abstract:
+    pattern: /abstract/{id}/accepted
+    defaults: { _controller: SitewebFrontBundle:Abstract:approuvedabstract }
+
+summit_abstracts:
+    pattern: /abstracts
+    defaults: { _controller: SitewebFrontBundle:Abstracts:abstracts }
+
+summit_abstract_add_emails:
+    pattern:  /abstract/{id}/add/emails
+    defaults: { _controller: SitewebFrontBundle:Abstract:abstractAddEmails }
+
+summit_abstract_speaker_agreement:
+    pattern:  /abstract/{id}/speaker/agreement
+    defaults: { _controller: SitewebFrontBundle:Abstract:speakeragreement }
+
+summit_abstract_submission:
+    pattern:  /track/{id}/abstract/submission
+    defaults: { _controller: SitewebFrontBundle:Abstract:abstractregister }
+
+summit_paypal_payment:
+    pattern:  /payment
+    defaults: { _controller: SitewebFrontBundle:Payment:preparePaypalExpressCheckoutPayment }
+
+summit_paypal_payment_done:
+    pattern:  /payment/done
+    defaults: { _controller: SitewebFrontBundle:Payment:captureDone }
+
+summit_registration_existusers:
+    pattern:  /existuser/register
+    defaults: { _controller: SitewebUserBundle:Registration:existusersregister }
+
+summit_travel:
+    pattern:  /travel
+    defaults: { _controller: SitewebFrontBundle:Travel:travel }
+
+summit_press:
+    pattern:  /press
+    defaults: { _controller: SitewebFrontBundle:Press:press }
+
+summit_organizers:
+    pattern:  /organizers
+    defaults: { _controller: SitewebFrontBundle:Organizers:organizers }
+
+summit_sponsorships:
+    pattern:  /sponsorships
+    defaults: { _controller: SitewebFrontBundle:Sponsorships:sponsorships }
+
+summit_sponsors:
+    pattern:  /sponsors
+    defaults: { _controller: SitewebFrontBundle:Sponsorships:sponsors }
+
+summit_focusgroups:
+    pattern:  /focusgroups
+    defaults: { _controller: SitewebFrontBundle:FocusGroups:focusgroups }
+
+summit_history:
+    pattern:  /history
+    defaults: { _controller: SitewebFrontBundle:History:history }
+
+summit_speakers:
+    pattern:  /speakers
+    defaults: { _controller: SitewebFrontBundle:Speakers:speakers }
+
+summit_construction:
+    pattern:  /construction
+    defaults: { _controller: SitewebFrontBundle:Construction:construction }
+
+summit_nomination:
+    pattern:  /award/{id}/nominate
+    defaults: { _controller: SitewebFrontBundle:Nomination:index }
+
+summit_awards:
+    pattern:  /awards
+    defaults: { _controller: SitewebFrontBundle:Nomination:awards }
+
+summit_propose_meeting:
+    pattern:  /user/{id}/meeting/propose
+    defaults: { _controller: SitewebFrontBundle:Meetings:propose }
+
+summit_meeting_refuse:
+    pattern:  /meeting/{id}/refuse
+    defaults: { _controller: SitewebFrontBundle:Meetings:decline }
+
+summit_meeting_approuve:
+    pattern:  /meeting/{id}/approuve
+    defaults: { _controller: SitewebFrontBundle:Meetings:approuve }
+
+#summit_scholarship:
+#    pattern:  /scholarship/registration
+#    defaults: { _controller: SitewebUserBundle:Registration:scholarshipregister }
+
+summit_scholarships:
+    pattern:  /scholarships
+    defaults: { _controller: SitewebFrontBundle:Scholarships:scholarships }
+
+summit_agenda:
+    pattern:  /agenda
+    defaults: { _controller: SitewebFrontBundle:Agenda:agenda }
+
+summit_attendees:
+    pattern:  /attendees
+    defaults: { _controller: SitewebFrontBundle:Attendees:attendees }
+
+summit_my_proposals:
+    pattern:  /proposals
+    defaults: { _controller: SitewebFrontBundle:Meetings:myproposals }
+
+summit_speaker_agreement:
+    pattern:  /accept/agreement
+    defaults: { _controller: SitewebFrontBundle:Default:speakeragreement }
+
+summit_edit_proposal:
+    pattern:  /meeting/{id}/newproposal
+    defaults: { _controller: SitewebFrontBundle:Meetings:proposeanother }
+
+summit_award_2015:
+    pattern:  /awards/2015
+    defaults: { _controller: SitewebFrontBundle:Default:award2015 }

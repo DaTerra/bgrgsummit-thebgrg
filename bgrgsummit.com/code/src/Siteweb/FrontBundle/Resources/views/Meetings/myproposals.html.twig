@@ -26,7 +26,7 @@
                             <td>{{ meeting.proposer.fname }} {{ meeting.proposer.lname }}</td>
                             <td>{{ meeting.invitee.fname }} {{ meeting.invitee.lname }}</td>
                             <td>{{ meeting.location }}</td>
-                            <td>{{ meeting.time }}</td>
+                            <td>{{ meeting.time|date }}</td>
                             <td>{{ meeting.status }}</td>
                         </tr>
                     {% endfor %}
@@ -36,7 +36,7 @@
                             <td>{{ meeting.proposer.fname }} {{ meeting.proposer.lname }}</td>
                             <td>{{ meeting.invitee.fname }} {{ meeting.invitee.lname }}</td>
                             <td>{{ meeting.location }}</td>
-                            <td>{{ meeting.time }}</td>
+                            <td>{{ meeting.time|date  }}</td>
                             <td>{{ meeting.status }}</td>
                         </tr>
                     {% endfor %}
@@ -64,9 +64,9 @@
                         <tr>
                             <td>{{ meeting.id }}</td>
                             <td>{{ meeting.proposer.fname }} {{ meeting.proposer.lname }}</td>
-                            <td>{{ meeting.invitee.fname }} {{ meeting.invitee.lname }}</td>
+                            <td>{% if meeting.invitee != null %}{{ meeting.invitee.fname }} {{ meeting.invitee.lname }}{% endif %}</td>
                             <td>{{ meeting.location }}</td>
-                            <td>{{ meeting.time }}</td>
+                            <td>{{ meeting.time|date  }}</td>
                             <td>{{ meeting.status }}</td>
                         </tr>
                              {% endfor %}
@@ -94,14 +94,14 @@
                         <tr>
                             <td>{{ meeting.id }}</td>
                             <td>{{ meeting.proposer.fname }} {{ meeting.proposer.lname }}</td>
-                            <td>{{ meeting.invitee.fname }} {{ meeting.invitee.lname }}</td>
+                            <td>{% if meeting.invitee != null %}{{ meeting.invitee.fname }} {{ meeting.invitee.lname }}{% endif %}</td>
                             <td>{{ meeting.location }}</td>
-                            <td>{{ meeting.time }}</td>
+                            <td>{{ meeting.time|date }}</td>
                             <td>{{ meeting.status }}</td>
                             <td>
-                                <a href="" >Accept</a>
+                                <a href="{{ path('summit_meeting_approuve',{'id':meeting.id}) }}" >Accept</a>
                                 <a href="{{ path('summit_meeting_refuse',{'id':meeting.id}) }}" >Deny</a>
-                                <a href="{{ path('proposeanother',{'id':meeting.id}) }}" >Propose another time</a>
+                                <a href="{{ path('summit_edit_proposal',{'id':meeting.id}) }}" >Propose another time</a>
                             </td>
                         </tr>
                     {% endfor %}

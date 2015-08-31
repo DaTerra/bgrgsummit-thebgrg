@@ -1,0 +1,434 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+
+          <div class="page-top">  
+            <h1 class="page-title btn-yellow-124">Speakers</h1>          
+            <p></p>
+          </div>
+          
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Craig" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Craig.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Craig Hutchinson</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">  
+                <!--
+                <p><strong>Presentation Title:</strong></p>
+                -->
+                <p><strong>Biography</strong></p>
+                <p>Craig Hutchinson received a B.A. with honors in African American Studies from the University of California, Berkeley. His honors thesis entitled, Comparing Stigma Management among Men who have Sex with Men in Barbados and the San Francisco Bay Area is one of the first major studies in this area. This research allowed him to understand how social context and geography influence men’s identities. Mr. Hutchinson managed a research project at University of California, San Francisco’s Center for AIDS Prevention Studies that assessed HIV risk behavior among Black men leaving prison. The specific focus of the research was to better understand the context in which sex with men and drug use takes place in prison in order to help recently released men better cope with and communicate about HIV risk with future partners. While receiving an MPH degree from the Columbia University’s Mailman School of Public Health in the Department of Sociomedical Sciences, Mr. Hutchinson worked as a research assistant on the HIV Prevention Trials Network 061 research study which was a large multi-site study of HIV and Black MSM conducted in six U.S. cities, and the first to determine the rate of new HIV infection among such a large prospective cohort of U.S. Black MSM.</p>
+
+                <p>Mr. Hutchinson was the consulting researcher with the Government of Barbados where he conducted qualitative interviews with members of the MSM community, non-governmental organizations, policy makers, and health care providers for a formative assessment prior to a Behavioral Surveillance Survey conducted by the Center for Disease Control and Prevention. He was also the consulting researcher with the University of California, Los Angeles looking at the quality of care of HIV positive service men in the military.</p>
+
+                <p>Mr. Hutchinson was a research analyst with the Public Health Research, Epidemiology, Surveillance for Hemoglobinopathies (PHRESH) Project within California Department of Public Health, Genetic Disease Screening Program where he is developing, implementing and evaluating sickle cell disease and thalassemia focused health promotion education and disease awareness raising activities throughout California.</p>
+
+                <p>Presently, Mr. Hutchinson is the Project Coordinator for the EBAN II Project within the Alameda County Public Health Department and The University of California, Los Angeles. EBAN II Project focuses on assessing implementation and effectiveness of an evidence-based HIV risk reduction intervention for HIV-serodiscordant, heterosexual African-American couples in two geographic areas (Oakland and Los Angeles, CA) that have a high prevalence of HIV and risk conditions among African Americans. EBAN II Project will test the effectiveness of the intervention as delivered in community-based organizations (CBOs) that serve African American clients.</p>
+
+                <p>Mr. Hutchinson serves on the Board of Directors of the Black Gay Research Group, the HIV Prevention Planning Committee within the Alameda County Department of Public Health, the Sickle Cell Community Advisory Council of Northern California and the HIV Prevention Trials Network (HPTN) 073 Black Caucus within the Fred Hutchinson Cancer Research Center.</p>  
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div> 
+
+          <!-- Ron Simmons, Ph.D. -->
+          <div class="col1of3 autocontent autocontent220">
+            
+            <a name="Ron" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Ron.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Ron Simmons, Ph.D. </h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">  
+                <!--
+                <p><strong>Presentation Title:</strong></p>
+                -->              
+                <p><strong>Biography</strong></p>
+                <p>Ron Simmons, Ph.D., is the President/CEO of Us Helping Us, People Into Living, Inc. (UHU), a nonprofit agency dedicated to reducing HIV infection in the African-American community.  UHU specializes in HIV prevention for black gay/same-gender-loving men.  UHU began as a self-help group for HIV-infected black gay men who would meet in their living rooms.  Under Dr. Simmons leadership, UHU has become one of the largest black AIDS organizations in the country serving gay/bisexual men, heterosexual men and women, transgender persons, and youth.  Currently, UHU offers an array of programs, including: mental health services; HIV testing; STI screenings; case management; support groups; and behavioral interventions.  UHU has 20 full-time staff and an annual budget of $2.1 million.  In 2001, UHU was the first black gay organization in the nation to purchase and renovate a building for its headquarters and service facility.</p>  
+
+                <p>For 11 years, Dr. Simmons was a member of the DC Board of Medicine.  He has a B.A. in Afro-American Studies, a M.A. in African History, and a M.S. in Educational Communications from the State University of New York at Albany.  He received his Ph.D. in Mass Communications from Howard University and served on the faculty of the Howard University School of Communications for 12 years.</p>  
+
+                <p>Dr. Simmons’ published works include: “Some Thoughts on the Challenges Facing Black Gay Intellectuals” in Brother To Brother: New Writings By Black Gay Men, “Sexuality, Television and Death: A Black Gay Dialogue On Malcolm X” in Malcolm X: In Our Own Image; “Baraka’s Dilemma: To Be Or Not To Be” in Black Men on Race, Gender and Sexuality; “The Voice” in For Colored Boys Who Have Considered Suicide When the Rainbow is Still Not Enough; and “Joe, Essex, Marlon, and Me” in Black Gay Genius: Answering Joseph Beam’s Call;.  He was a field producer, photographer and cast member of the award winning film, Tongues Untied.</p>  
+
+                <p>His honors include: the 2010 Life Time Achievement Award from the Black Gay Research Group; the 2010 Harvey Milk Alumni Award from the State University of New York at Albany; and the 2004 Heroes in the Struggle Award from the Black AIDS Institute.  He was inducted into the National AIDS Education and Services for Minorities’ Black Gay Men Hall of Fame in January 2013, and selected in December 2010 by POZ magazine as one of the POZ 100 most influential AIDS activists.</p>  
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Watson" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Watson.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Christopher Chauncey Watson</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <!--
+                <p><strong>Presentation Title</strong></p>
+                <p>aaa</p>
+                -->
+                <p><strong>Biography</strong></p>
+                <p>Christopher Chauncey Watson continues to address health disparities affecting African Americans now for nearly a decade. His clinical research areas range from cervical cancer to HIV/AIDS. Mr. Watson obtained his Bachelor of Science degree from North Carolina Agricultural and Technical State University, his research efforts continue to impact communities mostly marginalized and often underserved due to inequalities. His work with the HIV Prevention Trials Network includes domestic and international community engagement, clinical and administrative duties, building capacity and providing technical assistance to clinical research sites globally.</p>
+
+                <p>Mr. Watson currently works at The George Washington University as the Clinical Research Site Director in the School of Public Health and Health Services. Being in the epicenter of the HIV/AIDS epidemic, Mr. Watson’s work has lead him to serve as an expert consultant for a number of agencies both nationally and internationally. Prior to joining The George Washington research team, Mr. Watson assisted in the development of the d-up! Defend Yourself, an effective behavioral intervention focused on the African American MSM community of North Carolina, which now is a national intervention that is widely used to address and combat social norms within various communities throughout the United States. He also has been afforded opportunities to perform research fellowships at GlaxoSmithKline, Inc. and the UNC Lineberger Comprehensive Cancer Center.</p>
+
+                <p>Mr. Watson’s engagement efforts include multiple roles, including HPTN representative to the NIH/Division of AIDS HIV/AIDS Network Coordination Committee (HANC), representative to the HPTN Qualitative Working Group, and representative to the HPTN Global Community Working Group. He serves on the protocol team for the development of the HPTN 073 study. He also serves as the Chair Emeritus for the Young Black Gay Leadership Initiative and chair for the HPTN Black Caucus. Named a Champion of Change, Mr. Watson works tirelessly to influence both policy makers and community stakeholders about the importance of health inequalities.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Walker" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Walker.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Dr. Ja’Nina Walker</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <!--
+                <p><strong>Presentation Title</strong></p>
+                <p>aaa</p>
+                -->
+                <p><strong>Biography</strong></p>
+                <p>Dr. Ja’Nina Walker is an Assistant Professor in the department of Psychology at the University of San Francisco. She earned her B.A. from University of San Francisco and her Ph.D. from the Graduate Center of City University of New York.</p>
+                <p>Dr. Walker is a developmental psychologist whose research focuses on multiple identity development for Black lesbian, gay, bisexual, and transgender (LGBT) adolescents and emerging adults. Dr. Walker utilizes quantitative and qualitative methodologies to examine the intersections of multiple identities; specifically racial, religious and sexual identities. She is most interested in the ways in which Black LGBT young adults navigate and negotiate social marginalization in their multiple communities through negative religious rhetoric, racism, homophobia, transphobia, and heterosexism. Dr. Walker's work has emphasized the role of identity in the development of culturally competent HIV prevention interventions and community resources. </p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Wong" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Wong.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Dr. Josephine Pui-Hing Wong</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <!--
+                <p><strong>Presentation Title</strong></p>
+                <p>aaa</p>
+                -->
+                <p><strong>Biography</strong></p>
+                <p>Dr. Josephine Pui-Hing Wong is Associate Professor of the Daphne Cockwell School of Nursing at Ryerson University.  She has extensive experience in critical public health and health promotion. She collaborates with marginalized communities to develop, implement and evaluate community capacity building programs.  Her research focuses on addressing HIV and mental health challenges in diaspora communities through stigma reduction and resilience promotion. Her research is underpinned by the principle of doing research “with” and “not for” the affected communities.  Her research program focuses on HIV vulnerabilities and resilience among immigrants and refugees living with HIV; African, Caribbean and Black men; Asian MSM, and racialized youth. Her work is supported by the Ontario HIV Treatment Network and Canadian Institute of Health Research.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Dominique" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Dominique.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Dominique Jackson</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <!--
+                <p><strong>Presentation Title</strong></p>
+                <p>aaa</p>
+                -->
+                <p><strong>Biography</strong></p>
+                <p>A West Indian born entertainer/model/host, hailing from the beautiful republic of Trinidad and Tobago, born on the smaller island of Tobago. She moved to the USA at the age of fifteen to escape traumatic situations. She graduated Owings Mills High School in Owings Mills, Md. and attended Fayetteville State University, Fayetteville, N.C. and then Morgan State University, Baltimore, Md.</p>
+
+                <p>In New York City she became a part of the underground ballroom scene where she sharpened and honed her ability to walk the catwalk. Feeling accomplished in the ballroom scene she went on to become one of New York City’s legendary entertainers hosting club nights, pride festivals, non-profit organizational events and fundraisers that were to assist in the betterment of her community. She performed at many of the popular New York City night clubs and bars at times performing as Whitney Houston or performing high energy songs called soca and calypso, the music native to her island republic.</p>
+
+                <p>She participated in pageants winning a total of six titles including being crowned Miss Escuelita Continental, a title she would never have to relinquish. She entered the prestigious Miss Continental pageant twice in 2002 and 2005 winning best interview in 2002.</p>
+
+                <p>She was awarded the Jon Michael Harrington Humanitarian Award in 2003 and The Pepper Labeija Image Award in 2007, both awards given by the House of Latex Project through G.M.H.C at the House of Latex Balls. Our Youth 2007, community Activist of the year. The Leadership in Arts and Entertainment Award presented by People of Color In Crisis and, many others through the years.</p>
+
+                <p>She participated in The Dl Stats project in 2005 taking testing into the underground ballroom scene at the then known uptown mini ball club scene and into nightclub events giving incentives for testing, so as to reach and aid a population highly at risk for HIV/AIDS infection. She worked as the Trans/Youth Coordinator at the then known Bronx Consortium where she and a team of dedicated individuals restarted the Bronx Pride festival in 2006.</p>
+
+                <p>She got involved with different agencies assisting them in reaching the lgbtq community with main concentration on youth, infected youth and all trans- identified folk with empowerment, alternate choices for employment, medical and mental health.</p>
+
+                <p>She published her autobiographical memoir in March of 2014 and is currently a fashion and art model. One of the muses and resident models for Adrian Alicea Couture, Manuel Pelferez Couture and Angel Ayala Couture.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Darrel" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Darrell.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Darrell Cleveland Hucks</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <!--
+                <p><strong>Presentation Title</strong></p>
+                <p>aaa</p>
+                -->
+                <p><strong>Biography</strong></p>
+                <p>Darrell Cleveland Hucks is an Assistant Professor of Elementary Education at Keene State College. He received his Ph.D. in Teaching & Learning from New York University. His research interests include the schooling experiences of Black and Latino males, collective achievement, teacher education, culturally responsive pedagogy, college student retention and development, and literacy enrichment and technology integration. He is also the author of “New Visions of Collective Achievement:  The Cross-Generational Schooling Experiences of African American Males.” He is also one of the editors of “Literacy Enrichment and Technology Integration in Pre-Service Teacher Education.”</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Wallace" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Wallace.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Stephaun E. Wallace, MS</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <!--
+                <p><strong>Presentation Title</strong></p>
+                <p>aaa</p>
+                -->
+                <p><strong>Biography</strong></p>
+                <p>Stephaun E. Wallace, MS, is a social/behavioral researcher, organizational development expert, and seasoned nonprofit leader with over 15 years experience in the field of public health and over 20 years experience in community mobilization and advocacy work. Professionally, he is a nationally recognized leader for solutions-based advocacy for, and on behalf of, communities of color and the lesbian, gay, bisexual, and transgender community, and formerly served as the Deputy Director of the MOCHA Center, Inc. Currently, Mr. Wallace serves as a Project Manager with the Legacy Project, out of the Office of HIV/AIDS Network Coordination with the Fred Hutchinson Cancer Research Center where he manages and directs several behavioral research initiatives focused on biomedical HIV prevention clinical research.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Edward" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Edward.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Typhanye P. Dyer, PhD, MPH</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <!--
+                <p><strong>Presentation Title</strong></p>
+                <p>aaa</p>
+                -->
+                <p><strong>Biography</strong></p>
+                <p>Ed Brockenbrough is an Assistant Professor of Teaching and Curriculum at
+                the University of Rochester¹s Warner School of Education. His research
+                focuses on negotiations of identity, pedagogy, and power in urban
+                educational spaces, with particular attention to black, masculinity, and
+                queer issues in education. Ed¹s most recent study was an ethnography of an
+                HIV/AIDS prevention center that operated as an alternative, culturally
+                responsive pedagogical space for queer youth of color. Findings from this
+                study and other works have appeared in several journals and edited
+                anthologies, and he is the author of the forthcoming book, Black Men
+                Teaching in Urban Schools: Reassessing Masculinity (Routledge, 2016). In
+                addition to his scholarly pursuits, Ed directs the Urban Teaching and
+                Leadership Program, a Warner School initiative that prepares urban
+                teachers with a commitment to social justice, and he provides professional
+                development for K-12 educators on LGBT issues in schools.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Millett" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Millett.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Gregorio Millett, M.P.H.</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <!--
+                <p><strong>Presentation Title</strong></p>
+                <p>aaa</p>
+                -->
+                <p><strong>Biography</strong></p>
+                <p>Gregorio Millett is a former CDC Senior Behavioral Scientist in the Division of HIV/AIDS Prevention (DHAP) who served in the White House Office of National AIDS Policy between 2009 and 2013 where he co-wrote the President Obama’s National HIV/AIDS Strategy and worked on its implementation across the federal government and nationally.  Mr. Millett has co-authored publications with Dr. Anthony Fauci, former Surgeon General (Regina Benjamin) and former Assistant Secretary of Health Dr. Howard Koh.  His research expertise is racial/ethnic HIV disparities as well as HIV infection and circumcision among gay men and he has published across top-tier peer-reviewed medical, psychological, policy and public health journals, including The Lancet, Lancet HIV, JAMA, AIDS, JAIDS, American Psychologist, Health Affairs, and others.  Currently, Mr Millett is a Vice President and Director of Public Policy at amfAR, the Foundation for AIDS Research.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <!--Leo Wilton -->
+          <div class="col1of3 autocontent autocontent220">
+            
+            <a name="Wilton" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Wilton.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Leo Wilton, Ph.D.</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">  
+                <p><strong>Presentation Title:</strong></p>
+                <p> “The Transformation of Silence into Language and Action”:  Thinking About Interdisciplinary Theoretical Frameworks in Black Same Gender Practicing Men’s Communities in the Age of AIDS.</p>
+                <p><strong>Biography</strong></p>
+                <p>Leo Wilton, Ph.D., is an Associate Professor in the Department of Human Development in the College of Community and Public Affairs at the State University of New York at Binghamton. His primary research interests include health disparities (primary and secondary HIV prevention); community based research and evaluation; and Black psychological development and mental health. Dr. Wilton’s scholarly research on the AIDS epidemic focuses on the intersectionality of race, gender, and sexuality, as situated in macro- and –micro-level inequalities in Black communities, both nationally and internationally. The overall objective of Dr. Wilton’s scholarly research program has been to focus on the impact of socio-cultural factors that influence sexual/drug-risk and protective behavior and mental health that provide the basis for the development of culturally grounded HIV prevention interventions in Black communities.</p>  
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220"> 
+            <a name="gail" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/gail.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Gail Wyatt, PhD</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <p><strong>Presentation Title:</strong></p>
+                <p> Keynote Address from Preeminent Scholar in Sex Research My Brother and Sister’s Keeper: the Roles of Women and Gay Black Men in each other’s Lives</p>
+                <p><strong>Biography</strong></p>
+                <p>Professor in the UCLA Department of Psychiatry and Biobehavioral Sciences University of California Los Angeles</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="francis" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/francis.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Francis Boakye</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">                
+                <p><strong>Presentation Title:</strong></p>
+                <p>Inaugural David Kato Kisule International Keynote Address Homosexuality in Ghana: Myths, Misconceptions, Mysteries and Miseries.</p>
+                <p><strong>Biography</strong></p>
+                <p>Executive Director, Priorities on Rights & Sexual Health (Ghana) LGBT Human Rights Advocate<p> 
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>          
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Latrice" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Latrice.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Latrice C. Pichon, PhD, MPH</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <p><strong>Biography</strong></p>
+                <p>Latrice C. Pichon, PhD, MPH, is an Assistant Professor in the Division of Social and Behavioral Sciences, School of Public Health. She completed her PhD in Public Health with a concentration in Health Behavior from the Joint Doctoral Program in Public Health at San Diego State University and the University of California, San Diego in August of 2008. She received post-doctoral training in community-based participatory research (CBPR) in the Kellogg Health Scholars Program at the University of Michigan School of Public Health. Her research focuses on exploring the role of the faith-based community in addressing HIV awareness and prevention, partnering with community-based organizations to understand HIV outreach, care, and utilization needs among vulnerable populations, and using the application of community-based participatory research (CBPR) approaches</p> 
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>          
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Marlon" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Marlon.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Dr. Marlon Bailey</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <p><strong>Biography</strong></p>
+                <p>Marlon M. Bailey is an Associate Professor of Gender Studies and American Studies at Indiana University-Bloomington. He is also a Visiting Professor at the Center for AIDS Prevention Studies, in the Department of Medicine, at the University of California, San Francisco.</p>
+                <p>Marlon’s book, Butch Queens Up in Pumps: Gender, Performance, and Ballroom Culture in Detroit, a performance ethnography of Ballroom culture, was published by the University of Michigan Press in 2013. Butch Queens Up in Pumps was awarded the Alan Bray Memorial Book Prize by the GL/Q Caucus of the Modern Language Association (MLA), and it was a finalist for the Lambda Literary Book Award in LGBT studies in 2014. Dr. Bailey has published essays in Feminist Studies, Souls, Gender, Place, and Culture, The Journal of Gay and Lesbian Social Services, AIDS Patient Care & STDs and in several book collections. Marlon’s essay “Engendering Space: Ballroom Culture and the Spatial Practice of Possibility in Detroit” appears in the Themed Issue for which he is also the co-editor with Rashad Shabazz, entitled “Gender and Sexual Geographies of Blackness” in Gender, Place, and Culture: The Journal of Feminist Geography.</p>
+                <p>Bailey is also an accomplished performing artist, and he most recently performed a piece based on his new research entitled, “Exploring Black Queer Sex, Love, and Life in the Age of AIDS,” at the University of Texas, Austin.
+                Bailey is the recipient of the Joan Heller Bernard Fellowship from the Center for Gay and Lesbian Studies (CLAGS) in New York City. Marlon holds a PhD in African American Studies with a designated emphasis in Gender, Women, and Sexuality from the University of California-Berkeley. </p> 
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Lance" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Lance.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Lance T. McCready, Ph.D.</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <p><strong>Title</strong></p>
+                <p>Young Black MSM Living and Learning in Canadian Cities</p>
+                <p><strong>Biography</strong></p>
+                <p>Lance T. McCready, Ph.D. is Associate Professor of Urban Education in the department of Leadership, Higher and Adult Education (LHAE) at Ontario Institute for Studies in Education, University of Toronto (OISE/UT). He is an interdisciplinary scholar-activist whose research, teaching and service contribute to multiple areas of study including urban education, Black education, sexuality education, gender and sexuality studies, youth studies and African diaspora studies. His research program in African descent youth studies focuses on precarity, resilience and lifelong learning in online and offline communities. He has a strong interest in working with sexual minority, marginalized and racialized populations of men and boys.</p> 
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Frank" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Frank.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Frank Leon Robert</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <p><strong>Biography</strong></p>
+                <p>Frank Roberts is the Co-Founder (with CNBC contributor Keith Boykin) of the National Black Justice Coalition--the largest 501(c)3 civil rights organization of its kind in the United States. Currently a visiting lecturer at New York University, he has previously held teaching positions at The New School, Hunter College, The John Jay College of Criminal Justice, and the W.E.B. DuBois Scholars Institute at Princeton University, among others. A seasoned public commentator on issues related to race, sexuality, and American democracy--he has been a contributing writer to a multitude of media outlets, including The Huffington Post, Vibe Magazine, The Village Voice, The San Francisco Chronicle, The Daily Voice and Uptown Magazine.</p>
+
+                <p>A skilled political organizer with over a decade's worth of grassroots organizing experience, his recent efforts with the blacklivesmatter movement in Ferguson, Missouri has been profiled by CNN and The London Times, among others. In addition to being an early Board Member of BGRG, Frank previously held positions with both GMHC and People of Color in Crisis. In 2005, he was responsible for the naming of The Rashawn Brazell Collective---a grassroots coalition committed to bringing an end to the brutality perpetrated against black LGBTQ communities. Educated at NYU and Yale, he is the recipient of the Ford Foundation Fellowship from the National Research Academies.</p> 
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Mitchell" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Mitchell.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Mitchell J. Wharton, PhD, RN, FNP-BC</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <p><strong>Biography</strong></p>
+                <p>Mitchell J. Wharton, PhD, RN, FNP-BC, CNS has been a clinician, researcher and activist for Black MSM and HIV prevention for over a decade. Currently an Assistant Professor of Clinical Nursing at the University of Rochester, School of Nursing, his scholarly work focuses on identifying and describing asset-based modalities of HIV prevention and health maintenance for young Black MSM. He also maintains active clinical practice as a Family Nurse Practitioner in the Center for Peri-Operative Medicine at Strong Memorial Hospital.</p>
+
+                <p>In addition to conducing research among YBMSM, Dr. Wharton serves as a faculty mentor for the CreatingResponsible Intelligent Black Brothers (CRIBB) Fellowship through NAESM, Inc. in Atlanta, GA, and as member of the Board of Directors for The MOCHA Center in Rochester, NY, a 501c3 in Western New York whose mission is, “to improve the health & wellness of LGBT communities of color.”</p> 
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Cleo" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Cleo.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Cleo Manago</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <p><strong>Title</strong></p>
+                <p>Bet on Black or We will lose!</p>
+                <p><strong>Biography</strong></p>
+                <p>Cleo Manago is a behavioral health strategist, socio-political analyst, educator, community researcher and film documentarian.  Since 1988 he has founded several often emulated archetypes and national organizations, including the African, American Advocacy, Support-Services &amp; Survival Institute (or AmASSI Centers) and Black Men’s Xchange National (or BMX) - where he is CEO/Founder and President.  BMX is the nation's oldest and largest community-based movement devoted to the advocacy, affirmation, education and protection of diverse Black males. Projects are based throughout the US, in Hilbrow District, South Africa; and Brazil where Mr. Manago is working with Black Parliament officials there to reduce arbitrary assassinations of Black men and boys.  Manago has had transformative impact on the U.S. landscape, including with Minister Louis Farrakhan, the Nation of Islam, Rev. Al Sharpton, journalist Roland Martin, among other notables.  At the 2005, 10 year commemoration of the historic Million Man March, Farrakhan personally invited Cleo Manago to address an international audience on the DC mall.</p>
+ 
+                <p>Feminist, and social activist bell hooks - has affirmed and underscored Mr. Manago's thinking in her book ‘We Real Cool: Black Men and Masculinity’.   His uniquely sharp perspectives have also resulted in appearances on numerous television networks and national radio appearing on Michel Martin’s 'Tell Me More', and the 'Michael Baisden' and 'Tom Joyner Morning' Shows. He is widely published, in research journals, with articles by or about him appearing in most of the nation’s newspapers, including the Final call.  Currently Mr. Manago is a primary contributor at TV One for News One Now with Roland Martin.</p>
+                
+                <p>In 2006 he founded Black Life Matters Media Company, producing activist-educational documentaries translated into both Spanish and Portuguese, project receiving rave reviews internationally. ‘I AM A MAN: Black Manhood &amp; Sexual Diversity' has been selected by numerous Pan African Film Festivals.  Mr. Manago is developer of the critically noted Critical Thinking and Cultural Affirmation (or CTCA) behavioral excellence intervention.  His works featured in numerous Master’s Theses, and PhD dissertations, he is community faculty at Charles Drew University of Science and Medicine in Los Angeles, and a former doctoral student at the California Institute for Integral Studies in San Francisco.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="LaronNelson" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/LaronNelson.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Dr. Nelson Laron</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <p><strong>Biography</strong></p>
+                <p>Dr. Nelson is currently the inaugural Dean's Endowed Fellow in Health Disparities and Assistant Professor of Nursing at the University of Rochester. He is also Associate Director of International Research in the University of Rochester Center for AIDS Research. His research focuses on the primary prevention of HIV and other sexually transmissible infections among social marginalized groups within African and African Diaspora communities, including men who have sex with men (MSM). Dr. Nelson's current research projects are the Kumasi &amp; Accra Project to Prevent AIDS (KAPPA) in Ghana, KALI Black Men's Study in Toronto (Canada) and the HIV Prevention Trials Network 073—a multisite study examining associations between a client-centered care coordination intervention and pre-exposure prophylaxis initiation and adherence among Black MSM in 3 US cities. His work with MSM is primarily concerned with understanding social and structural factors that influence HIV infection with the goal of generating knowledge that can be used in developing interventions that address social/structural factors as part of integrated (e.g., behavioral, biomedical, social/structural) STD/HIV prevention strategies designed for local communities. His career has always been grounded in public health, starting as a registered nurse at the Monroe County Department of Public Health STD clinic, to working as a family nurse practitioner in an inner-city community health center, and on to serving as Associate Director of Public Health for Monroe County (Rochester), New York. Dr. Nelson has held academic appointments at prestigious universities around the world including the as assistant professor of nursing University of Toronto and visiting professor in the University of California San Francisco Center for AIDS Prevention Studies. He is the Chair of the Black Gay Research Group and a founding member of the Black Canadian Queer Research Network. Dr. Nelson is a Fellow and Distinguished Practitioner in the U.S. National Academies of Practice and in 2011 was named one of Canada's Rising Stars in Global Health for his HIV prevention research in Ghana.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Typhanye" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/placeholder.png')}}) no-repeat;"></a>
+            <h3 class="titley">Typhanye P. Dyer, PhD, MPH</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <p><strong>Presentation Title</strong></p>
+                <p>Understanding Psychosocial, Behavioral and Substance Use Correlates of STI and HIV Risk among Men who have Sex with Men (MSM) and Men who have Sex with Men and Women (MSMW).</p>
+                <p><strong>Biography</strong></p>
+                <p>Dr. Typhanye P. Dyer is an assistant professor in the Department of Epidemiology and Biostatistics, School of Public Health, University of Maryland College Park. She received her doctorate in Community Health Sciences from The University of California Los Angeles and completed a post-doctoral fellowship in drug dependence and infectious disease epidemiology at Johns Hopkins. Her research explores social, cultural and structural determinants of infectious disease disparities. Specifically, her research explores HIV/AIDS disparities, sexuality, mental health, and substance use with an emphasis in racial/ethnic and gender disparities among marginalized populations, as well as their families. Her focus in HIV/AIDS primarily examines syndemics and STI and HIV risk and infection among Black men who have sex with men and women (BMSMW), and how sex and drug risk networks of MSMW translates into risk for their male and female partners. Her work also explores intersections of racial identity, sexual identity and gender identity and expression among, addiction, stress and HIV-related clinical outcomes among Black gay/bisexual men. Collaborative research explores HIV-related stigma, engagement and retention in care and medication adherence among older Black women living with HIV in Prince George's County, Maryland. Additionally, areas of research involves the examination of risk for females with high risk male sex partners and partners who have been incarcerated, exploring social vulnerability including stigma and discrimination that drive risk. Population based research takes an interdisciplinary approach involving social epidemiology and community based research to reduce health disparities. Dr. Dyer has been an HIV/AIDS Translational Training Program Fellow (R25 MH-080644: PI: Wyatt), an HIV Prevention Trials Network (U01 068619: PI: Vermund), as well as the DC Center for AIDS Research and The National Black Women’s HIV/AIDS Network. Her research has also been supported by The National Institute on Minority Health and Health Disparities. Dr. Dyer’s syndemics work is currently funded by the Nationan Institute on Drug Abuse (R03 DA- 037131: PI: Penniman-Dyer). Dr. Dyer is committed to disparities research among Black men and women. </p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="Ayana" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Avana.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Ayana Elliott, DNP, APRN, FNP-C</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <p><strong>Biography</strong></p>
+                <p>Ayana Elliott is a Doctor of Nursing Practice and a certified Family Nurse Practitioner with clinical expertise in family medicine, medical oncology, HIV and transgender health. In collaboration with institutions across the nation, Dr. Elliott's research focuses on health promotion, prevention, and primary care for adolescent MSM and transgender persons of color in studies that will identify novel strategies in the prevention of HIV/AIDS, determine structural barriers to testing, prevention and treatment of HIV, and methodologies to enhance the quality of care to HIV+ transgender women of color. As an entrepreneur and a self-made brand, she serves as the principal and lead health consultant for The Elliott Group, LLC. Dr. Elliott is currently the Director of Health Services at the University of the District of Columbia in Washington, DC.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Cilas.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Dr. Cilas Kemedijo</h3>
+              <div class="yellowBox">
+              <div class="col12of12 content">
+                <p><strong>Biography</strong></p>
+                <p>Cilas Kemedjio is Associate Professor of Francophone and French Studies and Director of the Frederick Douglass Institute for African and African-American Studies at the University of Rochester.</p>
+                <p>Research interests include the articulation of the shared destinies and misunderstandings that circulate in the realm of transnational black studies, critical investigations of unequal encounters that are made possible by humanitarian interventions, and the genealogy of subjugation and resistance that is exhibited in the representations of the black body. Recents publications include “The Suspect Nation: Globalization and the Postcolonial Imaginary” Yale French Studies, 120 (2011), 111-126 and a monograph on Cameroonian writer and activist Mongo Beti - Le combattant fatigué. Une biographie intellectuelle. Berlin, Münster, London: LIT Verlag, 2013. Kemedjio is working on a collective volume on Critical Investigations Into Humanitarian Interventions in Africa (with Cecelia Lynch, University of California, Irvine). The presentation is part of his current research on “The Humanitarian Misunderstanding: Remembering Globalization.”</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a name="DaShaw" class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/DaShawn.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">DaShawn Usher</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">
+                <p><strong>Biography</strong></p>
+                <p>Community Education and Recruitment Manager at Project ACHIEVE
+                DaShawn Usher is an HIV prevention advocate and health communicator, who has worked in the field of public health for the past eight years. He has extensive experience in HIV prevention services, recruitment, program coordination, community mobilization, and social media. As the Community Education and Recruitment Manager at the New York Blood Center – Project ACHIEVE, DaShawn continues to engage underserved and underrepresented communities into research trials through effective community education and targeted recruitment. DaShawn is the current Vice Chair of the Young Black Gay Leadership Initiative (YBGLI), Director of Community Outreach for Impulse Group NYC, and the Health Editor for DBQ Magazine. In addition to these roles, DaShawn is a Planning Committee Member for the U.S. Department of Health and Human Services (HHS) Saving The Lives of the Men We Care About Workgroup. He continues to advocate nationally for biomedical education and access as a proud member of AVAC’s PxROAR Program. In 2014, DaShawn was named as one of the 100 Black LGBTQ/SGL Emerging Leaders to Watch by The National Black Justice Coalition (NBJC). DaShawn received his Bachelor of Science in Mass Communication with a concentration in Public Relations with a double minor in Global Studies and Writing from Middle Tennessee State University.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="col1of3 autocontent autocontent220">
+            <a class="center circular mb-15" style="background: url({{asset('bundles/sitewebfront/img/Christopher.jpg')}}) no-repeat;"></a>
+            <h3 class="titley">Christopher J.</h3>
+            <div class="yellowBox">
+              <div class="col12of12 content">  
+                <p>Black MSM, HIV, and the Primordial: A Case for Burning Condoms</p>
+                <p><strong>Biography</strong></p>
+                <p>Christopher Jones is Baptist minister, chaplain, writer, artist, burgeoning activist, and former journalist who has written about race, pop-culture, religion/faith and HIV/AIDS for noted publications. As a chaplain, he is the founder of Griot Works Pastoral Services, which offers spiritual direction and chaplaincy to marginalized communities (persons of color within LGBTQ community and/or affected by HIV/AIDS); and he is affiliated with the College of Pastoral Supervision and Psychotherapy. He is originally from Tennessee and holds a Master of Divinity degree from The Interdenominational Theological Center (Atlanta) and a Master of Arts degree in Psychiatry and Religion from Union Theological Seminary (NYC).  He currently is a Site Manager for Services and Advocacy for GLBT Elders (SAGE) based in NYC and oversees their Harlem Center, which primarily services communities of color in Harlem, East Harlem and the Bronx. In his leisure, he enjoys theater, music, jogging, and traveling.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+
+          <div class="clearfix"></div>
+          
+          
+
+
+{%endblock%}
+
+
+

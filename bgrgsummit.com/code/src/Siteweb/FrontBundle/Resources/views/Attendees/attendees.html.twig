@@ -1,24 +1,23 @@
 {% extends 'SitewebFrontBundle::layout.html.twig' %}
 
 {% block content %}
-
-          <div class="page-top">  
+          <div class="page-top">
             <h1 class="page-title btn-yellow-124">Attendees</h1>          
             <p></p>
           </div>
-
     {% for user in users %}
           <div class="col1of3 autocontent autocontent220">
-            
+              {% set verif = 0 %}
             <a class="center circular mb-15" style="background: url( {% if user.photo != null %}
-                {% if file_exists('/upload/userphotos/'~user.id~'/'~user.photo) %}
-                    {{asset('/upload/userphotos/'~user.id~'/'~user.photo)}}
-                        {% else %}
-                    {{ 'http://www.thebgrg.org/code/web/upload/userphotos/'~user.id~'/'~user.photo }}
-                {% endif %}
-
+                    {% if file_exists(web_path~'/upload/userphotos/'~user.id~'/'~user.photo) %}
+                        {{asset('/upload/userphotos/'~user.id~'/'~user.photo)}}
+                        {% set verif = 1 %}
+                    {% else %}
+                        {{ 'http://www.thebgrg.org/code/web/upload/userphotos/'~user.id~'/'~user.photo }}
+                            {% set verif = 1 %}
+                    {% endif %}
             {% else %}
-                {{asset('bundles/sitewebfront/img/placeholder.png')}}
+                {{ 'http://bgrgsummit.com/code/web/bundles/sitewebfront/img/placeholder.png'}}
             {% endif %}) no-repeat;"></a>
 
             <h3 class="titley">{{ user.fname }} {{ user.lname }} - {{ user.degree1 }}, {{ user.degree2 }}, {{ user.degree3 }}</h3>
@@ -38,12 +37,12 @@
                 <h5>Why I am attending the 2015 SUMMIT</h5>
                 <p>{{ user.demographic.summitreason }}</p>
               </div>
-                <a href="{{ path('summit_propose_meeting',{'id':user.id}) }}" class="btn-red-146" style="color: white; padding: 6px; margin: 0 30%;" >Propose meeting</a>
+                <!-- <a href="{{ path('summit_propose_meeting',{'id':user.id}) }}" class="btn-red-146" style="color: white; padding: 6px; margin: 0 30%;" >Propose meeting</a> -->
               <div class="clearfix"></div>
             </div>
           </div>
 
-{% endfor %}
+    {% endfor %}
           <div class="clearfix"></div>
           
           

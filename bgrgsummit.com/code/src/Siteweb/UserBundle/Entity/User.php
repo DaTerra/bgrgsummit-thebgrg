@@ -190,6 +190,11 @@ class User extends BaseUser
     private $cv;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description;
+
+    /**
      * @ORM\Column(type="string", length=45, nullable=true)
      */
     private $document;
@@ -1170,5 +1175,28 @@ class User extends BaseUser
     public function removeDocument()
     {
         unlink($this->getFullDocumentPath());
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return User
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

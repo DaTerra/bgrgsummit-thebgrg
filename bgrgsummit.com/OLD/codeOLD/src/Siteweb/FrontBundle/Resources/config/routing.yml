@@ -1,0 +1,7 @@
+siteweb_front_homepage:
+    pattern:  /
+    defaults: { _controller: SitewebFrontBundle:Default:index }
+
+new_summit_registration:
+    pattern:  /registration
+    defaults: { _controller: SitewebFrontBundle:Default:summitregistration }

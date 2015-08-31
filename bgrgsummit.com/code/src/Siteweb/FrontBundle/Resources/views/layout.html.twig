@@ -59,31 +59,32 @@ window._fbq.push(['track', '6017388437611', {'value':'0.01','currency':'USD'}]);
     <div class="main-header">
         <div class="logo-wrapper">
             <a class="main-logo" href="/"><h1>UCLA h3 / BGRG Summit 2015</h1></a>
-            <a class ="register-btn btn-red-124" style="margin-left:20px;margin-top:40px;" href="/register">Register</a>
+            <!-- <a class ="register-btn btn-red-124" style="margin-left:20px;margin-top:40px;" href="/register">Register</a> -->
         </div>
         
         <div class="top-menu">
             <div class="menu-column1">
                 <a class="btn-red-115" href="/agenda">Agenda</a>
                 <a class="btn-red-115" href="/speakers">Speakers</a>
-                <a class="btn-red-115" href="/sponsorships">Sponsors</a>
+                <a class="btn-red-115" href="{{ path('summit_sponsors') }}">Sponsors</a>
+                <a class="btn-red-115" href="/moderators">Moderators</a>               
+                <a class="btn-red-115" href="{{ path('summit_attendees') }}">Attendees</a>
                 <a class="btn-red-115" href="/organizers">Organizers</a>
-                <a class="btn-red-115" href="/attendees">Attendees</a>
-                <a class="btn-red-115" href="/construction">Meetings</a>
+
             </div>
             <div class="menu-column2">
-                <a class="btn-green-115" href="/awards">Awards</a>
+                <a class="btn-green-115" href="{{ path('summit_award_2015') }}">Awards</a>
                 <a class="btn-green-135" href="/scholarships">Scholarships</a>
                 <a class="btn-green-115" href="/construction">Research</a>
-                <a class="btn-green-115" style="margin-left:20px;" href="/abstracts">Abstracts</a>
+                <a class="btn-green-115" style="margin-left:20px;" href="{{ path('summit_accepted_abstracts') }}">Abstracts</a>
                 <a class="btn-green-135" href="/focusgroups">Focus Groups</a>
-                <a class="btn-green-115" href="/history">History</a>
+                <a class="btn-green-115" href="/gallery">Gallery</a>
             </div>
             <div class="menu-column3">
                 <a class="btn-black-115" href="/travel">Travel</a>
                 <a class="btn-black-115" href="/press">Press</a>
                 <a class="btn-black-115" href="/construction">Evaluation</a>
-                <a class="btn-black-115" href="/construction">Contact</a>
+                <a class="btn-black-115" href="{{ path('new_summit_contact') }}">Contact</a>
                 
                 {% if app.user %}
                     <a class="btn-black-115" href="{{ path('fos_user_profile_show') }}">My Account</a>
@@ -133,18 +134,22 @@ window._fbq.push(['track', '6017388437611', {'value':'0.01','currency':'USD'}]);
         </div>
     </div>
     <div class="side-content">
-        <!--
-        <a href="#"><h3 class="side-sponsors-title btn-yellow-100">Sponsors</h3></a>
+        
+        <a href="#"><h3 class="side-sponsors-title btn-yellow-124">Sponsors</h3></a>
         <ul>
-            <a href='#"'><li><img src="{{ asset('bundles/sitewebfront/img/BGRG-logo-side-menu.png') }}"></li></a>
-            <a href='#"'><li><img src="{{ asset('bundles/sitewebfront/img/H3-logo-side-menu.png') }}"></li></a>
+            <a href='#"'><li><img src="{{ asset('bundles/sitewebfront/img/Roche.jpg') }}"></li></a>
+            <a href='#"'><li><img src="{{ asset('bundles/sitewebfront/img/CHBT_center.jpg') }}"></li></a>
+            <a href='#"'><li><img src="{{ asset('bundles/sitewebfront/img/amFarlogo_small.jpg') }}"></li></a>
+            <a href='#"'><li><img src="{{ asset('bundles/sitewebfront/img/hptn_logo_small.jpg') }}"></li></a>
+            <a href='#"'><li><img src="{{ asset('bundles/sitewebfront/img/rochester_small.jpg') }}"></li></a>
         </ul>
-        -->
+
         <a href="/organizers"><h3 class="side-organizers-title btn-yellow-124">Organizers</h3></a>
         <ul>
             <a href='http://www.thebgrg.org'><li><img src="{{ asset('bundles/sitewebfront/img/BGRG-logo-side-menu.png') }}"></li></a>
             <a href='http://chipts.ucla.edu/2013/03/21/ucla-health-hope-healing-h3-conference-presentations/'><li><img src="{{ asset('bundles/sitewebfront/img/H3-logo-side-menu.png') }}"></li></a>
         </ul>
+
     </div>
     <div class="clearfix"></div>
     <div class="footer">

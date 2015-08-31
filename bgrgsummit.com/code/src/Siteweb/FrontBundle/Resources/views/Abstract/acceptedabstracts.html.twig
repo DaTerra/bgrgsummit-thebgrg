@@ -1,0 +1,28 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+
+
+    <div class="page-top">
+        <h1 class="page-title btn-yellow-124">Abstracts</h1>
+        <p></p>
+    </div>
+
+
+        {% for abstract in abstracts %}
+            <div class="main-right" style="margin: 0 20px;margin-bottom: 20px;">
+
+            <h3 class="titley">{{ abstract.title }}</h3>
+            <div class="guidelines" id="accordion">
+                <p><span>methods:</span>
+                    {{ abstract.methods }}
+                </p>
+                <a class="accordion-toggle" style="float: right;margin-top: 10px;" href="{{ path('summit_accepted_abstract',{'id':abstract.id}) }}">Read all summary</a>
+            </div>
+    </div>
+
+        {% endfor %}
+        <div class="clearfix"></div>
+
+
+{%endblock%}

@@ -64,7 +64,7 @@ class ResettingController extends ContainerAware
         $this->container->get('fos_user.mailer')->sendResettingEmailMessage($user);
         $user->setPasswordRequestedAt(new \DateTime());
         $this->container->get('fos_user.user_manager')->updateUser($user);
-
+        $this->container->get('doctrine')->getManager()->flush();
         return new RedirectResponse($this->container->get('router')->generate('fos_user_resetting_check_email'));
     }
 

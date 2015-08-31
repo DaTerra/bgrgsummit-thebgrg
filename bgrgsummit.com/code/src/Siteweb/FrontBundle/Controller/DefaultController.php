@@ -19,6 +19,10 @@ class DefaultController extends Controller implements ContainerAwareInterface
         return $this->render('SitewebFrontBundle:Default:index.html.twig');
     }
 
+    public function award2015Action()
+    {
+        return $this->render('SitewebFrontBundle:Awards:awards_2015.html.twig');
+    }
     public function speakeragreementAction(Request $request)
     {
       if ($request->getMethod() == 'POST'){
@@ -27,14 +31,14 @@ class DefaultController extends Controller implements ContainerAwareInterface
 
          $user =  $um->findUserByEmail($this->getUser()->getEmail());
 
-          $user->setSpeakerIpaddress($request->get('ipaddress'));
-          $user->setSpeakerDatetime($request->get('speakerdatetime'));
+          $user->setSpeakerIpaddress($request->getClientIp());
+          $user->setSpeakerDatetime(new \DateTime('now'));
 
           $um->updateUser($user, false);
 
           $this->getDoctrine()->getManager()->flush();
 
-          $this->get('session')->getFlashBag()->set('notice','information updated');
+          $this->get('session')->getFlashBag()->set('notice','Agreement accepted');
 
           return $this->redirect($this->generateUrl('siteweb_front_homepage'));
 

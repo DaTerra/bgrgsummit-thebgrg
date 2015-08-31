@@ -30,6 +30,31 @@ class AbstractController extends Controller
             ));
     }
 
+
+    public function approuvedabstractsAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $abstracts = $em->getRepository('SitewebBackBundle:Abstracts')->findBy(array(
+            'status' => 'Accepted'
+        ));
+
+        return $this->render('SitewebFrontBundle:Abstract:acceptedabstracts.html.twig',array(
+            'abstracts' => $abstracts
+        ));
+    }
+
+    public function approuvedabstractAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $abstract = $em->getRepository('SitewebBackBundle:Abstracts')->findOneById($id);
+
+        return $this->render('SitewebFrontBundle:Abstract:acceptedabstract.html.twig',array(
+            'abstract' => $abstract
+        ));
+    }
+
     public function abstractregisterAction($id ,Request $request)
     {
 

@@ -1,0 +1,28 @@
+{% extends 'SitewebFrontBundle::layout.html.twig' %}
+
+{% block content %}
+
+
+    <div class="page-top">
+        <h1 class="page-title btn-yellow-124">Abstracts</h1>
+        <p></p>
+    </div>
+
+    <div class="main-right">
+        <h3 class="titley">{{ abstract.title }}</h3>
+        <div class="guidelines" id="accordion">
+            <p><span>Methods:</span>
+                {{ abstract.methods }}
+            </p>
+            <p><span>Results:</span>
+                {{ abstract.results }}
+            </p>
+            <p><span>Conclusions:</span>
+                {{ abstract.conclusions }}
+            </p>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+{% endblock %}
+

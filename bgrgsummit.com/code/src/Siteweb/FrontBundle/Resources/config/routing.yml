@@ -11,6 +11,14 @@ new_summit_contact:
     defaults: { _controller: "SitewebFrontBundle:Contact:contact" }
 
 
+summit_accepted_abstracts:
+    pattern: /abstracts/accepted
+    defaults: { _controller: SitewebFrontBundle:Abstract:approuvedabstracts }
+
+summit_accepted_abstract:
+    pattern: /abstract/{id}/accepted
+    defaults: { _controller: SitewebFrontBundle:Abstract:approuvedabstract }
+
 summit_abstracts:
     pattern: /abstracts
     defaults: { _controller: SitewebFrontBundle:Abstracts:abstracts }
@@ -55,17 +63,25 @@ summit_sponsorships:
     pattern:  /sponsorships
     defaults: { _controller: SitewebFrontBundle:Sponsorships:sponsorships }
 
+summit_sponsors:
+    pattern:  /sponsors
+    defaults: { _controller: SitewebFrontBundle:Sponsorships:sponsors }
+
 summit_focusgroups:
     pattern:  /focusgroups
     defaults: { _controller: SitewebFrontBundle:FocusGroups:focusgroups }
 
-summit_history:
-    pattern:  /history
-    defaults: { _controller: SitewebFrontBundle:History:history }
+summit_gallery:
+    pattern:  /gallery
+    defaults: { _controller: SitewebFrontBundle:Gallery:gallery }
 
 summit_speakers:
     pattern:  /speakers
     defaults: { _controller: SitewebFrontBundle:Speakers:speakers }
+
+summit_moderators:
+    pattern:  /moderators
+    defaults: { _controller: SitewebFrontBundle:Moderators:moderators }
 
 summit_construction:
     pattern:  /construction
@@ -86,6 +102,10 @@ summit_propose_meeting:
 summit_meeting_refuse:
     pattern:  /meeting/{id}/refuse
     defaults: { _controller: SitewebFrontBundle:Meetings:decline }
+
+summit_meeting_approuve:
+    pattern:  /meeting/{id}/approuve
+    defaults: { _controller: SitewebFrontBundle:Meetings:approuve }
 
 #summit_scholarship:
 #    pattern:  /scholarship/registration
@@ -113,5 +133,8 @@ summit_speaker_agreement:
 
 summit_edit_proposal:
     pattern:  /meeting/{id}/newproposal
-    defaults: { _controller: SitewebFrontBundle:Meetings:myproposals }
+    defaults: { _controller: SitewebFrontBundle:Meetings:proposeanother }
 
+summit_award_2015:
+    pattern:  /awards/2015
+    defaults: { _controller: SitewebFrontBundle:Default:award2015 }

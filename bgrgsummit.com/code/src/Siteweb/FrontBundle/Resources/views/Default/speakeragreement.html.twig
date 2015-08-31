@@ -24,23 +24,11 @@
         </div>
 
         <form action="{{ path('summit_speaker_agreement') }}" method="POST" class="fos_user_registration_register">
-
-            <label>IP Address</label>
-            <input type="text" name="ipaddress" id="ipaddress" class="input-155 input-yellow" readonly>
-            <label>Datetime</label>
-            <input type="datetime" name="datetime" class="input-155 input-yellow" required="required">
             <input type="submit" name="speakerdatetime" value="Agree" class="btn-red-146 btn-submit">
 
         </form>
 
 
     </div>
-<script>
-    $(document).ready(function () {
-        $.get('http://jsonip.com', function (res) {
-            $('#ipaddress').val(res.ip);
-        });
-    });
 
-</script>
 {%endblock%}

@@ -3,7 +3,7 @@
 {% block content %}
     <style>
         .radio-inline {
-           xmargin: 0 0;
+           margin: 0 0;
         }
 
     </style>
@@ -29,28 +29,12 @@
             <p>To receive the discount you must register through the NAESM website http://www.naesm.org using your H<sup>3</sup>/BGRG Summit confirmation code.</p>
         </div>
         <h2 class="titlen">Registration Form</h2>
+        {{ form_errors(form) }}
         <a class="form-top-link" href="{{ path('fos_user_security_login') }}">Login with your <span>TheBGRG.org</span> account!</a>
         <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register" >
 
-            {% if form_errors(form) %}
-            <div class="auto-alerts">
-                <div class="error">
-                    <p>{{ form_errors(form) }}</p>
-                </div>
-            </div>
-            {% endif %}
         <h3 class="titley">SECTION 1: APPLICANT INFORMATION (THIS INFORMATION WILL REMAIN CONFIDENTIAL)</h3>
         <p><span class="field-required required-helper">*Required fields</span>
-
-    {% for type, messages in app.session.flashBag.all %}
-        {% for message in messages %}
-                <div class="auto-alerts">
-                    <div class="error">
-                        <p>{{ message|trans({}, 'FOSUserBundle') }}</p>
-                    </div>
-                </div>
-        {% endfor %}
-    {% endfor %}
 
 
     <div class="section-1">
@@ -172,6 +156,10 @@
             {{ form_widget(form.email,{'attr':{'class':'input-155 input-yellow'} }) }}
         </div>
         <div class="form-group-260">
+            <label for="inputConfirm" class="label-92">Password<span class="field-required">*</span></label>
+            {{ form_widget(form.plainPassword,{'attr':{'class':'input-155 input-yellow'} }) }}
+        </div>
+        <div class="form-group-260">
             <p class="label-bold label-inline" style="width: 165px; float: left">Make profile public<sup><span class="labelhelper" onclick="alert('If yes, your profile will be public and visible for all website visitors');">?</span></sup></p>
             {% for publicprofile in form.publicprofile %}
                 <span class="radio-inline publicprofile">
@@ -236,11 +224,8 @@
         <div class="form-group">
             <p class="label-bold">HIV Status?<span class="field-required">*</span></p>
             {% for hiv in form.demographic.hiv %}
-                <span class="radio-inline w150">
-            {{ form_widget(hiv) }} {{ form_label(hiv) }}
-                        </span>
+                <span class="radio-inline w150">{{ form_widget(hiv) }} {{ form_label(hiv) }}</span>
             {% endfor %}
-            </span>
             <div class="clearfix"></div>
         </div>
         
@@ -335,6 +320,7 @@
         <button type="submit" class="btn-red-146 btn-submit">Submit Registration</button>
     </div>
     </form>
+    </div>
 
     <script language="javascript" type="text/javascript">
     function registerControl(radioGroups, checkboxes) {

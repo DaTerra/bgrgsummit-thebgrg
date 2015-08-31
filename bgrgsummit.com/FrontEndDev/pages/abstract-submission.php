@@ -1,0 +1,233 @@
+          <div class="page-top">  
+            <h1 class="page-title btn-yellow-100">Abstract Submission</h1>
+            <p></p>
+          </div>
+          <div class="main-left">            
+            <h3 class="titley">ABSTRACT SUBMISSION FORM</h3>              
+            <br/>
+            <p class="title-15">TRACK C: Theoretical & innovative Methodological Directions</p>
+            <p>This track addresses innovative culturally congruent theoretical approaches methodologies primarily crossing disciplinary boundaries such as anthropology, psychology, public health, ethnography...</p>
+            <p><span class="field-required required-helper">*Required fields</span></p>
+            <div class="clearfix"></div>    
+            <form action="./handlers/abstractsubmit-handler.php"  method="post"  onsubmit="return validate();">
+              <div class="section-0"> 
+                <div class="form-group-326">
+                  <label for="SubmitterName" class="label-105">Submitter's Name<span class="field-required">*</span></label>
+                  <input type="text" class="input-200 input-yellow" name="SubmitterName" id="SubmitterName">
+                </div>
+                <div class="form-group-326">
+                  <label for="SubmitterEmail" class="label-92-pad">Email<span class="field-required">*</span></label>
+                  <input type="text" class="input-228 input-yellow" name="SubmitterEmail" id="SubmitterEmail">
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-group-326">
+                  <label for="FirstAuthorName" class="label-105">First Author<span class="field-required">*</span></label>
+                  <input type="text" class="input-200 input-yellow" name="FirstAuthorName" id="FirstAuthorName">
+                </div>
+                <div class="clearfix"></div>
+                <div id="coauthors">
+                  <div class="form-group-420">
+                    <label for="CoAuthorName" class="label-105">Co-Author</label>
+                    <input type="text" class="input-200 input-yellow" name="CoAuthorName[]" id="CoAuthorName">                                      
+                  </div> 
+                  <a class="addlink" id="more_fields" onclick="add_fields();" href="#">+ Add Co-Author</a>
+                </div>               
+                <div class="clearfix"></div>
+                <p class="note-m-20">You will be notified about the status of your submission. Once accepted, you’ll be able to provide Authorship and Speakership details.</p>
+              </div> 
+              <div class="section-1">
+                <p class="title-15 center">ABSTRACT TITLE</p>
+                <div class="pad20-45">                  
+                  <textarea class="text-555 MyTitleBox" name="abstractTitle"  id="abstractTitle" rows="6"></textarea>
+                  <p class="note-red-12  center">Max. 30 words. You have <span id="count-label">30</span> words remaining for the Title.</p>
+                </div>                           
+                <div class="clearfix"></div>
+              </div>        
+              <div class="section-2 yellowBG">
+                <!-- 20 Words -->
+                <p class="title-15 center">ABSTRACT TEXT</p>
+                <p class="note-red-12 center">Max. 350 words. You have <span id="remainingWords">350</span> words remaining for the Abstract Text</p>  
+                <!-- 350 Words -->
+                <div class="form-group-b10">
+                  <p  class="label-bold center">Background</p>                       
+                  <textarea name="abstract_background" id="abstract_background" class="MyTextBox text-555"  rows="6"></textarea>
+                </div> 
+                <div class="form-group-b10">
+                  <p  class="label-bold center">Methods</p>                       
+                  <textarea name="abstract_methods" id="abstract_methods" class="MyTextBox text-555" rows="6"></textarea>
+                </div> 
+                <div class="form-group-b10">
+                  <p  class="label-bold center">Results</p>                       
+                  <textarea name="abstract_results" id="abstract_results" class="MyTextBox text-555" rows="6"></textarea>
+                </div> 
+                <div class="form-group-b10">
+                  <p  class="label-bold center">Conclusions</p>                       
+                  <textarea name="abstract_conclusions" id="abstract_conclusions" class="MyTextBox text-555" rows="6"></textarea>
+                </div>
+                <button class="btn-red-146 btn-submit">Submit Abstract</button>   
+              </div>                                                           
+            </form>
+          </div>
+          <div class="main-right">            
+            <h3 class="titley">SUBMISSION GUIDELINES</h3>
+            <div class="guidelines" id="accordion">
+              <p><span>Summary:</span> The abstract submission period closed Wednesday, October 15, 2014. All notifications were sent in early November to the submitting authors. It is the submitting author’s responsibility to inform all co-authors of the status of the abstract.</p>
+              <a class="accordion-toggle" href="#">Read all summary</a>
+              <div class="accordion-content">
+                <p>Abstracts must be 500 words or less. Use the spell checking and word count features of your word processor to check the text of the abstract before submitting. Each contributed abstract must be categorized under one of the topics or areas of interest described below. Authors are encouraged to submit abstracts from a variety of disciplines, methodological perspectives and approaches.</p>
+                <p>Abstracts can be submitted to any track. However, you may NOT submit the same abstract to more than one track. Authors may submit only one abstract on which they are listed as the presenter. All abstracts must be received by Wednesday, October 15, 2014. An acknowledgement of receipt will be sent to the first author (the primary presenter) within three business days of submitting the abstract.</p>
+                <p>All abstracts will be blind peer-reviewed and notification to presenting authors is expected to occur on Friday, November 7, 2014. Abstracts accepted for presentation at the summit will be published in the summit program book, accompanied with a brief bio & photo of the presenter.    At the time of submission, only the presenting authors are requested to complete all of the submission forms:</p>
+                  <ul>
+                    <li>Conference Registration Form</li>
+                    <li>Speaker Agreement Form</li>
+                  </ul>
+                <p>This information will only be used for those abstracts selected for presentation at the conference. Authors whose submissions have been accepted are expected to register and pay the conference registration fee after presenters have been notified of acceptance. Abstracts not accepted will be destroyed.</p>
+                <p>The presenter author will be notified via e-mail of abstract status on Friday, November 7, 2014. Please make sure your e-mail address is correct and up-to-date. Please note: withdrawing an abstract after acceptance may prevent consideration of acceptance to future UCLA H3/BGRG Summits.</p>
+              </div>
+              <br/>              
+                <p><span>Details:<span></p>
+                  <a class="accordion-toggle" href="#">Types of presentations ></a>
+                  <div class="accordion-content">
+                    <p>There will be one type of presentation: single oral presentations. Oral sessions are 90 minutes. Single oral session abstracts will be accepted individually and combined into sessions by track chairs, typically four per session. Each speaker will have 20 minutes for his/her presentation. The track chairs attempt to combine abstracts of a similar topic into each session.<p>
+                    <p>• Single Oral Session</P>
+                    <p>Abstracts of individual papers will be considered for parallel sessions organized around a theme or topic, and will involve individual presentations of approximately 20 minutes in length (including discussion). Individual presentations of co-authored papers are welcome.</p>
+                  </div>
+                  </p>
+                  <a class="accordion-toggle" href="#">Instructions for formatting abstracts ></a>
+                  <div class="accordion-content">
+                    <ol>
+                      <li>IMPORTANT: Please read these instructions carefully and follow the guidelines below when preparing an abstract for submission.</li>
+                      <li>All abstracts must be submitted in English.</li>
+                      <li>All abstracts should be no more than 500 words.</li>
+                      <li>All abstracts should be written in Arial and 12 point font.</li>
+                      <li>Include the first and the last name of each author. Authors should be listed as lead/presenting author, followed by coauthors.</li>
+                      <li>The lead/presenting author may only submit one abstract. If more than two abstracts are submitted by a presenting author, then only the first abstract submitted will be reviewed.</li>
+                      <li>An author’s affiliation should follow immediately after the author’s name(s).</li>
+                      <li>Use of abbreviations is desirable. Place special or unusual abbreviations in parentheses after the full word or phrase the first time the abbreviation appears.</li>
+                      <li>Do not indent any paragraphs.</li>
+                      <li>Do not use hard returns at the end of lines. Only use hard returns at the end of paragraphs.</li>
+                      <li>Use numerals to indicate numbers, except at the beginning of a sentence.</li>
+                      <li>Explain your results. Do NOT state that the results will be discussed.</li>
+                    </ol>
+                  </div>
+                  <a class="accordion-toggle" href="#">Format I: Scientific research findings ></a>
+                  <div class="accordion-content">
+                    <p>This format is most appropriate for the presentation of scientific research findings.</p>
+                    <ol>
+                      <li>Background/Objectives: Study objectives, the hypothesis to be tested, or a description of the problem.</li>
+                      <li>Methods: Methods used or approach taken.</li>
+                      <li>Results: Specific results in summary form (with appropriate statistical analysis).</li>
+                      <li>Conclusions/Implications: Discussion, implications and conclusions.</li>
+                    </ol>
+                  </div>
+                  <a class="accordion-toggle">Format II: Descriptive summary</a>
+                  <div class="accordion-content">
+                    <p>This format is most appropriate for description of programs or other activities.</p>
+                    <ol>
+                      Issue: Identify the specific problems or needs addressed
+                      Setting: Geographic location, description of where intervention takes place, and intended audience.
+                      Project: Description of the program or model.
+                      Results: Specific quantifiable results in summary form.
+                      Lessons Learned: Summary of the lessons learned and implications.
+                      Please note: the abstract should disclose primary findings and not include statements such as “experiment in progress” or “results will be discussed.”
+                      Deadline for abstract submission is Wednesday, October 15, 2014.
+                    </ol>
+                  </div>
+                  <a href="#">Download Submission Guidelines PDF</a>
+            </div>               
+          </div>
+
+<script type="text/javascript">              
+  var WordsLim = 30;
+  var WordsUs = 0;
+  var WordsRem = 30;
+  var regexx = /\s+/gi;
+  $(document).ready(function () {
+      
+      $('.MyTitleBox').live("keyup", function (e) {
+          var v = "";
+          $('.MyTitleBox').each(function() { v = v + " " + $(this).val().trim(); });
+          v = v.trim();
+          console.log(v);
+          var WordsUs = v.replace(regexx, ' ').split(' ').length;
+          WordsRem = parseInt(WordsLim) - parseInt(WordsUs);
+          if (WordsUs == WordsLim) {
+              $('.MyTitleBox').readOnly = true;
+              $('#count-label').html("0 Words remaining.");
+              $('#ExtraWords').html("");             
+          }
+          else if (WordsUs > WordsLim) {
+              $('#count-label').html("0");
+              document.getElementById('abstractTitle').readOnly = true;
+              var extraWord = parseInt(WordsUs) - parseInt(WordsLim);
+              $('#ExtraWords').html("You have entered " + extraWord + " extra Words!!");
+          } else {
+              $('#count-label').html(WordsRem);
+          }
+      });
+  });
+</script>
+
+<script type="text/javascript">    
+/*          
+  var WordsLimit = 350;
+  var WordsUsed = 0;
+  var WordsRemaining = 350;
+  var regex = /\s+/gi;
+  $(document).ready(function () {
+      
+      $('.MyTextBox').live("keyup", function (e) {
+          var v = "";
+          $('.MyTextBox').each(function() { v = v + " " + $(this).val().trim(); });
+          v = v.trim();
+          console.log(v);
+          var WordsUsed = v.replace(regex, ' ').split(' ').length;
+          WordsRemaining = parseInt(WordsLimit) - parseInt(WordsUsed);
+          if (WordsUsed == WordsLimit) {
+              $('.MyTextBox').readOnly = true;
+              $('#remainingWords').html("0 Words remaining.");
+              $('#ExtraWords').html("");
+             
+          }
+          else if (WordsUsed > WordsLimit) {
+              $('#remainingWords').html("0");
+              document.getElementById('MyTextBox1').readOnly = true;
+              var extraWord = parseInt(WordsUsed) - parseInt(WordsLimit);
+              $('#ExtraWords').html("You have entered " + extraWord + " extra Words!!");
+          } else {
+              $('#remainingWords').html(WordsRemaining);
+          }
+      });
+  });
+ */ 
+</script>
+
+<script type="text/javascript">
+  var WordsLimit = 350;
+  var WordsUsed = 0;
+  var WordsRemaining = 350;
+  var regex = /\s+/gi;
+  $(document).ready(function () {
+      
+      $('.MyTextBox').live("keyup", function (e) {
+          var v = "";
+          $('.MyTextBox').each(function() { v = v + " " + $(this).val().trim(); });
+          v = v.trim();
+          //console.log(v);
+          var WordsUsed = v.replace(regex, ' ').split(' ').length;
+          WordsRemaining = parseInt(WordsLimit) - parseInt(WordsUsed);
+          if (WordsUsed >= WordsLimit) {
+              $('.MyTextBox').on("keydown", function(e) {
+                  if (e.keyCode !== 8) {                            
+                      return false;
+                  }
+              });
+          } else {
+              $('.MyTextBox').off("keydown");
+          }
+          $('#remainingWords').html(WordsRemaining);
+      });
+  });
+</script>
+
+

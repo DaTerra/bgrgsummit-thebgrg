@@ -16,7 +16,7 @@ html {
 body {
   font-family: dtr_proregular;  
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #333333;
   background-color: #ffffff;
   background:url(../img/footer-bg.png);
@@ -123,6 +123,7 @@ body {
 .main-container{
 	width:945px;
 	float:right;
+	min-height: 1360px;
 }
 .page-header{
 	position: relative;
@@ -266,7 +267,7 @@ body {
 }
 .main-content{
 	position: relative;	
-	min-height:1000px;
+	min-height:1190px;
 }
 .main-content .page-top{
 	position:absolute;
@@ -563,7 +564,8 @@ body {
 .agenda section .subsession .maintitle{
 	font-size:16px;	
 	line-height:40px;
-	font-weight:normal;
+	font-weight: 900;
+	color: red;
 }
 .agenda section .subsession .maintitle span{
 	color:#999999;	
@@ -571,11 +573,13 @@ body {
 .agenda section .subsession p{
 	font-size:14px;	
 	padding-left:10px;
+	line-height: 20px;
 }
 .agenda section .subsession li{
 	font-size:14px;	
 	list-style: circle inside;
 	padding-left:20px;
+	line-height: 20px;
 
 }
 .agenda .fa-chevron-circle-right{
@@ -594,7 +598,7 @@ body {
 }
 .share-bottom{
 	width:165px;
-	float:left;
+	float:lef<p><strong>Biography</strong></p>t;
 	margin-right:30px;
 	margin-top:10px;
 }
@@ -624,6 +628,7 @@ body {
 .footer-content{
 	float:left;
 	width:683px;
+	margin-left: 65px;
 }
 .footer-content p{
 	font-family:dtr_probold;
@@ -679,7 +684,7 @@ body {
 	font-family: dtr_probold;
 	background:#fdb618;
 	text-transform: capitalize;
-	color:#fff;
+	color:#000;
 	font-size:15px;
 	text-align: center;
 	position: relative;
@@ -1077,7 +1082,8 @@ input.file {
 	float:left;
 }
  .mb-15{
- 	margin-bottom:15px;
+ 	margin-top: 20px;
+	margin-bottom: 10px;
  }
 
 .yellowBG .mb-15{
@@ -1225,6 +1231,9 @@ input.file {
 	background:rgba(253,182,24,0.1);
 	border:1px solid #FECB62;
 }
+.yellowBox .content strong{ 
+	font-weight: bold;
+}
 .padding5p{
 	padding:5%;
 }
@@ -1238,6 +1247,19 @@ input.file {
 	width:810px;            
 	float:right;
 	margin-right:67px;
+}
+.pdf,.ppt{
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	background-image: url("../img/presoicon.png");
+}
+.pdf{
+	background-position: left;
+
+}
+.ppt{
+	background-position: right;
 }
 .section-agenda .time{
 	width:67px;
@@ -1465,6 +1487,14 @@ font-size:13px;
   .accordion-content {display: none;}
   .accordion-content.default {display: block;}
 
+/*Sponsors*/
+
+.sponsorspage a,
+.sponsorspage a li{
+	width:25%;
+	float:left;
+	text-align: center;
+}
 /*Become a Sponsor*/
 
 

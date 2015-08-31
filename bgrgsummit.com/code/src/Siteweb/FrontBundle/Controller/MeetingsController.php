@@ -24,11 +24,12 @@ class MeetingsController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $meeting =  $em->getRepository('SitewebFrontBundle:Meeting')->findOneById($id);
+        $previousmeeting =  $em->getRepository('SitewebBackBundle:Meeting')->findOneById($id);
+        $meeting = new Meeting();
 
 
         $form = $this->createForm(new MeetingType(), $meeting, array(
-            'action' => $this->generateUrl('summit_propose_meeting',array(
+            'action' => $this->generateUrl('summit_edit_proposal',array(
                     'id' => $id
                 )),
             'method' => 'post',
@@ -40,6 +41,18 @@ class MeetingsController extends Controller
 
         if ($form->isValid()) {
 
+            $invitee = $em->getRepository('SitewebUserBundle:User')->findOneById($previousmeeting->getProposer()->getId());
+            if(!$invitee){
+                $this->createNotFoundException('No User With This id '.$id);
+            }
+            $proposer = $em->getRepository('SitewebUserBundle:User')->findOneById($this->getUser()->getId());
+
+            $meeting->setInvitee($invitee);
+            $meeting->setProposer($proposer);
+            $date = date("H:i", strtotime($form->get('time')->getData()));
+            $meeting->setTime(new \DateTime($date));
+            $meeting->setStatus('Pending');
+            $em->remove($previousmeeting);
             $em->persist($meeting);
 
             $em->flush();
@@ -51,16 +64,16 @@ class MeetingsController extends Controller
                 ->setBody(
                     $this->renderView(
                         'SitewebFrontBundle:Meetings:email2.txt.twig',
-                        array('name' => $meeting->getProposer()->getFname().' '.$meeting->getProposer()->getLname(),
+                        array('name' => $invitee->getFname().' '.$invitee->getLname(),
                         )
                     )
                 )
             ;
             $this->get('mailer')->send($message);
 
-            $this->get('session')->getFlashBag()->add('Another Meeting proposal has been submitted.');
+            $this->get('session')->getFlashBag()->add('notice','A New Meeting proposal has been submitted.');
 
-            return $this->redirect($this->generateUrl('siteweb_front_homepage'));
+            return $this->redirect($this->generateUrl('summit_my_proposals'));
         }
 
         return $this->render('SitewebFrontBundle:Meetings:propose.html.twig',array(
@@ -134,13 +147,21 @@ class MeetingsController extends Controller
         $accepteddmeetings1 = $em->getRepository('SitewebBackBundle:Meeting')->findBy(array(
             'status' => 'accepted',
             'invitee' => $user
+        ),array(
+            'status' => 'ASC'
         ));
         $accepteddmeetings2 = $em->getRepository('SitewebBackBundle:Meeting')->findBy(array(
             'status' => 'accepted',
             'proposer' => $user
+        ),array(
+            'status' => 'ASC'
         ));
-        $sentmeetings = $em->getRepository('SitewebBackBundle:Meeting')->findByInvitee($user);
-        $recievedmeetings = $em->getRepository('SitewebBackBundle:Meeting')->findByProposer($user);
+        $sentmeetings = $em->getRepository('SitewebBackBundle:Meeting')->findByProposer($user,array(
+            'status' => 'ASC'
+        ));
+        $recievedmeetings = $em->getRepository('SitewebBackBundle:Meeting')->findByInvitee($user,array(
+            'status' => 'ASC'
+        ));
 
         return $this->render('SitewebFrontBundle:Meetings:myproposals.html.twig',array(
             'sentmeetings' => $sentmeetings,
@@ -211,9 +232,9 @@ class MeetingsController extends Controller
         ;
         $this->get('mailer')->send($message);
 
-        $this->get('session')->getFlashBag()->add('The Meeting proposal has been Approuved.');
+        $this->get('session')->getFlashBag()->add('notice','The Meeting proposal has been Approved.');
 
-        return $this->redirect($this->generateUrl('siteweb_front_homepage'));
+        return $this->redirect($this->generateUrl('summit_my_proposals'));
     }
 
 
